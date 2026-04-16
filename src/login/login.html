@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.css"> <!--link do css-->
     <title>Login</title>
 </head>
 
 <body>
-    <header class="main-cabecalho">
+    <header class="main-cabecalho"> <!--cabeçalho da página-->
 
-        <div class="logo-e-titulo">
+        <div class="logo-e-titulo"> <!--logo e título do site-->
 
             <div class="logo-icon">
                 <img src="" alt="Logo">
@@ -19,22 +19,23 @@
 
         </div>
 
-        <nav class="container-nav">
+        <nav class="container-nav"> <!--barra de navegação-->
             <ul>
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="../sobre/sobre.html">Sobre</a></li>
-                <li><a href="../simulador/simulador.html">Simulador</a></li>
-                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
+                <li><a href="../home/home.html">Home</a></li> <!--links para as outras páginas-->
+                <li><a href="../sobre/sobre.html">Sobre</a></li><!--links para as outras páginas-->
+                <li><a href="../simulador/simulador.html">Simulador</a></li><!--links para as outras páginas-->
+                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li><!--links para as outras páginas-->
             </ul>
         </nav>
-    </header>
+    </header> <!--fim do cabeçalho-->
 
-    <main class="container-main">
-        <div>
+    <main class="container-main"> <!--conteúdo principal da página-->
+
+        <div class="titulo-introducao"> <!--título e introdução da página-->
             <p>Seja bem-vindo!</p>
             <p>Caso ainda não tenha cadastro, clique para criar sua conta.</p>
 
-            <a href="../cadastro/cadastro.html">
+            <a href="../cadastro/cadastro.html"> <!--link para a página de cadastro-->
                 <button class="btn-pagina-cadastro" type="button">Cadastrar-se</button>
             </a>
 
@@ -42,19 +43,18 @@
 
 
         <div>
-            <p class="container-titulo">Login</p>
+            <p class="container-titulo">Login</p> <!--título do formulário de login-->
             <p>Email:</p>
             <input id="ipt_login_email">
             <p>Senha:</p>
             <input type="password" id="ipt_login_senha">
 
-            <a href="../dashboard/dashboard.html">
+            <a href="../dashboard/dashboard.html"> <!--link para a página do dashboard, que é a página principal do usuário após o login-->
                 <button class="btn-pagina-dash" type="button">Entrar</button>
             </a>
 
-            <br> <!--mim apagar depois-->
 
-            <label class="check-login">
+            <label class="check-login"> <!--checkbox para permanecer conectado-->
                 <input type="checkbox">
                 Permanecer conectado?
             </label>
