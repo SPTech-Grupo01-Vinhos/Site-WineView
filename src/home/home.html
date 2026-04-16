@@ -1,55 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Wine View - O Olhar da Tecnologia sobre o Vinho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Página Inicial</title>
 </head>
 
 <body>
+    <header class="main-cabecalho">
 
-    <div>
-        <h1>Wine View: O Olhar da Tecnologia sobre o Vinho.</h1>
-        <p>Gestão inteligente de temperatura e alertas instantâneos para o processo de fermentação alcoólica.</p>
-        <button onclick="telaSobre()">VER MAIS</button>
-    </div>
+        <div class="logo-e-titulo">
 
-    <br><br>
+            <div class="logo-icon">
+                <img src="" alt="Logo">
+            </div>
 
-    <div>
-        <p>COM O MONITORAMENTO</p>
-        <h2>Domine a Fermentação.</h2>
-        <p>O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. O Wine View captura dados em tempo
-            real para que você tome decisões informadas, não suposições.</p>
-    </div>
-
-    <br><br>
-
-    <div>
-        <div>
-            <strong>Relatórios Semanais</strong>
-            <p>Receba análises detalhadas e consolidadas de toda a semana para otimizar seus próximos safras.</p>
         </div>
-        <br>
-        <div>
-            <strong>Captura em Tempo Real</strong>
+
+        <nav class="container-nav">
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../sobre/sobre.html">Sobre</a></li>
+                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-principal">
+
+        <div class="conatiner-introducao">
+
+            <img src="" alt="Campo de vinho verde">
+
+            <p class="container-titulo-introducao">Wine View: O Olhar da Tecnologia sobre o Vinho.</p>
+            <p>Gestão inteligente de temperatura e alertas instantâneos para o processo de fermentação alcoólica.</p>
+
+            <a href="../sobre/sobre.html">
+                <button class="btn-pagina-sobre" type="button">Ver Mais</button>
+            </a>
+        </div>
+
+
+
+        <div class="container-descricao-resumida">
+
+            <img src="" alt="Garrafa de vinho e uvas">
+
+            <p>COM O MONITORAMENTO</p>
+            <p class="container-titulo-descricao">Domine a Fermentação.</p>
             <p>O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. O Wine View captura dados em
-                tempo real para que você tome decisões informadas, não suposições.</p>
-        </div>
-        <br>
-        <div>
-            <strong>Alertas Instantâneos</strong>
-            <p>Notificações imediatas via sistema sobre qualquer desvio de temperatura, prevenindo perdas na
-                fermentação.</p>
-        </div>
-    </div>
+                tempo
+                real para que você tome decisões informadas, não suposições.</p>
 
-    <br><br>
+            <a href="../simulador/simulador.html">
+                <button class="btn-pagina-simulador" type="button">Ver Mais</button>
+            </a>
 
-    <div>
+        </div>
+
+
+
+        <div class="container-cards">
+
+            <div class="card1">
+
+                <img src="" alt="">
+                
+                <p class="container-subtitulo-cards">Relatórios Semanais</p>
+                <p>Receba análises detalhadas e consolidadas de toda a semana para otimizar seus próximos safras.</p>
+
+                <a href="../sobre/sobre.html">
+                    <button class="btn-pagina-sobre" type="button">Ver Mais</button>
+                </a>
+
+            </div>
+
+            <div class="card2">
+                
+                <img src="" alt="">
+
+                <p class="container-subtitulo-cards">Captura em Tempo Real</p>
+                <p>O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. O Wine View captura dados em
+                    tempo real para que você tome decisões informadas, não suposições.</p>
+
+                <a href="../sobre/sobre.html">
+                    <button class="btn-pagina-sobre" type="button">Ver Mais</button>
+                </a>
+
+            </div>
+
+            <div class="card3">
+
+                <img src="" alt="">
+
+                <p class="container-subtitulo-cards">Alertas Instantâneos</p>
+                <p>Notificações imediatas via sistema sobre qualquer desvio de temperatura, prevenindo perdas na
+                    fermentação.</p>
+
+                <a href="../sobre/sobre.html">
+                    <button class="btn-pagina-sobre" type="button">Ver Mais</button>
+                </a>
+
+            </div>
+        </div>
+
+
         <div class="container-contato">
 
-            <div class="container-titulo">
+            <div class="container-titulo-contato">
 
                 <p class="texto-destaque">Ficou alguma dúvida?</p>
                 <p>Caso ainda não tenha cadastro, clique para criar a sua conta.</p>
@@ -71,7 +131,9 @@
             </div>
 
         </div>
-    </div>
+
+
+    </main>
 
 
 </body>
