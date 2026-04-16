@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header class="main-cabecalho">
+
+        <div class="logo-e-titulo">
+
+            <div class="logo-icon">
+                <img src="" alt="Logo">
+            </div>
+
+        </div>
+
+        <nav class="container-nav">
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../sobre/sobre.html">Sobre</a></li>
+                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-main">
+        <div>
+            <p>Seja bem-vindo!</p>
+            <p>Caso já tenha cadastro, clique para logar em sua conta.</p>
+
+            <a href="../login/login.html">
+                <button class="btn-pagina-login" type="button">Login</button>
+            </a>
+
+        </div>
+
+
+        <div class="container-cadastro">
+            <p class="container-titulo">Cadastro</p>
+
+            <div class="container-user">
+                <p>Nome Completo:</p>
+                <input id="ipt_nome">
+                <p>E-mail Corporativo:</p>
+                <input id="ipt_email">
+                <p>Cargo:</p>
+                <input id="ipt_cargo">
+                <p>Celular:</p>
+                <input id="ipt_celular">
+                <p>Senha:</p>
+                <input type="password" id="ipt_senha">
+                <p>Confirme a senha:</p>
+                <input type="password" id="ipt_senha_confirmacao">
+            </div>
+
+            <div class="container-endereco">
+                <h4>Endereço Comercial</h4>
+                Logradouro: <input id="ipt_rua">
+                Número: <input id="ipt_num">
+                Cidade: <input id="ipt_cidade">
+                Estado: <input id="ipt_uf"><br>
+                Complemento: <input id="ipt_comp">
+                CEP: <input id="ipt_cep"><br><br>
+            </div>
+
+            <a href="../dashboard/dashboard.html">
+                <button class="btn-pagina-dash" type="button" onclick="alert('Cadastro realizado!')">Cadastrar</button>
+            </a>
+
+            <label class="check-login">
+                <input type="checkbox">
+                Permanecer conectado?
+            </label>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
