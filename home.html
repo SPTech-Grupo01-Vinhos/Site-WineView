@@ -47,11 +47,30 @@
     <br><br>
 
     <div>
-        <p>Faça parte do ecossistema Wine View. Conteúdo técnico e prático direto na sua caixa de entrada.</p>
-        <input type="text" id="ipt_news" placeholder="Digite seu e-mail">
-        <button onclick="alert('E-mail cadastrado!')">ENVIAR</button>
-        <br>
-        <input type="checkbox"> Concordo em receber conteúdos da Wine View e aceito a Política de Privacidade.
+        <div class="container-contato">
+
+        <div class="container-titulo">
+
+            <p class="texto-destaque">Ficou alguma dúvida?</p>
+            <p>Caso ainda não tenha cadastro, clique para criar a sua conta.</p>
+
+        </div>
+
+        <div class="container-form">
+
+            <p class="texto-destaque-form">Entre em contato</p>
+
+            <p class="texto-comum">Nome:</p> 
+            <input id="ipt_cont_nome">
+            <p class="texto-comum">Email:</p> 
+            <input id="ipt_cont_email">
+            <p class="texto-comum">Mensagem: </p>
+            <textarea id="ipt_cont_msg"></textarea> <!--Mesma coisa que input só para quando tem mais linhas-->
+
+            <button class="btn-contato" onclick="alert('Mensagem enviada!')">ENVIAR</button>
+        </div>
+
+    </div>
     </div>
 
 
