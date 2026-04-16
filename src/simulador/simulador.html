@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+    <link rel="stylesheet" href="simulador.css">
+</head>
+
+<body>
+    <header class="main-cabecalho">
+
+        <div class="logo-e-titulo">
+
+            <div class="logo-icon">
+                <img src="" alt="Logo">
+            </div>
+
+        </div>
+
+        <nav class="container-nav">
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../sobre/sobre.html">Sobre</a></li>
+                <li><a href="../simulador/simulador.html">Simulador</a></li>
+                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-principal">
+
+        <div class="conteudo">
+            <h1>Simulador Wine View</h1>
+            <h3>+ Tecnologia = Maior Qualidade</h3><br>
+
+            Quantos litros de vinho você produz por mês? <br>
+            <input type="text" id="input_producao_mensal"><br><br>
+
+            Qual o custo de produção de 1 litro de vinho?<br>
+            <input type="text" id="input_custo_litro"><br><br>
+
+            Qual o valor médio de venda de uma garrafa (750ml)?<br>
+            <input type="text" id="input_valor_garrafa"><br><br>
+
+            <button onclick="simular_vinho()">Simular Lucratividade</button><br><br>
+        </div>
+
+        <span id="div_mensagem">
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function simular_vinho() {
+        let litros_mes = Number(input_producao_mensal.value)
+        let custo_litro = Number(input_custo_litro.value)
+        let valor_garrafa = Number(input_valor_garrafa.value)
+
+        let total_garrafas_mes = litros_mes / 0.75
+        let custo_total_mes = litros_mes * custo_litro
+        let receita_total_mes = total_garrafas_mes * valor_garrafa
+        let lucro_estimado_mes = receita_total_mes - custo_total_mes
+
+        // novo cálculo: custo por garrafa
+        let custo_por_garrafa = custo_litro * 0.75
+
+        let perda_10_porcento = receita_total_mes * 0.10
+        let perda_2_porcento = receita_total_mes * 0.02
+
+        let economia_mensal = perda_10_porcento - perda_2_porcento
+        let economia_anual = economia_mensal * 12
+
+        div_mensagem.innerHTML = `
+        <h3>Análise de Produção:</h3>
+        Você produz <b>${litros_mes}</b> litros por mês.<br>
+        Isso equivale a aproximadamente <b>${total_garrafas_mes.toFixed(0)}</b> garrafas por mês.<br><br>
+
+        Seu custo por litro é de <b>R$ ${custo_litro.toFixed(2)}</b>.<br>
+        Seu custo por garrafa (750ml) é de <b>R$ ${custo_por_garrafa.toFixed(2)}</b>.<br>
+        O custo total mensal é de <b>R$ ${custo_total_mes.toFixed(2)}</b>.<br><br>
+
+        Seu lucro bruto estimado é de <b>R$ ${lucro_estimado_mes.toFixed(2)}</b> por mês.<br><br>
+
+        <h3>Solução Wine View:</h3>
+        Reduzindo perdas de 10% para 2%, a economia é de <b>R$ ${economia_mensal.toFixed(2)}</b> por mês.<br>
+        Economia anual: <b>R$ ${economia_anual.toFixed(2)}</b>.
+    `
+    }
+</script>
