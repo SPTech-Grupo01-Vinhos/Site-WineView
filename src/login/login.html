@@ -24,7 +24,8 @@
                 <li><a href="../home/home.html">Home</a></li> <!--links para as outras páginas-->
                 <li><a href="../sobre/sobre.html">Sobre</a></li><!--links para as outras páginas-->
                 <li><a href="../simulador/simulador.html">Simulador</a></li><!--links para as outras páginas-->
-                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li><!--links para as outras páginas-->
+                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
+                <!--links para as outras páginas-->
             </ul>
         </nav>
     </header> <!--fim do cabeçalho-->
@@ -49,7 +50,8 @@
             <p>Senha:</p>
             <input type="password" id="ipt_login_senha">
 
-            <a href="../dashboard/dashboard.html"> <!--link para a página do dashboard, que é a página principal do usuário após o login-->
+            <a href="../dashboard/dashboard.html">
+                <!--link para a página do dashboard, que é a página principal do usuário após o login-->
                 <button class="btn-pagina-dash" type="button">Entrar</button>
             </a>
 
@@ -66,3 +68,50 @@
 </body>
 
 </html>
+
+<script>
+
+    let tentativas = 3;
+
+    function logar() {
+
+        let email_digitado = ipt_login_email.value
+
+        let senha_digitada = ipt_login_senha.value
+
+        let email = 'Vinho123@gmail.com'
+
+        let senha = '@Vinho123'
+
+
+
+        if (email_digitado != email || senha_digitada != senha) {
+
+            alert('Senha e/ou E-mail errado!')
+
+            tentativas--;
+
+            div_mensagem.innerHTML = `Você tem mais ${tentativas}`
+
+            if (tentativas == 1) {
+
+                alert('Essa é última tentativa')
+
+            }
+
+            else if (tentativas == 0) {
+                alert('Acesso negado!')
+
+                div_mensagem.innerHTML = `<span style="color: red">Você estourou seu limite de tentativas! tente mais tarde.</span>`
+
+                tentativas = 3
+
+            }
+
+        }
+
+        else { alert('Seja bem-vindo(a) Nome do Cliente') }
+
+    }
+
+</script>
