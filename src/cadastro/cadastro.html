@@ -51,6 +51,8 @@
                 <input id="ipt_nome">
                 <p>E-mail Corporativo:</p>
                 <input id="ipt_email">
+                <p>CNPJ:</p>
+                <input id="ipt_cnpj">
                 <p>Cargo:</p>
                 <input id="ipt_cargo">
                 <p>Celular:</p>
@@ -78,18 +80,48 @@
             </div>
 
             <a href="../dashboard/dashboard.html"> <!-- Link para a página do dashboard, estilizado como um botão, isso serve somente para estilizar, o link deve ser alterado para a página de confirmação de cadastro ou para a página de login, dependendo da lógica de navegação do site -->
-                <button class="btn-pagina-dash" type="button" >Cadastrar</button>
+                <button class="btn-pagina-dash" onclick="cadastrar()">Cadastrar</button>
             </a>
 
-            <label class="check-login"> <!-- Container para o check de "Permanecer conectado?", isso serve somente para estilizar-->
-                <input type="checkbox">
-                Permanecer conectado?
-            </label>
+            <!-- <label class="check-login"> -->
+                 <!-- Container para o check de "Permanecer conectado?", isso serve somente para estilizar-->
+                <!-- <input type="checkbox">
+                Permanecer conectado? -->
+            <!--</label> -->
 
         </div>
+        
+        <div id="exibir"></div>
 
     </main>
 
 </body>
 
 </html>
+
+<script>
+
+    function cadastrar() {
+        let nome = ipt_nome.value;
+        let email = ipt_email.value;
+        let cnpj = ipt_cnpj.value;
+        let senha = ipt_senha.value;
+        let senhaConfirmacao = ipt_senha_confirmacao.value;
+
+        let mensagem = "";
+
+        if (!email.indexOf('@') == -1 && !email.indexOf('.') == -1) {
+            alert('Insira um email válido!')
+        } else if (senha <= 6 && senhaConfirmacao != senha) {
+            alert('Insira uma senha válida!')
+        } else if (nome.length <= 1) {
+            alert('Insira um nome válido!')
+        } else if (cnpj.length != 14) {
+            alert('Insira um CNPJ válido!')
+        } else {
+            mensagem += 'Cadastro realizado com sucesso!'
+        }
+
+        exibir.innerHTML = mensagem;
+    }
+</script>
