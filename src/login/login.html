@@ -9,61 +9,45 @@
 </head>
 
 <body>
-    <header class="main-cabecalho"> <!--cabeçalho da página-->
+    <div class="container-main"> <!--conteúdo principal da página-->
 
-        <div class="logo-e-titulo"> <!--logo e título do site-->
+        <div class="container-esquerda"> <!--título e introdução da página-->
 
-            <div class="logo-icon">
-                <img src="" alt="Logo">
+            <div class="content">
+                <h1>Seja bem-vindo!</h1>
+                <p>Caso ainda não tenha cadastro, <br> clique para criar sua conta.</p>
+    
+                <a href="../cadastro/cadastro.html"> <!--link para a página de cadastro-->
+                    <button class="btn-pagina-cadastro" type="button">Cadastrar-se</button>
+                </a>
             </div>
 
         </div>
 
-        <nav class="container-nav"> <!--barra de navegação-->
-            <ul>
-                <li><a href="../home/home.html">Home</a></li> <!--links para as outras páginas-->
-                <li><a href="../sobre/sobre.html">Sobre</a></li><!--links para as outras páginas-->
-                <li><a href="../simulador/simulador.html">Simulador</a></li><!--links para as outras páginas-->
-                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
-                <!--links para as outras páginas-->
-            </ul>
-        </nav>
-    </header> <!--fim do cabeçalho-->
 
-    <main class="container-main"> <!--conteúdo principal da página-->
+        <div class="container-direita">
 
-        <div class="titulo-introducao"> <!--título e introdução da página-->
-            <p>Seja bem-vindo!</p>
-            <p>Caso ainda não tenha cadastro, clique para criar sua conta.</p>
+            <div class="content">
+                <h2>Login</h2> <!--título do formulário de login-->
+                <p>Email:</p>
+                <input id="ipt_login_email" placeholder="Digite o email...">
+                <p>Senha:</p>
+                <input type="password" id="ipt_login_senha" placeholder="Digite sua senha...">
+    
+                    <!--link para a página do dashboard, que é a página principal do usuário após o login-->
+                    <button class="btn-pagina-dash" type="button" onclick="logar()">Entrar</button>
 
-            <a href="../cadastro/cadastro.html"> <!--link para a página de cadastro-->
-                <button class="btn-pagina-cadastro" type="button">Cadastrar-se</button>
-            </a>
-
-        </div>
-
-
-        <div>
-            <p class="container-titulo">Login</p> <!--título do formulário de login-->
-            <p>Email:</p>
-            <input id="ipt_login_email">
-            <p>Senha:</p>
-            <input type="password" id="ipt_login_senha">
-
-            <a href="../dashboard/dashboard.html">
-                <!--link para a página do dashboard, que é a página principal do usuário após o login-->
-                <button class="btn-pagina-dash" type="button">Entrar</button>
-            </a>
-
-
-            <label class="check-login"> <!--checkbox para permanecer conectado-->
-                <input type="checkbox">
-                Permanecer conectado?
-            </label>
+    
+    
+                <!-- <label class="check-login"> 
+                    <input type="checkbox">
+                    Permanecer conectado?
+                </label> -->
+            </div>
 
         </div>
 
-    </main>
+    </div>
 
 </body>
 
@@ -98,6 +82,7 @@
             }
 
         } else { 
+            window.location.href = "../dashboard/dashboard.html"
             alert('Seja bem-vindo(a) Nome do Cliente') 
         }
 
