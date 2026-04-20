@@ -1,6 +1,166 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  border: none;
+}
+
+.container-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.container-esquerda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* tamanho */
+  width: 50%;
+  height: 100%;
+
+  /* cor de fundo */
+  background-color: #270e0e;
+
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    height: 20%;
+  }
+
+  h1 {
+    color: #f8f6f4;
+    font-family: "DM Serif Display";
+    font-size: 55px;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  p {
+    color: #aea9a4;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .btn-pagina-login {
+    border-radius: 10px;
+    background: #fefbf8;
+    padding: 5px 20px;
+
+    color: #221515;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+
+    cursor: pointer;
+
+    transition: 200ms;
+  }
+
+  .btn-pagina-login:hover {
+    background-color: #453636;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 25px;
+    transition: 200ms;
+  }
+}
+
+.container-direita {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* tamanho */
+  width: 50%;
+  height: 100%;
+
+  /* cor de fundo */
+  background-color: #e2d8ca;
+
+  .content {
+    background-color: #fefbf8;
+    border-radius: 1rem;
+    padding: 50px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+
+    height: 90%;
+    width: 85%;
+  }
+
+  h2 {
+    color: #4a0e0e;
+    font-family: "DM Serif Display";
+    font-size: 25px;
+    font-weight: 700;
+
+    /* tamanho */
+    height: 20%;
+  }
+
+  p {
+    color: #270e0e;
+    font-family: "Josefin Sans";
+    font-size: 15px;
+    font-weight: 500;
+
+    /* tamanho */
+    height: 20%;
+  }
+
+  input {
+    border-radius: 5px;
+    background: #e4e4e3;
+    padding: 10px;
+
+    /* tamanho */
+    height: 10%;
+    width: 100%;
+  }
+
+  .btn-proximo {
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: #4a0e0e;
+
+    color: #fefbf8;
+    font-family: "Josefin Sans";
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+
+    border: 1px solid #ffffff00;
+
+    height: 2.5rem;
+
+    cursor: pointer;
+    transition: 200ms;
+  }
+
+  .btn-proximo:hover {
+    background-color: #a69696;
+    border: 1px solid #4a0e0e;
+    color: white;
+    border-radius: 10px;
+    transition: 200ms;
+  }
 }
 

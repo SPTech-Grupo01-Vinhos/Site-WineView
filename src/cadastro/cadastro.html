@@ -8,120 +8,54 @@
     <title>Cadastro</title>
 </head>
 
-<body> <!-- Estrutura HTML para a página de cadastro -->
+<body>
+    <div class="container-main">
 
-    <header class="main-cabecalho"> <!-- Cabeçalho da página, header de cabeça mesmo-->
+        <div class="container-esquerda">
 
-        <div class="logo-e-titulo"> <!-- Container para o logo e título da empresa, isso serve somente para estilizar-->
+            <div class="content">
+                <h1>Seja bem-vindo!</h1>
+                <p>Caso já possua cadastro, <br> clique para logar em sua conta.</p>
 
-            <div class="logo-icon">
-                <img src="" alt="Logo">
+                <a href="../login/login.html"> <!-- Link para a página de login, estilizado como um botão -->
+                    <button class="btn-pagina-login" type="button">Login</button>
+                </a>
+
             </div>
 
         </div>
 
-        <nav class="container-nav"> <!-- Navegação principal da página, com links para as outras páginas do site -->
-            <ul>
-                <li><a href="../home/home.html">Home</a></li> <!-- Link para a página inicial -->
-                <li><a href="../sobre/sobre.html">Sobre</a></li> <!-- Link para a página sobre a empresa -->
-                <li><a href="../simulador/simulador.html">Simulador</a></li> <!-- Link para a página do simulador de empréstimos -->
-                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li> <!-- Link para a página de login, estilizado como um botão -->
-            </ul>
-        </nav>
-    </header>
 
-    <main class="container-main"> <!-- Conteúdo principal da página, onde o usuário irá preencher o formulário de cadastro (main = principal)-->
+        <div class="container-direita">
 
-        <div class="titulo-introducao"> <!-- Container para o título e introdução da página, isso serve somente para estilizar-->
-            <p>Seja bem-vindo!</p>
-            <p>Caso já tenha cadastro, clique para logar em sua conta.</p>
+            <div class="content">
+                <h2>Cadastro</h2>
 
-            <a href="../login/login.html"> <!-- Link para a página de login, estilizado como um botão -->
-                <button class="btn-pagina-login" type="button">Login</button>
-            </a>
-
-        </div>
-
-
-        <div class="container-cadastro"> <!-- Container para o formulário de cadastro, onde o usuário irá preencher seus dados pessoais e endereço comercial, isso serve somente para estilizar-->
-            <p class="container-titulo">Cadastro</p> <!-- Título do formulário de cadastro, isso serve somente para estilizar-->
-
-            <div class="container-user"> <!-- Container para os dados pessoais do usuário, onde o usuário irá preencher seus dados pessoais, isso serve somente para estilizar-->
                 <p>Nome Completo:</p>
-                <input id="ipt_nome">
+                <input id="ipt_nome" placeholder="Digite aqui...">
                 <p>E-mail Corporativo:</p>
-                <input id="ipt_email">
+                <input id="ipt_email" placeholder="Digite aqui...">
                 <p>CNPJ:</p>
-                <input id="ipt_cnpj">
-                <p>Cargo:</p>
-                <input id="ipt_cargo">
+                <input id="ipt_cnpj" placeholder="Digite aqui...">
                 <p>Celular:</p>
-                <input id="ipt_celular">
+                <input id="ipt_celular" placeholder="Digite aqui...">
                 <p>Senha:</p>
-                <input type="password" id="ipt_senha">
+                <input type="password" id="ipt_senha" placeholder="Digite aqui...">
                 <p>Confirme a senha:</p>
-                <input type="password" id="ipt_senha_confirmacao">
+                <input type="password" id="ipt_senha_confirmacao" placeholder="Digite aqui...">
+
+                <a href="./cadastro-continuacao.html">
+                    <button class="btn-proximo">Próximo</button>
+                </a>
+
             </div>
-
-            <div class="container-endereco"> <!-- Container para o endereço comercial do usuário, onde o usuário irá preencher seu endereço comercial, isso serve somente para estilizar-->
-                <p>Endereço Comercial</p>
-                <p>Logradouro:</p>
-                <input id="ipt_rua">
-                <p>Número:</p>
-                <input id="ipt_num">
-                <p>Cidade:</p>
-                <input id="ipt_cidade">
-                <p>Estado:</p>
-                <input id="ipt_uf">
-                <p>Complemento:</p>
-                <input id="ipt_comp">
-                <p>CEP:</p>
-                <input id="ipt_cep">
-            </div>
-
-            <a href="../dashboard/dashboard.html"> <!-- Link para a página do dashboard, estilizado como um botão, isso serve somente para estilizar, o link deve ser alterado para a página de confirmação de cadastro ou para a página de login, dependendo da lógica de navegação do site -->
-                <button class="btn-pagina-dash" onclick="cadastrar()">Cadastrar</button>
-            </a>
-
-            <!-- <label class="check-login"> -->
-                 <!-- Container para o check de "Permanecer conectado?", isso serve somente para estilizar-->
-                <!-- <input type="checkbox">
-                Permanecer conectado? -->
-            <!--</label> -->
 
         </div>
-        
+
         <div id="exibir"></div>
 
-    </main>
+    </div>
 
 </body>
 
 </html>
-
-<script>
-
-    function cadastrar() {
-        let nome = ipt_nome.value;
-        let email = ipt_email.value;
-        let cnpj = ipt_cnpj.value;
-        let senha = ipt_senha.value;
-        let senhaConfirmacao = ipt_senha_confirmacao.value;
-
-        let mensagem = "";
-
-        if (!email.indexOf('@') == -1 && !email.indexOf('.') == -1) {
-            alert('Insira um email válido!')
-        } else if (senha <= 6 && senhaConfirmacao != senha) {
-            alert('Insira uma senha válida!')
-        } else if (nome.length <= 1) {
-            alert('Insira um nome válido!')
-        } else if (cnpj.length != 14) {
-            alert('Insira um CNPJ válido!')
-        } else {
-            mensagem += 'Cadastro realizado com sucesso!'
-        }
-
-        exibir.innerHTML = mensagem;
-    }
-</script>

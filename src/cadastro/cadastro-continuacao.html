@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css"> <!-- Link para o arquivo de estilo -->
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="container-main">
+
+        <div class="container-esquerda">
+
+            <div class="content">
+                <h1>Seja bem-vindo!</h1>
+                <p>Caso já possua cadastro, <br> clique para logar em sua conta.</p>
+
+                <a href="../login/login.html"> <!-- Link para a página de login, estilizado como um botão -->
+                    <button class="btn-pagina-login" type="button">Login</button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container-direita">
+
+            <div class="content">
+                <h2>Cadastro</h2>
+
+                <p>Logradouro:</p>
+                <input id="ipt_rua" placeholder="Digite aqui...">
+                <p>Cidade:</p>
+                <input id="ipt_cidade" placeholder="Digite aqui...">
+                <p>Estado:</p>
+                <input id="ipt_uf" placeholder="Digite aqui...">
+                <p>Número:</p>
+                <input id="ipt_num" placeholder="Digite aqui...">
+                <p>CEP:</p>
+                <input id="ipt_cep" placeholder="Digite aqui...">
+                <p>Complemento:</p>
+                <input id="ipt_comp" placeholder="Digite aqui...">
+
+                <button class="btn-proximo" onclick="cadastrar()">Cadastrar</button>
+            </div>
+
+        </div>
+
+        <div id="exibir"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+        let nome = ipt_nome.value;
+        let email = ipt_email.value;
+        let cnpj = ipt_cnpj.value;
+        let senha = ipt_senha.value;
+        let senhaConfirmacao = ipt_senha_confirmacao.value;
+
+        let mensagem = "";
+
+        if (!email.indexOf('@') == -1 && !email.indexOf('.') == -1) {
+            alert('Insira um email válido!')
+        } else if (senha <= 6 && senhaConfirmacao != senha) {
+            alert('Insira uma senha válida!')
+        } else if (nome.length <= 1) {
+            alert('Insira um nome válido!')
+        } else if (cnpj.length != 14) {
+            alert('Insira um CNPJ válido!')
+        } else {
+            window.location.href = "../dashboard/dashboard.html"
+            mensagem += 'Cadastro realizado com sucesso!'
+        }
+
+        exibir.innerHTML = mensagem;
+    }
+</script>
