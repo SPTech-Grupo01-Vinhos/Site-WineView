@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sobre.css"> <!-- Link para o arquivo CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <title>Sobre</title>
 </head>
 
@@ -24,48 +27,87 @@
                 <li><a href="../home/home.html">Home</a></li> <!-- Link para a página Home -->
                 <li><a href="../sobre/sobre.html">Sobre</a></li> <!-- Link para a página Sobre -->
                 <li><a href="../simulador/simulador.html">Simulador</a></li> <!-- Link para a página Simulador -->
-                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li> <!-- Link para a página de Login -->
+                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
+                <!-- Link para a página de Login -->
             </ul>
         </nav>
     </header>
 
     <main class="container-main"> <!-- Conteúdo principal da página -->
+        <div class="conteudo">
 
-        <div class="container-img"> <!-- Container para a imagem principal da página -->
-            <img src="/img/sobre.png" alt="Uva e sensor">
+            <div class="container-img"> <!-- Container para a imagem principal da página -->
+                <img class="img-uva" src="../../img/sobre/img_sobre.png" alt="Uva e sensor">
+            </div>
+
+            <div class="titDireita">
+                <p class="titulo-main"><i><b>Tradição Protegida pela Precisão.</b></i></p>
+                <!-- Título principal da página -->
+                <p class="tit">Na Wine View, acreditamos que a alma de um grande vinho tinto nasce no controle exato de
+                    cada grau
+                    Celsius.</p>
+            </div>
         </div>
 
-        <p class="titulo-main">Tradição Protegida pela Precisão.</p> <!-- Título principal da página -->
-        <p>Na Wine View, acreditamos que a alma de um grande vinho tinto nasce no controle exato de cada grau Celsius.</p>
-
-        <nav class="container-nav"> <!-- Navegação interna para as seções da página -->
-            <ul>
-                <li><a href=#historia>HISTÓRIA</a></li> <!-- Link para a seção História -->
-                <li><a href=#missao>NOSSA MISSÃO</a></li> <!-- Link para a seção Nossa Missão -->
-                <li><a href=#pilar>NOSSOS PILARES</a></li> <!-- Link para a seção Nossos Pilares -->
-                <li><a href=#quemFaz>QUEM FAZ ACONTECER</a></li> <!-- Link para a seção Quem Faz Acontecer -->
-            </ul>
+        <nav class="container-lista"> <!-- Navegação interna para as seções da página -->
+            <p><a href=#historia>HISTÓRIA</a></p> <!-- pnk para a seção História -->
+            <p><a href=#missao>NOSSA MISSÃO</a></p> <!-- pnk para a seção Nossa Missão -->
+            <p><a href=#pilar>NOSSOS PILARES</a></p> <!-- pnk para a seção Nossos Pilares -->
+            <p><a href=#quemFaz>QUEM FAZ ACONTECER</a></p> <!-- Link para a seção Quem Faz Acontecer -->
         </nav>
 
-        <p class="titulo-historia" id="historia">HISTÓRIA</p> <!-- Título da seção História com id para navegação -->
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </p>
+        <div class="conteudo-principal">
+            <div class="mensagens" id="historia">
+                <p class="titulo">HISTÓRIA</p> <!-- Título da seção História com id para navegação -->
+                <p>A WineView nasceu da observação de um contraste profundo no coração da vitivinicultura brasileira.
+                    Enquanto o setor movimenta biliões de reais e se moderniza a passos largos, muitos pequenos e médios
+                    produtores ainda enfrentam um desafio arcaico: a "cegueira" durante o processo de fermentação.
 
-        <p class="titulo-missao" id="missao">NOSSA MISSÃO</p> <!-- Título da seção Nossa Missão com id para navegação -->
-        <p>
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </p>
+                    A nossa história começa com a uva Cabernet Sauvignon. Conhecida como a "rainha das uvas tintas", ela
+                    exige um rigor técnico quase matemático para revelar o seu potencial de cor, taninos e aromas. No
+                    entanto, o processo de fermentação é, por natureza, instável; as leveduras trabalham gerando calor e
+                    gás carbónico, e um desvio de poucos graus pode significar a ruína de uma safra inteira.
 
-        <p class="titulo-pilar" id="pilar">NOSSOS PILARES</p> <!-- Título da seção Nossos Pilares com id para navegação -->
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </p>
+                    Ao vermos produtores dedicados perderem qualidade — e rentabilidade — por dependerem de medições
+                    manuais e imprecisas, decidimos que era hora de unir dois mundos: o saber milenar da vinificação e a
+                    precisão da tecnologia IoT (Internet das Coisas).
 
-        <p class="titulo-quem-faz" id="quemFaz">QUEM FAZ ACONTECER</p> <!-- Título da seção Quem Faz Acontecer com id para navegação -->
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </p>
+                    A WineView não surgiu apenas para criar sensores, mas para democratizar o controlo. Inspirados pela
+                    excelência de gigantes como a Vinícola Aurora, desenvolvemos uma solução que permite ao pequeno
+                    produtor ter o mesmo nível de monitorização de uma grande indústria. O nosso sistema tornou-se o
+                    "olhar" que falta dentro do tanque, capturando variações térmicas em tempo real e garantindo que a
+                    fermentação ocorra na faixa ideal de 20°C a 30°C.
 
+                    Hoje, a nossa história é escrita em conjunto com os produtores que acreditam que a tradição e a
+                    tecnologia não são opostas, mas parceiras. A WineView existe para garantir que o esforço do campo se
+                    transforme, com segurança e ciência, num vinho de excelência.
+                </p>
+            </div>
+
+            <div class="mensagens"id="missao">
+                <!-- Título da seção Nossa Missão com id para navegação -->
+                <p class="titulo">NOSSA MISSÃO</p>
+                <p>
+                    Garantir a excelência na produção de vinhos através do monitoramento tecnológico de precisão,
+                    oferecendo aos produtores controle total sobre a fermentação alcoólica para preservar a essência, o
+                    sabor e o valor comercial de cada safra.
+                </p>
+            </div>
+            <div class="mensagens "id="pilar">
+                <!-- Título da seção Nossos Pilares com id para navegação -->
+                <p class="titulo">NOSSOS PILARES</p>
+                <p>Os pilares da WineView fundamentam-se na união entre a ciência de dados e a biologia da vinificação. O primeiro deles é a <span><b class="pilares">Precisão Tecnológica</b></span>, que garante a captura rigorosa de dados térmicos para que a fermentação ocorra na faixa ideal para a Cabernet Sauvignon. Somado a isso, temos a <span><b class="pilares">Segurança Biológica</b></span>, focada em monitorar o processo continuamente para evitar o estresse das leveduras e contaminações que possam comprometer a integridade da bebida. A <span><b class="pilares">Qualidade Sensorial</b></span> é outro pilar essencial, assegurando que o controle de temperatura e CO2 preserve a cor, os taninos e os aromas autênticos da uva. Por fim, sustentamos nosso modelo na <span><b class="pilares">Eficiência Econômica e Sustentabilidade</b></span>, elevando a competitividade de produtores em um mercado de bilhões de reais ao substituir medições manuais por automação, prevenindo perdas financeiras e garantindo a estabilidade das safras a longo prazo.
+                </p>
+            </div>
+            <span><b></b></span>
+            <div class="mensagens" id="quemFaz">
+                <p class="titulo">QUEM FAZ ACONTECER</p>
+                <!-- Título da seção Quem Faz Acontecer com id para navegação -->
+                <p>A WineView é impulsionada por um time multidisciplinar que une a paixão pela vitivinicultura à expertise em tecnologia e análise de dados. Quem faz acontecer são mentes inquietas e comprometidas com a inovação no campo, focadas em transformar a complexidade da fermentação biológica em soluções digitais intuitivas e eficientes. Nossa equipe é composta por especialistas que compreendem que, por trás de cada gráfico de temperatura, existe o trabalho de uma vida inteira de um produtor e a busca pela taça perfeita. É essa união de competências técnicas em hardware, software e visão de mercado que nos permite traduzir os sinais silenciosos dos tanques em decisões estratégicas, garantindo que a tradição da Cabernet Sauvignon seja protegida pela precisão da era conectada.
+                </p>
+            </div>
+        </div>
     </main> <!-- Fim do conteúdo principal da página -->
-
 </body>
 
 </html>

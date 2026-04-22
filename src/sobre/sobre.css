@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    /* font-family: "Libre Bodoni", serif; */
+    font-family: "Libre Bodoni", serif;
+    text-decoration: none;
+}
+
+
+.conteudo {
+    width: 100%;
+    height: 550px;
+    background-color: #F1F1F0;
+    display: flex;
+}
+
+.titDireita {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+
+
+    .titulo-main {
+        font-family: 'DM Serif Display', serif;
+        font-size: 4rem;
+        color: #4E0E0E;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .tit {
+        margin-top: 15px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2rem;
+        color: #4A4141;
+    }
+}
+
+.container-img {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .img-uva {
+        width: 500px;
+        height: auto;
+    }
+}
+
+.container-lista {
+    width: 100%;
+    height: 100px;
+    background-color: #F0EAE3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        padding: 50px;
+
+        a {
+            color: #4E0E0E;
+            font-family: 'Josefin Sans', sans-serif;
+
+        }
+    }
+}
+
+.conteudo-principal {
+    width: 100%;
+    height: 950px;
+    background-color: #E2D8CA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+
+    .titulo {
+        color: #4E0E0E;
+        padding: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .mensagens {
+        width: 80%;
+        color: #4A4141;
+        padding: 30px 0;
+
+        .pilares {
+            color: #4E0E0E;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        p {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+}
