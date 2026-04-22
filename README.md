@@ -5,4 +5,14 @@ Este é um projeto em grupo desenvolvido para a **São Paulo Tech School**. O Si
 facilita o monitoramento da temperatura do vinho em vinicolas, com foco apenas no monitoramento de temperatura
 na parte de fermentação alcoolica nos vinhos produzidos apartir da uva Carbenet Sauvignon.
 
+--
+
+## 🚀 Tecnologias e Ferramentas
+
+O projeto foi construído utilizando as disciplinas do 1º semestre de ADS:
+
+* **Front-end:** HTML5, CSS3 e JavaScript.
+* **Banco de Dados:** MySQL (modelagem relacional).
+* **Infraestrutura:** Servidor de Banco de Dados hospedado em Máquina Virtual(Lubuntu).
+* **Governança & Planejamento:** Git para controle de versão e Trello para gestão de tarefas.
 
