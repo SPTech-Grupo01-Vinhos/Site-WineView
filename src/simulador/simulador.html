@@ -9,42 +9,49 @@
 </head>
 
 <body>
-    <header class="main-cabecalho">
+    <header class="main-cabecalho"> <!-- Cabeçalho com logo e navegação -->
 
-        <div class="logo-e-titulo">
+        <div class="content">
 
-            <div class="logo-icon">
-                <img src="" alt="Logo">
+            <div class="container-logo">
+                <img src="../img/logo_transparente.png" alt="Logo">
+            </div>
+
+            <div class="container-nav">
+
+                <nav> <!-- Navegação principal do site -->
+                    <ul>
+                        <li><a href="../home/home.html">Home</a></li> <!-- Link para a página Home -->
+                        <li><a href="../sobre/sobre.html">Sobre</a></li> <!-- Link para a página Sobre -->
+                        <li><a href="../simulador/simulador.html">Simulador</a></li>
+                        <!-- Link para a página Simulador -->
+                        <a href="../login/login.html">
+                            <button class="btn-nav-entrar">Entrar</button>
+                        </a>
+                        <!-- Link para a página de Login -->
+                    </ul>
+                </nav>
+
             </div>
 
         </div>
-
-        <nav class="container-nav">
-            <ul>
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="../sobre/sobre.html">Sobre</a></li>
-                <li><a href="../simulador/simulador.html">Simulador</a></li>
-                <li class="btn-nav-entrar"><a href="../login/login.html">Entrar</a></li>
-            </ul>
-        </nav>
     </header>
 
     <div class="container-principal">
 
         <div class="conteudo">
-            <h1>Simulador Wine View</h1>
-            <h3>+ Tecnologia = Maior Qualidade</h3><br>
 
-            Quantos litros de vinho você produz por mês? <br>
-            <input type="text" id="input_producao_mensal"><br><br>
+            <div class="titulo">
+                <h1>Simulador Wine View</h1>
+            </div>
 
-            Qual o custo de produção de 1 litro de vinho?<br>
-            <input type="text" id="input_custo_litro"><br><br>
-
-            Qual o valor médio de venda de uma garrafa (750ml)?<br>
-            <input type="text" id="input_valor_garrafa"><br><br>
-
-            <button onclick="simular_vinho()">Simular Lucratividade</button><br><br>
+            <p>Quantos litros de vinho você produz por mês?</p>
+            <input type="text" id="input_producao_mensal" placeholder="Digite aqui...">
+            <p>Qual o custo de produção de 1 litro de vinho?</p>
+            <input type="text" id="input_custo_litro" placeholder="Digite aqui...">
+            <p>Qual o valor médio de venda de uma garrafa (750ml)?</p>
+            <input type="text" id="input_valor_garrafa" placeholder="Digite aqui...">
+            <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
         </div>
 
         <span id="div_mensagem">
@@ -76,19 +83,27 @@
         let economia_anual = economia_mensal * 12
 
         div_mensagem.innerHTML = `
-        <h3>Análise de Produção:</h3>
-        Você produz <b>${litros_mes}</b> litros por mês.<br>
-        Isso equivale a aproximadamente <b>${total_garrafas_mes.toFixed(0)}</b> garrafas por mês.<br><br>
+        <div class="card-resultado">
+        <h3>Análise de Produção</h3>
+        <p>Você produz <span class="destaque">${litros_mes}</span> litros por mês.</p>
+        <p>Equivale a aprox. <span class="destaque">${total_garrafas_mes.toFixed(0)}</span> garrafas/mês.</p>
+        
+        <hr>
 
-        Seu custo por litro é de <b>R$ ${custo_litro.toFixed(2)}</b>.<br>
-        Seu custo por garrafa (750ml) é de <b>R$ ${custo_por_garrafa.toFixed(2)}</b>.<br>
-        O custo total mensal é de <b>R$ ${custo_total_mes.toFixed(2)}</b>.<br><br>
+        <div class="financeiro">
+            <p>Custo por litro: <b>R$ ${custo_litro.toFixed(2)}</b></p>
+            <p>Custo por garrafa: <b>R$ ${custo_por_garrafa.toFixed(2)}</b></p>
+            <p class="custo-total">Custo total mensal: <span>R$ ${custo_total_mes.toFixed(2)}</span></p>
+        </div>
 
-        Seu lucro bruto estimado é de <b>R$ ${lucro_estimado_mes.toFixed(2)}</b> por mês.<br><br>
+        <div class="lucro-box">
+            Lucro bruto estimado: <b>R$ ${lucro_estimado_mes.toFixed(2)}</b>
+        </div>
 
-        <h3>Solução Wine View:</h3>
-        Reduzindo perdas de 10% para 2%, a economia é de <b>R$ ${economia_mensal.toFixed(2)}</b> por mês.<br>
-        Economia anual: <b>R$ ${economia_anual.toFixed(2)}</b>.
-    `
+        <h3>Solução Wine View</h3>
+        <p class="economia">Economia Mensal: <span>R$ ${economia_mensal.toFixed(2)}</span></p>
+        <p class="economia">Economia Anual: <span>R$ ${economia_anual.toFixed(2)}</span></p>
+         </div>
+`;
     }
 </script>
