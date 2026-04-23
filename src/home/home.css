@@ -19,18 +19,21 @@
 .content {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 100%;
-  background-color: #878f90;
+  background-color: #6c7272;
 }
 
-.container-logo img {
-  padding-left: 40px;
-  padding-top: 10px;
+.container-logo { 
   width: 220px;
+  padding: .5rem 0;
 }
 
 .container-nav {
-  width: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
   a {
     color: #4a0e0e;
@@ -39,10 +42,11 @@
     font-size: 17px;
     font-weight: 500;
     text-decoration: none;
+    transition: 200ms;
   }
 
   a:hover {
-    color: #cf5c5c;
+    color: #ffffff;
   }
 
   ul {
@@ -51,8 +55,6 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    padding-right: 130px;
-    padding-top: 20px;
     gap: 80px;
     list-style: none;
   }
@@ -80,6 +82,7 @@
   flex-direction: column;
 }
 
+/* Container 1: Primeira parte da tela */
 .container-banner {
   position: relative;
   width: 100%;
@@ -98,6 +101,8 @@ img {
   flex-direction: column;
   align-items: flex-start;
   position: absolute;
+
+  gap: 15px;
   padding: 150px;
   top: 10%;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -116,34 +121,105 @@ img {
     font-weight: 400;
     color: #aea9a4;
     font-size: 30px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
-}
 
-.btn-pagina-sobre {
-  border-radius: 8px;
-  padding: 6px;
-  background: #4a0e0e;
+  .btn-paginaSobre-container1 {
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: #4a0e0e;
 
-  color: #fefbf8;
-  text-align: center;
-  font-family: "Montserrat";
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 700;
+    color: #fefbf8;
+    font-family: "Montserrat";
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
 
-  cursor: pointer;
+    border: 1px solid #ffffff00;
+    height: 2.5rem;
 
-  width: 20%;
-  height: 30%;
+    cursor: pointer;
+    transition: 200ms;
+  }
 
-  transition: 200ms;
-
-  .btn-pagina-sobre:hover {
+  .btn-paginaSobre-container1:hover {
     background-color: #a69696;
     border: 1px solid #4a0e0e;
     color: white;
     border-radius: 10px;
-    padding: 7px;
     transition: 200ms;
+  }
+}
+
+/*Container 2: Segunda parte da tela */
+.container-descricao {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #e2d8ca;
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+
+  .imagem-vinho img {
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+
+  .texto-descricao {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 70px;
+    gap: 30px;
+
+    span {
+      color: #756d61;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: "Montserrat";
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 4.8px;
+    }
+
+    h2 {
+      color: #221515;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: "DM Serif Display";
+      font-size: 96px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 85px;
+    }
+
+    p {
+      color: rgba(34, 21, 21, 0.6);
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: "Montserrat";
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    a {
+      color: #756d61;
+      text-align: start;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: "Montserrat";
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 4.8px;
+      text-decoration: none;
+
+      cursor: pointer;
+      transition: 200ms;
+    }
+
+    a:hover {
+      transition: 200ms;
+      color: #fefbf8;
+    }
   }
 }
