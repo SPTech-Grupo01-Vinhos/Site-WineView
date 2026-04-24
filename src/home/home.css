@@ -7,6 +7,8 @@
   border: none;
 }
 
+/* #region */
+
 /* cabeçalho */
 .main-cabecalho {
   display: flex;
@@ -24,7 +26,7 @@
   background-color: #6c7272;
 }
 
-.container-logo { 
+.container-logo {
   width: 220px;
   padding: .5rem 0;
 }
@@ -223,3 +225,228 @@ img {
     }
   }
 }
+
+/* #endregion */
+/* #region cards*/
+.container-cards {
+  width: 100%;
+  height: 130vh;
+  background-color: #270E0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+
+
+  .card {
+    width: 25%;
+    height: 65%;
+    /* background-color: #fefbf8; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .subtitulo {
+      width: 100%;
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      /* background-color: #6c7272; */
+
+      .container-subtitulo-cards {
+        font-family: 'DM Serif Display', serif;
+        font-size: 2rem;
+        color: #E2D8CA;
+      }
+
+      p {
+        font-family: 'Josefin Sans', sans-serif;
+        color: #E2D8CA;
+        font-size: 1rem;
+      }
+    }
+
+    a {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #E2D8CA;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+  }
+}
+
+/* #endregion */
+
+/* #region contato*/
+.container-contato {
+  width: 100%;
+  height: 120vh;
+  background-color: #E2D8CA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container-titulo-contato {
+    width: 40%;
+    height: 80%;
+    /* background-color: #4a0e0e; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    .texto-destaque {
+      width: 100%;
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem;
+      font-style: italic;
+      font-weight: 400;
+      color: #4a0e0e;
+    }
+
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #756d61;
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .container-form {
+    width: 50%;
+    height: 65%;
+    background-color: #FEFBF8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    .container-info-form {
+      width: 90%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .texto-destaque-form {
+        font-family: 'DM Serif Display', serif;
+        font-size: 2rem;
+        color: #4a0e0e;
+      }
+
+      .container-caixinha {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .texto-comum {
+          font-family: 'Josefin Sans', sans-serif;
+          font-size: 1rem;
+          color: #4a0e0e;
+        }
+
+        .inp-form {
+          width: 100%;
+          height: 40px;
+          border-radius: 10px;
+          outline: none;
+          padding-left: 10px;
+          background-color: #E4E4E3;
+          box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.249);
+        }
+
+        #ipt_cont_msg {
+          width: 100%;
+          height: 160px;
+          border-radius: 10px;
+          outline: none;
+          padding: 10px;
+          background-color: #E4E4E3;
+          box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.249);
+          resize: none;
+        }
+      }
+
+      .container-btn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        .btn-contato {
+          width: 160px;
+          height: 40px;
+          background-color: #4a0e0e;
+          font-family: 'Josefin Sans', sans-serif;
+          border-radius: 14px;
+          color: #FEFBF8;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.188);
+          font-size: 1.1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+/* #endregion */
+
+/* #region  footer*/
+.footer {
+  width: 100%;
+  height: 70px;
+  background-color: #f5f5f3;
+  border-top: 1px solid #4a0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .footer-logo {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4a0e0e;
+      text-decoration: none;
+    }
+  }
+
+  .footer-email {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #4a0e0e;
+
+    span {
+      font-size: 1rem;
+    }
+
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+}
+/* #endregion */

@@ -1,75 +1,145 @@
 <!DOCTYPE html>
+<!-- Define que o documento é HTML5 -->
+
 <html lang="en">
+<!-- 
+    Tag principal do HTML.
+    lang="en" define o idioma da página (pode trocar para pt-BR).
+-->
 
 <head>
+    <!-- Configurações da página -->
+
     <meta charset="UTF-8">
+    <!-- Permite acentos e caracteres especiais -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsividade (adaptação para celular/tablet) -->
+
     <link rel="stylesheet" href="style.css">
+    <!-- Importa o CSS da dashboard -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <!-- Importa fontes personalizadas -->
+
     <title>Dashboard</title>
+    <!-- Nome da aba -->
 </head>
 
 <body>
+    <!-- Tudo que aparece na tela -->
+
     <div class="container-principal">
+        <!-- Container geral da página -->
+
+        <!-- ===== MENU LATERAL ===== -->
         <div class="menu">
+
             <img src="../../img/dash/logoBranca.png" alt="logo" class="logo">
+            <!-- Logo do sistema -->
+
             <div class="itens">
+                <!-- Lista de navegação -->
+
                 <div class="item">
                     <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
                     <a href="./painel.html">Painel</a>
                 </div>
+
                 <div class="item">
                     <img src="../../img/dash/iconeSininho.png" alt="" class="imgItens">
                     <a href="./alerta.html">Alertas</a>
                 </div>
+
                 <div class="item">
                     <img src="../../img/dash/iconeVinicola.png" alt="" class="imgItens">
                     <a href="./vinicola.html">Vinícola</a>
                 </div>
+
                 <div class="item" id="p4">
+                    <!-- 
+                        id="p4" provavelmente marca essa página como ativa
+                        (destacada no menu via CSS)
+                    -->
                     <img src="../../img/dash/iconeConta.png" alt="" class="imgItens">
                     <a href="./conta.html">Conta</a>
                 </div>
             </div>
+
+            <!-- Botão de voltar -->
             <div class="voltar">
                 <img src="../../img/dash/iconePorta.png" alt="" class="imgItens">
                 <a href="../home/home.html">Voltar ao Site</a>
             </div>
         </div>
 
+        <!-- ===== CONTEÚDO PRINCIPAL: CONTA ===== -->
         <div class="conta" id="idConta">
-            <div class="container-conta">
+            <!-- 
+                Container da página de conta.
+                id pode ser usado futuramente com JavaScript.
+            -->
 
+            <div class="container-conta">
+                <!-- Container interno para organização -->
+
+                <!-- ===== TÍTULO ===== -->
                 <div class="titulo">
                     <h2>Conta</h2>
+                    <!-- Título principal -->
+
                     <p>
                         Aqui você pode visualizar as informações da sua conta.
                     </p>
+                    <!-- Texto explicativo -->
                 </div>
 
+                <!-- ===== CAIXA PRINCIPAL ===== -->
                 <div class="caixa-conta">
+                    <!-- 
+                        Caixa que agrupa todas as informações do usuário.
+                        Visualmente funciona como um "card grande".
+                    -->
 
+                    <!-- ===== CABEÇALHO DA CAIXA ===== -->
                     <div class="titulo-conta">
+
                         <div class="bolinha-titulo">
+                            <!-- Ícone decorativo -->
                             <img src="../../img/dash/icon-pessoa.png" alt="">
                         </div>
+
                         <h2>Informações do Usuário</h2>
                     </div>
 
+                    <!-- ===== ITEM: NOME ===== -->
                     <div class="container-info-conta">
+                        <!-- 
+                            Cada bloco desses representa um dado do usuário.
+                            Esse padrão se repete (reutilização).
+                        -->
+
                         <div class="bolinha-info">
+                            <!-- Ícone -->
                             <img src="../../img/dash/icon-pessoa.png" alt="">
                         </div>
 
                         <div class="infos-conta">
+                            <!-- Texto do dado -->
+
                             <p class="subtitulo">Nome Completo</p>
+                            <!-- Label (descrição do campo) -->
+
                             <p>João da Silva</p>
+                            <!-- Valor do campo -->
                         </div>
                     </div>
 
+                    <!-- ===== ITEM: EMAIL ===== -->
                     <div class="container-info-conta">
+
                         <div class="bolinha-info">
                             <img src="../../img/dash/icon-carta.png" alt="">
                         </div>
@@ -80,7 +150,9 @@
                         </div>
                     </div>
 
+                    <!-- ===== ITEM: SENHA ===== -->
                     <div class="container-info-conta">
+
                         <div class="bolinha-info">
                             <img src="../../img/dash/icon-cadeado.png" alt="">
                         </div>
@@ -88,6 +160,10 @@
                         <div class="infos-conta">
                             <p class="subtitulo">Senha</p>
                             <p>**********</p>
+                            <!-- 
+                                A senha não aparece de verdade por segurança.
+                                Isso é apenas uma representação visual.
+                            -->
                         </div>
                     </div>
 

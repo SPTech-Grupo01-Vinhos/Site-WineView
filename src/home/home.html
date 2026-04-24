@@ -1,153 +1,327 @@
 <!DOCTYPE html>
+<!-- Define que este documento usa HTML5 -->
+
 <html lang="en">
+<!-- Tag principal do HTML. O lang indica o idioma da página. Poderia ser "pt-BR". -->
 
 <head>
+    <!-- Cabeçalho técnico da página: não aparece visualmente no site -->
+
     <meta charset="UTF-8">
+    <!-- Permite o uso de acentos e caracteres especiais -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css"> <!--Link para o arquivo CSS-->
+    <!-- Faz a página se adaptar melhor em telas menores, como celular e tablet -->
+
+    <link rel="stylesheet" href="home.css">
+    <!-- Conecta o arquivo CSS responsável pela aparência da página -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Importa fontes do Google Fonts para serem usadas no CSS -->
+
     <title>Página Inicial</title>
+    <!-- Nome que aparece na aba do navegador -->
 </head>
 
 <body>
-    <header class="main-cabecalho"> <!-- Cabeçalho com logo e navegação -->
+    <!-- Corpo da página: tudo que aparece visualmente no site -->
+
+    <header class="main-cabecalho">
+        <!-- Cabeçalho do site, onde ficam logo e menu de navegação -->
 
         <div class="content">
+            <!-- Container interno usado para organizar os elementos do cabeçalho -->
 
             <div class="container-logo">
+                <!-- Área reservada para a logo -->
+
                 <img src="../img/logo_transparente.png" alt="Logo">
+                <!-- Imagem da logo do site -->
             </div>
 
             <div class="container-nav">
+                <!-- Área onde fica o menu de navegação -->
 
-                <nav> <!-- Navegação principal do site -->
+                <nav>
+                    <!-- Tag semântica usada para menus de navegação -->
+
                     <ul>
-                        <li><a href="../home/home.html">Home</a></li> <!-- Link para a página Home -->
-                        <li><a href="../sobre/sobre.html">Sobre</a></li> <!-- Link para a página Sobre -->
+                        <!-- Lista de links do menu -->
+
+                        <li><a href="../home/home.html">Home</a></li>
+                        <!-- Link para a página inicial -->
+
+                        <li><a href="../sobre/sobre.html">Sobre</a></li>
+                        <!-- Link para a página sobre o projeto -->
+
                         <li><a href="../simulador/simulador.html">Simulador</a></li>
-                        <!-- Link para a página Simulador -->
+                        <!-- Link para a página do simulador -->
+
                         <a href="../login/login.html">
+                            <!-- Link para a página de login -->
+
                             <button class="btn-nav-entrar">Entrar</button>
+                            <!-- Botão de entrada/login -->
                         </a>
-                        <!-- Link para a página de Login -->
                     </ul>
                 </nav>
-
             </div>
-
         </div>
     </header>
 
-
-
     <div class="container-principal">
+        <!-- Container principal que agrupa todo o conteúdo da home -->
 
         <div class="container-banner">
-            <img src="../img/home/fundo-principal-vinhedo (1).png" alt="Campo do vonhedo - Foto principal">
+            <!-- Primeira seção da página: banner principal -->
+
+            <img src="../img/home/fundo-principal-vinhedo (1).png" alt="Campo do vinhedo - Foto principal">
+            <!-- Imagem de fundo/destaque do banner -->
 
             <div class="texto-banner">
+                <!-- Texto que aparece sobre ou junto ao banner -->
+
                 <h1>Wine View: O Olhar da Tecnologia sobre o Vinho.</h1>
-                <p>Gestão inteligente de temperatura e alertas instantâneos para o processo de fermentação alcoólica.
+                <!-- Título principal da página -->
+
+                <p>
+                    Gestão inteligente de temperatura e alertas instantâneos para o processo de fermentação alcoólica.
                 </p>
+                <!-- Descrição curta do projeto -->
 
                 <a href="../sobre/sobre.html">
+                    <!-- Link que leva para a página Sobre -->
+
                     <button class="btn-paginaSobre-container1" type="button">Ver Mais</button>
+                    <!-- Botão de chamada para ação -->
                 </a>
             </div>
-            
-            
-
         </div>
 
+        <div class="container-descricao">
+            <!-- Segunda seção: explicação resumida sobre o monitoramento -->
 
-
-        <div class="container-descricao"> <!-- Container para a descrição resumida do site -->
             <div class="imagem-vinho">
+                <!-- Área da imagem decorativa da seção -->
+
                 <img src="../img/home/home.png" alt="Garrafa de vinho e uvas">
+                <!-- Imagem relacionada ao tema do site -->
             </div>
-                
-                <div class="texto-descricao">
-                    <span>COM O MONITORAMENTO</span>
-                    <h2>Domine a Fermentação.</h2>
-                    <p>O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. O Wine View captura dados em
-                        tempo
-                        real para que você tome decisões informadas, não suposições.</p>
-        
-                    <a href="../simulador/simulador.html">VER MAIS &rarr;</a>
+
+            <div class="texto-descricao">
+                <!-- Área do texto explicativo -->
+
+                <span>COM O MONITORAMENTO</span>
+                <!-- Texto pequeno de destaque antes do título -->
+
+                <h2>Domine a Fermentação.</h2>
+                <!-- Título da seção -->
+
+                <p>
+                    O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. 
+                    O Wine View captura dados em tempo real para que você tome decisões informadas, não suposições.
+                </p>
+                <!-- Parágrafo explicando a proposta do sistema -->
+
+                <a href="../simulador/simulador.html">VER MAIS &rarr;</a>
+                <!-- Link para a página do simulador. &rarr; cria uma seta para a direita -->
+            </div>
+        </div>
+
+        <div class="container-cards">
+            <!-- 
+                Seção dos cards.
+                Os cards apresentam funcionalidades ou benefícios do sistema.
+            -->
+
+            <div class="card">
+                <!-- Primeiro card de funcionalidade -->
+
+                <img src="../../img/home page/cards/homem-cheirando-vinho.jpg" alt="">
+                <!-- Imagem ilustrativa do card -->
+
+                <div class="subtitulo">
+                    <!-- Container que guarda o título e a descrição do card -->
+
+                    <p class="container-subtitulo-cards"><i>Relatórios Semanais</i></p>
+                    <!-- 
+                        Título do card.
+                        A tag <i> deixa o texto em itálico.
+                    -->
+
+                    <p>
+                        Receba análises detalhadas e consolidadas de toda a semana para otimizar seus próximos safras.
+                    </p>
+                    <!-- Descrição da funcionalidade -->
                 </div>
 
+                <a href="../sobre/sobre.html">VER MAIS 🠒</a>
+                <!-- Link para o usuário saber mais sobre essa funcionalidade -->
+            </div>
+
+            <div class="card">
+                <!-- Segundo card de funcionalidade -->
+
+                <img src="../../img/home page/cards/taca-vinho-enchendo.jpg" alt="">
+                <!-- Imagem ilustrativa do card -->
+
+                <div class="subtitulo">
+                    <!-- Área de texto do card -->
+
+                    <p class="container-subtitulo-cards"><i>Captura em Tempo Real</i></p>
+                    <!-- Título do card -->
+
+                    <p>
+                        O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. 
+                        O Wine View captura dados em tempo real para que você tome decisões informadas, não suposições.
+                    </p>
+                    <!-- Explicação da funcionalidade -->
+                </div>
+
+                <a href="../sobre/sobre.html">VER MAIS 🠒</a>
+                <!-- Link para a página Sobre -->
+            </div>
+
+            <div class="card">
+                <!-- Terceiro card de funcionalidade -->
+
+                <img src="../../img/home page/cards/homem-segurando-taca.jpg" alt="">
+                <!-- Imagem ilustrativa do card -->
+
+                <div class="subtitulo">
+                    <!-- Área textual do card -->
+
+                    <p class="container-subtitulo-cards"><i>Alertas Instantâneos</i></p>
+                    <!-- Título do card -->
+
+                    <p>
+                        Notificações imediatas via sistema sobre qualquer desvio de temperatura, prevenindo perdas na fermentação.
+                    </p>
+                    <!-- Descrição da funcionalidade -->
+                </div>
+
+                <a href="../sobre/sobre.html">VER MAIS 🠒</a>
+                <!-- Link para mais informações -->
+            </div>
         </div>
 
+        <div class="container-contato" id="id_contato">
+            <!-- 
+                Seção de contato do site.
+                O id="id_contato" permite que o link do footer leve diretamente para essa parte da página.
+            -->
 
-
-        <div class="container-cards"> <!-- Container para os cards de funcionalidades do site -->
-
-            <div class="card1"> <!-- Card 1 -->
-
-                <img src="" alt="">
-
-                <p class="container-subtitulo-cards">Relatórios Semanais</p> <!-- Subtítulo do card -->
-                <p>Receba análises detalhadas e consolidadas de toda a semana para otimizar seus próximos safras.</p>
-
-                <a href="../sobre/sobre.html">Ver Mais</a>
-
-            </div>
-
-            <div class="card2"> <!-- Card 2 -->
-
-                <img src="" alt="">
-
-                <p class="container-subtitulo-cards">Captura em Tempo Real</p><!-- Subtítulo do card -->
-                <p>O segredo de uma fermentação alcoólica perfeita não é sorte, é controle. O Wine View captura dados em
-                    tempo real para que você tome decisões informadas, não suposições.</p>
-
-                <a href="../sobre/sobre.html">Ver Mais</a>
-
-            </div>
-
-            <div class="card3"> <!-- Card 3 -->
-
-                <img src="" alt="">
-
-                <p class="container-subtitulo-cards">Alertas Instantâneos</p> <!-- Subtítulo do card -->
-                <p>Notificações imediatas via sistema sobre qualquer desvio de temperatura, prevenindo perdas na
-                    fermentação.</p>
-
-                <a href="../sobre/sobre.html">Ver Mais</a>
-
-            </div>
-        </div>
-
-
-        <div class="container-contato"> <!-- Container para a seção de contato do site -->
-
-            <div class="container-titulo-contato"> <!-- Container para o título da seção de contato -->
+            <div class="container-titulo-contato">
+                <!-- Área com o título/texto chamativo da seção de contato -->
 
                 <p class="texto-destaque">Ficou alguma dúvida?</p>
-                <p>Caso ainda não tenha cadastro, clique para criar a sua conta.</p>
+                <!-- Texto principal de destaque -->
 
+                <p>Caso ainda não tenha cadastro, clique <br> para criar a sua conta.</p>
+                <!-- 
+                    Texto complementar.
+                    A tag <br> quebra a linha.
+                -->
             </div>
 
-            <div class="container-form"> <!-- Container para o formulário de contato -->
+            <div class="container-form">
+                <!-- Container do formulário de contato -->
 
-                <p class="texto-destaque-form">Entre em contato</p> <!-- Título do formulário de contato -->
+                <div class="container-info-form">
+                    <!-- Agrupa os campos do formulário -->
 
-                <p class="texto-comum">Nome:</p>
-                <input id="ipt_cont_nome">
-                <p class="texto-comum">Email:</p>
-                <input id="ipt_cont_email">
-                <p class="texto-comum">Mensagem: </p>
-                <textarea id="ipt_cont_msg"></textarea> <!--Mesma coisa que input só para quando tem mais linhas-->
+                    <p class="texto-destaque-form">Entre em contato</p>
+                    <!-- Título do formulário -->
 
-                <button class="btn-contato" onclick="alert('Mensagem enviada!')">ENVIAR</button>
-                <!-- Botão para enviar a mensagem, com um alerta simples para simular o envio -->
+                    <div class="container-caixinha">
+                        <!-- Bloco de um campo do formulário -->
+
+                        <p class="texto-comum">Nome:</p>
+                        <!-- Nome do campo -->
+
+                        <input id="ipt_cont_nome" class="inp-form">
+                        <!-- Campo para o usuário digitar o nome -->
+                    </div>
+
+                    <div class="container-caixinha">
+                        <!-- Bloco do campo de email -->
+
+                        <p class="texto-comum">Email:</p>
+                        <!-- Nome do campo -->
+
+                        <input id="ipt_cont_email" class="inp-form">
+                        <!-- Campo para o usuário digitar o email -->
+                    </div>
+
+                    <div class="container-caixinha">
+                        <!-- Bloco do campo de mensagem -->
+
+                        <p class="texto-comum">Mensagem: </p>
+                        <!-- Nome do campo -->
+
+                        <textarea id="ipt_cont_msg"></textarea>
+                        <!-- 
+                            Campo de texto maior.
+                            Diferente do input, o textarea permite escrever mensagens longas.
+                        -->
+                    </div>
+
+                    <div class="container-btn">
+                        <!-- Container usado para posicionar o botão -->
+
+                        <button class="btn-contato" onclick="alert('Mensagem enviada!')">ENVIAR</button>
+                        <!-- 
+                            Botão de envio.
+                            O onclick executa uma ação ao clicar.
+                            Neste caso, mostra um alerta simples na tela com a mensagem "Mensagem enviada!".
+                        -->
+                    </div>
+                </div>
             </div>
-
         </div>
-
-
     </div>
 
+    <footer class="footer">
+        <!-- Rodapé da página -->
+
+        <div class="footer-logo">
+            <!-- Área da logo no rodapé -->
+
+            <img src="../img/logo_transparente.png" alt="Logo Wine View">
+            <!-- Logo da empresa/projeto -->
+        </div>
+
+        <nav class="footer-nav">
+            <!-- Navegação do rodapé -->
+
+            <a href="../home/home.html">PÁGINA INICIAL</a>
+            <!-- Link para voltar ao início -->
+
+            <a href="#id_contato">CONTATO</a>
+            <!-- 
+                Link interno.
+                Ele leva para a seção que tem id="id_contato".
+            -->
+
+            <a href="../sobre/sobre.html">SOBRE</a>
+            <!-- Link para a página Sobre -->
+
+            <a href="../login/login.html">CADASTRE-SE / ENTRE</a>
+            <!-- Link para login ou cadastro -->
+        </nav>
+
+        <div class="footer-email">
+            <!-- Área com email de contato -->
+
+            <span>✉</span>
+            <!-- Ícone de email -->
+
+            <p>contato@wine.view.com</p>
+            <!-- Email de contato do projeto -->
+        </div>
+    </footer>
 
 </body>
-
 </html>

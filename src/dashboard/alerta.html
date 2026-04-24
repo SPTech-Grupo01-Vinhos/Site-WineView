@@ -1,52 +1,160 @@
 <!DOCTYPE html>
+<!-- 
+    Define o tipo do documento como HTML5.
+    Isso é importante para o navegador interpretar corretamente o código.
+-->
+
 <html lang="en">
+<!-- 
+    Tag raiz do HTML.
+    lang="en" define o idioma como inglês (você pode mudar para "pt-BR").
+-->
 
 <head>
+    <!-- Cabeçalho da página: configurações e importações -->
+
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres (UTF-8 suporta acentos, etc.) -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        Faz o site ser responsivo (adaptar para celular, tablet, etc.)
+    -->
+
     <link rel="stylesheet" href="style.css">
+    <!-- Conecta o arquivo CSS responsável pelo visual da página -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <!-- Importa fontes do Google Fonts -->
+
     <title>Dashboard</title>
+    <!-- Título da aba do navegador -->
 </head>
 
 <body>
+    <!-- Corpo da página (tudo que aparece visualmente) -->
+
     <div class="container-principal">
+        <!-- 
+            Container principal da página inteira.
+            Geralmente controla layout geral (flex, largura, fundo, etc.)
+        -->
+
+        <!-- ===== MENU LATERAL ===== -->
         <div class="menu">
+            <!-- Menu lateral da dashboard -->
+
             <img src="../../img/dash/logoBranca.png" alt="logo" class="logo">
+            <!-- Logo do sistema -->
+
             <div class="itens">
+                <!-- Container dos itens do menu -->
+
                 <div class="item">
                     <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
                     <a href="./painel.html">Painel</a>
+                    <!-- Link para página principal (dashboard com gráficos) -->
                 </div>
+
                 <div class="item" id="p2">
+                    <!-- 
+                        Esse item tem id="p2" → provavelmente usado no CSS
+                        para indicar que essa página está ativa
+                    -->
                     <img src="../../img/dash/iconeSininho.png" alt="" class="imgItens">
                     <a href="./alerta.html">Alertas</a>
                 </div>
+
                 <div class="item">
                     <img src="../../img/dash/iconeVinicola.png" alt="" class="imgItens">
                     <a href="./vinicola.html">Vinícola</a>
                 </div>
+
                 <div class="item">
                     <img src="../../img/dash/iconeConta.png" alt="" class="imgItens">
                     <a href="./conta.html">Conta</a>
                 </div>
             </div>
+
+            <!-- Botão de voltar -->
             <div class="voltar">
                 <img src="../../img/dash/iconePorta.png" alt="" class="imgItens">
                 <a href="../home/home.html">Voltar ao Site</a>
             </div>
         </div>
+
+        <!-- ===== ÁREA PRINCIPAL: ALERTAS ===== -->
         <div class="alerta" id="idAlerta">
+            <!-- 
+                Container da página de alertas.
+                id pode ser usado no JavaScript (se necessário).
+            -->
+
             <div class="container-alerta">
+                <!-- Container interno para organizar conteúdo -->
+
+                <!-- ===== TÍTULO ===== -->
                 <div class="titulo">
                     <h2>Alertas</h2>
+                    <!-- Título principal -->
+
                     <p>
                         Aqui você consegue visualizar todos os alertas já registrados.
                     </p>
+                    <!-- Descrição da página -->
                 </div>
+
+                <!-- ===== LISTA DE ALERTAS ===== -->
                 <div class="container-alertas2">
+                    <!-- 
+                        Container que agrupa todos os cards de alerta.
+                        Usado para organizar em coluna (flex-direction: column).
+                    -->
+
+                    <!-- ===== CARD DE ALERTA ===== -->
+                    <div class="cardsAlertas">
+                        <!-- 
+                            Cada card representa um alerta individual.
+                        -->
+
+                        <div class="iconeAlerta">
+                            <!-- Ícone visual do alerta -->
+                            <img src="../../img/dash/iconalerta.png" alt="">
+                        </div>
+
+                        <div class="infoAlerta">
+                            <!-- Informações principais do alerta -->
+
+                            <h3>Tanque: T2</h3>
+                            <!-- Identificação do tanque -->
+
+                            <p><b>Status:</b> Temperatura crítica: 32°C</p>
+                            <!-- Situação do tanque -->
+
+                            <p><b>Leitura:</b> 32.50°C</p>
+                            <!-- Valor exato medido -->
+                        </div>
+
+                        <div class="divisor"></div>
+                        <!-- 
+                            Linha vertical que separa informações do tempo.
+                            É apenas visual (estético).
+                        -->
+
+                        <div class="tempoAlerta">
+                            <!-- Horário do alerta -->
+
+                            <p>Registrado às</p>
+                            <span>12:38</span>
+                            <!-- Horário destacado -->
+                        </div>
+                    </div>
+
+                    <!-- ===== OUTROS ALERTAS (mesma estrutura) ===== -->
+                    <!-- Repetição do mesmo card -->
+
                     <div class="cardsAlertas">
                         <div class="iconeAlerta">
                             <img src="../../img/dash/iconalerta.png" alt="">
@@ -65,6 +173,7 @@
                             <span>12:38</span>
                         </div>
                     </div>
+
                     <div class="cardsAlertas">
                         <div class="iconeAlerta">
                             <img src="../../img/dash/iconalerta.png" alt="">
@@ -83,26 +192,8 @@
                             <span>12:38</span>
                         </div>
                     </div>
-                    <div class="cardsAlertas">
-                        <div class="iconeAlerta">
-                            <img src="../../img/dash/iconalerta.png" alt="">
-                        </div>
 
-                        <div class="infoAlerta">
-                            <h3>Tanque: T2</h3>
-                            <p><b>Status:</b> Temperatura crítica: 32°C</p>
-                            <p><b>Leitura:</b> 32.50°C</p>
-                        </div>
-
-                        <div class="divisor"></div>
-
-                        <div class="tempoAlerta">
-                            <p>Registrado às</p>
-                            <span>12:38</span>
-                        </div>
-                    </div>
                 </div>
-
             </div>
         </div>
     </div>

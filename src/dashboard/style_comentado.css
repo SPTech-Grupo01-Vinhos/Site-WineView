@@ -1,0 +1,1291 @@
+/* ========================================================================== */
+/* ARQUIVO DE ESTILO DO DASHBOARD                                             */
+/* ========================================================================== */
+/*
+    Este arquivo CSS é responsável pela aparência visual de várias páginas do
+    dashboard: Painel, Alertas, Vinícola e Conta.
+
+    Aqui ficam regras de cor, tamanho, espaçamento, alinhamento, fonte,
+    bordas, organização dos elementos e layout geral da tela.
+
+    IMPORTANTE SOBRE A ESCRITA DESTE CSS:
+    O código está usando CSS aninhado, ou seja, seletores dentro de outros
+    seletores. Isso deixa o arquivo mais organizado, porque mostra que certos
+    estilos pertencem a uma área específica da página.
+
+    Exemplo:
+
+    .container-principal {
+        .menu {
+            .logo {
+            }
+        }
+    }
+
+    Isso significa que a classe .logo está sendo estilizada dentro da .menu,
+    que por sua vez está dentro da .container-principal.
+
+    Em projetos comuns, esse formato aparece muito em Sass/SCSS. Em CSS mais
+    novo, alguns navegadores também já aceitam aninhamento, mas é importante
+    confirmar se o ambiente do projeto permite isso.
+*/
+
+
+/* #region global */
+/*
+    A região "global" contém estilos que valem para o projeto inteiro ou para
+    estruturas que aparecem em mais de uma página, como o container principal,
+    o menu lateral, itens de legenda e classes de cores reutilizáveis.
+*/
+
+/*
+    O seletor universal (*) seleciona TODOS os elementos da página.
+    Ele é usado aqui para fazer uma limpeza inicial nos estilos padrões que o
+    navegador coloca automaticamente.
+*/
+* {
+    /* Remove o espaçamento interno padrão dos elementos. */
+    padding: 0;
+
+    /* Remove o espaçamento externo padrão dos elementos. */
+    margin: 0;
+
+    /* Remove decoração de texto, principalmente o sublinhado padrão dos links. */
+    text-decoration: none;
+
+    /* Remove bordas padrão que alguns elementos podem ter. */
+    border: none;
+
+    /*
+        Faz com que width e height incluam também padding e border.
+        Sem isso, um elemento com width: 100px e padding: 20px ficaria maior
+        que 100px. Com border-box, ele continua respeitando os 100px totais.
+    */
+    box-sizing: border-box;
+
+    /*
+        Impede rolagem horizontal na página.
+        Isso ajuda quando algum elemento passa um pouco da largura da tela.
+    */
+    overflow-x: hidden;
+
+    /* Define a fonte padrão do projeto para todos os elementos. */
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*
+    .container-principal é o container maior da tela do dashboard.
+    Ele envolve o menu lateral e o conteúdo principal da página.
+*/
+.container-principal {
+    /* Ocupa toda a largura disponível da tela. */
+    width: 100%;
+
+    /* Ocupa 100% da altura da janela do navegador. */
+    height: 100vh;
+
+    /* Define a cor de fundo geral do dashboard. */
+    background-color: #F0EAE3;
+
+    /*
+        display: flex coloca os filhos diretos lado a lado por padrão.
+        Aqui ele permite que o menu fique à esquerda e o conteúdo fique à direita.
+    */
+    display: flex;
+
+    /*
+        .menu representa a barra lateral esquerda.
+        Ela contém a logo, os links de navegação e o botão de voltar ao site.
+    */
+    .menu {
+        /* Define largura fixa para o menu lateral. */
+        width: 250px;
+
+        /* Cor vinho escura usada no fundo do menu. */
+        background-color: #42090e;
+
+        /* Arredonda os cantos do menu. */
+        border-radius: 15px;
+
+        /*
+            Margem externa do menu.
+            Ordem dos valores: topo, direita, baixo, esquerda.
+            Aqui: 15px em cima, 0 na direita, 15px embaixo e 15px na esquerda.
+        */
+        margin: 15px 0 15px 15px;
+
+        /* Ativa flexbox para organizar os elementos internos do menu. */
+        display: flex;
+
+        /* Centraliza os itens no eixo horizontal, porque o flex-direction será coluna. */
+        align-items: center;
+
+        /*
+            Organiza os elementos de cima para baixo.
+            Sem isso, o flex deixaria os elementos lado a lado.
+        */
+        flex-direction: column;
+
+        /*
+            .logo estiliza a imagem da logo dentro do menu lateral.
+        */
+        .logo {
+            /* A logo fica com a mesma largura do menu. */
+            width: 250px;
+
+            /*
+                A altura automática mantém a proporção original da imagem.
+                Assim, ela não fica achatada ou esticada.
+            */
+            height: auto;
+        }
+
+        /*
+            .voltar é a área do menu que leva o usuário de volta ao site.
+            Ela contém um ícone e um link.
+        */
+        .voltar {
+            /* Ocupa 80% da largura do menu, deixando respiro nas laterais. */
+            width: 80%;
+
+            /* Deixa o ícone e o texto lado a lado. */
+            display: flex;
+
+            /* Alinha verticalmente o ícone e o texto no centro. */
+            align-items: center;
+
+            /* Imagem/ícone dentro da área de voltar. */
+            .imgItens {
+                /* Define largura fixa para o ícone. */
+                width: 50px;
+            }
+
+            /* Link da área de voltar. */
+            a {
+                /* Cria espaço entre o ícone e o texto. */
+                margin-left: 15px;
+
+                /* Define a cor clara do texto do link. */
+                color: #F0EAE3;
+
+                /* Garante que o link use a fonte principal do projeto. */
+                font-family: 'Josefin Sans', sans-serif;
+            }
+        }
+
+        /*
+            .itens é o bloco que guarda os links principais do menu:
+            Painel, Alertas, Vinícola e Conta.
+        */
+        .itens {
+            /* Ocupa 80% da largura do menu. */
+            width: 80%;
+
+            /* Ocupa 60% da altura disponível dentro do menu. */
+            height: 60%;
+
+            /* Ativa flexbox para organizar os itens. */
+            display: flex;
+
+            /* Coloca os itens um embaixo do outro. */
+            flex-direction: column;
+
+            /* Centraliza os itens no eixo horizontal. */
+            align-items: center;
+
+            /*
+                Centraliza o bloco horizontalmente.
+                O valor 0 é para cima/baixo e auto para esquerda/direita.
+            */
+            margin: 0 auto;
+
+            /*
+                .item representa cada opção individual do menu.
+                Cada item geralmente contém um ícone e um texto/link.
+            */
+            .item {
+                /* O item ocupa toda a largura do bloco .itens. */
+                width: 100%;
+
+                /* Deixa o ícone e o link lado a lado. */
+                display: flex;
+
+                /*
+                    Esta linha está comentada.
+                    Se fosse ativada, centralizaria o conteúdo horizontalmente.
+                */
+                /* justify-content: center; */
+
+                /* Alinha ícone e texto no centro verticalmente. */
+                align-items: center;
+
+                /* Dá espaço entre um item e outro. */
+                margin-top: 10px;
+
+                /* Ícone dentro de cada item do menu. */
+                .imgItens {
+                    /* Define o tamanho do ícone. */
+                    width: 50px;
+                }
+
+                /* Link textual dentro do item. */
+                a {
+                    /* Espaço entre o ícone e o texto. */
+                    margin-left: 15px;
+
+                    /* Cor clara do link no menu escuro. */
+                    color: #F0EAE3;
+
+                    /* Fonte usada no link. */
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+            }
+
+            /*
+                #p1, #p2, #p3 e #p4 são IDs usados para destacar a página atual
+                no menu lateral. Quando uma página está ativa, o item recebe um
+                fundo um pouco mais claro e bordas arredondadas.
+            */
+            #p1 {
+                background-color: #60292d;
+                border-radius: 10px;
+            }
+
+            #p2 {
+                background-color: #60292d;
+                border-radius: 10px;
+            }
+
+            #p3 {
+                background-color: #60292d;
+                border-radius: 10px;
+            }
+
+            #p4 {
+                background-color: #60292d;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+/*
+    .legenda-custom parece ser uma legenda reutilizável para gráficos.
+    Ela organiza os itens da legenda horizontalmente e centralizados.
+*/
+.legenda-custom {
+    /* Coloca os itens da legenda lado a lado. */
+    display: flex;
+
+    /* Centraliza os itens da legenda na horizontal. */
+    justify-content: center;
+
+    /* Cria espaço entre cada item da legenda. */
+    gap: 30px;
+
+    /* Cria distância acima da legenda. */
+    margin-top: 15px;
+}
+
+/*
+    .item é uma classe genérica para organizar pequenos grupos com ícone/cor + texto.
+    Atenção: também existe .item dentro do menu. Como esta regra está fora do menu,
+    ela pode afetar qualquer elemento com class="item" na página.
+*/
+.item {
+    /* Coloca os elementos internos lado a lado. */
+    display: flex;
+
+    /* Alinha os elementos verticalmente no centro. */
+    align-items: center;
+
+    /* Espaço entre os elementos internos. */
+    gap: 8px;
+
+    /* Tamanho da fonte do item. */
+    font-size: 14px;
+}
+
+/*
+    .bolinha cria um marcador circular, geralmente usado em legendas.
+*/
+.bolinha {
+    /* Largura da bolinha. */
+    width: 12px;
+
+    /* Altura da bolinha. */
+    height: 12px;
+
+    /*
+        50% transforma o quadrado em círculo.
+        Para funcionar bem, width e height precisam ter o mesmo valor.
+    */
+    border-radius: 50%;
+}
+
+/* Cores reutilizáveis para legendas ou marcadores. */
+.verde {
+    /* Define fundo verde. */
+    background-color: #6b8e23;
+}
+
+.laranja {
+    /* Define fundo laranja. */
+    background-color: #ffa230;
+}
+
+.vermelho {
+    /* Define fundo vermelho. */
+    background-color: #d9534f;
+}
+
+/* #endregion */
+
+
+/* #region painel */
+/*
+    Esta região estiliza a página Painel.
+    Nela aparecem título, texto explicativo, KPIs e gráficos.
+*/
+
+/*
+    .painel é a área principal da página de painel, posicionada ao lado do menu.
+*/
+.painel {
+    /* Ocupa 80% da largura disponível, deixando espaço para o menu lateral. */
+    width: 80%;
+
+    /* Margem externa ao redor do painel. */
+    margin: 15px 15px;
+
+    /* Altura automática, se adaptando ao conteúdo. */
+    height: auto;
+
+    /* Cor de fundo do painel. */
+    background-color: #E2D8CA;
+
+    /* Bordas arredondadas para dar aparência de card grande. */
+    border-radius: 15px;
+
+    /* Ativa flexbox. */
+    display: flex;
+
+    /* Centraliza o conteúdo na horizontal. */
+    justify-content: center;
+
+    /* Centraliza o conteúdo na vertical. */
+    align-items: center;
+
+    /*
+        .container-painel é o conteúdo interno do painel.
+        Ele segura o título, os KPIs e os gráficos.
+    */
+    .container-painel {
+        /* Ocupa 95% da largura do painel, criando margem interna visual. */
+        width: 95%;
+
+        /* Organiza as seções uma embaixo da outra. */
+        display: flex;
+        flex-direction: column;
+
+        /* Ocupa 90% da altura do painel. */
+        height: 90%;
+
+        /* Bloco do título e descrição da página. */
+        .titulo {
+            /* Ativa flexbox para organizar h2 e p. */
+            display: flex;
+
+            /* Ocupa toda a largura disponível. */
+            width: 100%;
+
+            /* Altura fixa para a área do título. */
+            height: 100px;
+
+            /* Coloca título e parágrafo em coluna. */
+            flex-direction: column;
+
+            /* Centraliza verticalmente o conteúdo dentro da área. */
+            justify-content: center;
+
+            /* Título principal da seção. */
+            h2 {
+                /* Fonte decorativa usada em títulos. */
+                font-family: 'DM Serif Display', serif;
+
+                /* Peso intermediário da fonte. */
+                font-weight: 500;
+
+                /* Cor vinho escura. */
+                color: #42090e;
+
+                /*
+                    rem é uma unidade relativa ao tamanho da fonte raiz do site.
+                    2rem normalmente equivale a 32px se a raiz for 16px.
+                */
+                font-size: 2rem;
+            }
+
+            /* Texto explicativo abaixo do título. */
+            p {
+                color: #4A4141;
+                font-size: 1rem;
+            }
+        }
+
+        /*
+            .kpis é a área dos cards superiores com números importantes.
+            KPI significa Key Performance Indicator, ou Indicador-Chave.
+        */
+        .kpis {
+            /* Ocupa toda a largura do container. */
+            width: 100%;
+
+            /* Coloca os cards lado a lado. */
+            display: flex;
+
+            /* Distribui os cards com espaço entre eles. */
+            justify-content: space-between;
+
+            /* Cada .caixas é um card de KPI. */
+            .caixas {
+                width: 270px;
+                height: 150px;
+
+                /* Arredonda o card. */
+                border-radius: 12px;
+
+                /* Fundo claro do card. */
+                background-color: #F0EAE3;
+
+                /* Flexbox para organizar conteúdo interno. */
+                display: flex;
+
+                /* Conteúdo em coluna: título, número e descrição. */
+                flex-direction: column;
+
+                /* Centraliza verticalmente. */
+                justify-content: center;
+
+                /* Centraliza horizontalmente. */
+                align-items: center;
+
+                /* Espaço entre título, número e descrição. */
+                gap: 5px;
+
+                /* Centraliza o texto dentro do card. */
+                text-align: center;
+
+                /* Título pequeno do KPI. */
+                .tituloKpi {
+                    h3 {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        color: #42090e;
+                    }
+                }
+
+                /* Área do número principal do KPI. */
+                .num {
+                    h2 {
+                        /* Número grande para chamar atenção. */
+                        font-size: 2.5rem;
+                        font-weight: 700;
+
+                        /* Espaço interno em cima e embaixo. */
+                        padding: 5px 0;
+                    }
+
+                    /*
+                        Classe usada quando o número é maior/com texto, como "20°C - 30°C".
+                        Ela diminui a fonte para caber melhor no card.
+                    */
+                    .numEspcial {
+                        font-size: 2rem;
+                    }
+                }
+
+                /* Descrição inferior do KPI. */
+                .desc {
+                    p {
+                        font-size: 0.90rem;
+                        color: #42090e;
+                    }
+                }
+            }
+        }
+
+        /*
+            .graficos é a área que contém os dois gráficos da página:
+            gráfico de barras e gráfico de linhas.
+        */
+        .graficos {
+            width: 100%;
+            height: 300px;
+
+            /* Deixa os dois gráficos lado a lado. */
+            display: flex;
+
+            /* Esta cor estava sendo usada provavelmente para teste e ficou comentada. */
+            /* background-color: #42090e; */
+
+            /* Espaço entre os KPIs e os gráficos. */
+            margin-top: 40px;
+
+            /* Distribui os gráficos nas extremidades do container. */
+            justify-content: space-between;
+
+            /* Alinha verticalmente os gráficos no centro. */
+            align-items: center;
+
+            /* Espaço mínimo entre os dois gráficos. */
+            gap: 10px;
+
+            /*
+                Esta regra vale para .graf1 e .graf2 ao mesmo tempo.
+                A vírgula serve para aplicar o mesmo estilo a mais de um seletor.
+            */
+            .graf1,
+            .graf2 {
+                width: 40%;
+                height: 300px;
+            }
+
+            /*
+                .graf1 é o bloco do gráfico de barras.
+                Ele contém a área do canvas e a legenda personalizada.
+            */
+            .graf1 {
+                display: flex;
+                flex-direction: column;
+
+                /* Área onde o canvas do gráfico de barras fica. */
+                .area-grafico {
+                    /* O gráfico ocupa 85% da altura do bloco. */
+                    height: 85%;
+
+                    /* Ocupa toda a largura disponível. */
+                    width: 100%;
+                }
+
+                /* Legenda personalizada do gráfico de barras. */
+                .legenda {
+                    /* A legenda ocupa os 15% restantes da altura. */
+                    height: 15%;
+
+                    /* Coloca os itens da legenda lado a lado. */
+                    display: flex;
+
+                    /* Centraliza horizontalmente. */
+                    justify-content: center;
+
+                    /* Centraliza verticalmente. */
+                    align-items: center;
+
+                    /* Espaço entre os itens da legenda. */
+                    gap: 18px;
+
+                    /*
+                        Permite que os itens quebrem para outra linha se não couberem.
+                        Isso evita que a legenda ultrapasse o container.
+                    */
+                    flex-wrap: wrap;
+
+                    /* Cada item da legenda contém uma cor e um texto. */
+                    .item-legenda {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        /* Texto da legenda. */
+                        p {
+                            margin: 0;
+                            font-size: 11px;
+                            font-family: 'Josefin Sans', sans-serif;
+                            color: #42090e;
+                        }
+
+                        /*
+                            .cor é o quadradinho colorido da legenda do gráfico de barras.
+                        */
+                        .cor {
+                            width: 12px;
+                            height: 12px;
+
+                            /* Arredonda levemente o marcador, deixando parecido com um retângulo suave. */
+                            border-radius: 3px;
+                        }
+
+                        /* Cores que representam as situações de temperatura no gráfico de barras. */
+                        .verde {
+                            /* Temperatura dentro da faixa ideal. */
+                            background-color: #6BBF61;
+                        }
+
+                        .laranja {
+                            /* Temperatura abaixo do ideal. */
+                            background-color: #E6982B;
+                        }
+
+                        .vermelho {
+                            /* Temperatura acima do ideal. */
+                            background-color: #C52A2A;
+                        }
+                    }
+                }
+            }
+
+            /*
+                .graf2 é o bloco do gráfico de linhas.
+                Ele também é dividido em área do gráfico e legenda.
+            */
+            .graf2 {
+                display: flex;
+                flex-direction: column;
+
+                /* Área onde fica o canvas do gráfico de linhas. */
+                .area-grafico-linha {
+                    width: 100%;
+                    height: 82%;
+                }
+
+                /* Legenda personalizada do gráfico de linhas. */
+                .legenda-linha {
+                    height: 18%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 14px;
+                    flex-wrap: wrap;
+
+                    /* Cada item da legenda tem uma linha colorida e um texto. */
+                    .item-legenda {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        /* Texto da legenda. */
+                        p {
+                            margin: 0;
+                            font-size: 11px;
+                            font-family: 'Josefin Sans', sans-serif;
+                            color: #42090e;
+                        }
+
+                        /*
+                            .linha cria o tracinho colorido da legenda.
+                            Diferente da legenda de barras, aqui o marcador é uma linha fina.
+                        */
+                        .linha {
+                            width: 22px;
+                            height: 2px;
+                            border-radius: 2px;
+                        }
+
+                        /*
+                            Cada classe abaixo representa a cor de uma linha no gráfico.
+                            Essas cores precisam combinar com as cores definidas no JavaScript
+                            do Chart.js para cada tanque.
+                        */
+                        .vermelho {
+                            background: #8B5E5E;
+                        }
+
+                        .laranja {
+                            background: #C48A5A;
+                        }
+
+                        .terracota {
+                            background: #A8735A;
+                        }
+
+                        .verde {
+                            background: #7A8F6B;
+                        }
+
+                        .azul {
+                            background: #6F8FAF;
+                        }
+
+                        .roxo {
+                            background-color: #8C7AA9;
+                        }
+
+                        .amarelo {
+                            background-color: #C2B36F;
+                        }
+
+                        /*
+                            .limiteSup representa a linha tracejada do limite superior.
+                            O border-top cria o tracejado, e height: 0 impede que o elemento
+                            tenha altura extra além da borda.
+                        */
+                        .limiteSup {
+                            background: #B04A4A;
+                            border-top: 2px dashed #B04A4A;
+                            height: 0;
+                        }
+
+                        /*
+                            .limiteInf representa a linha tracejada do limite inferior.
+                        */
+                        .limiteInf {
+                            background: #4A6FA5;
+                            border-top: 2px dashed #4A6FA5;
+                            height: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* #endregion */
+
+
+/* #region alerta */
+/*
+    Esta região estiliza a página de Alertas.
+    Nela aparecem cards com informações de alertas dos tanques.
+*/
+
+/* Área principal da página de alertas. */
+.alerta {
+    width: 80%;
+    margin: 15px 15px;
+    height: auto;
+    background-color: #E2D8CA;
+    border-radius: 15px;
+
+    /* Centraliza o container interno. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Organiza os elementos internos de cima para baixo. */
+    flex-direction: column;
+
+    /* Container interno da página de alertas. */
+    .container-alerta {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+
+        /* Cor de teste comentada. */
+        /* background-color: #120942; */
+
+        /* Título e descrição da página. */
+        .titulo {
+            display: flex;
+            width: 100%;
+            height: 100px;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                font-family: 'DM Serif Display', serif;
+                font-weight: 500;
+                color: #42090e;
+                font-size: 2rem;
+            }
+
+            p {
+                color: #4A4141;
+                font-size: 1rem;
+            }
+        }
+
+        /*
+            .container-alertas2 guarda todos os cards de alerta.
+        */
+        .container-alertas2 {
+            width: 100%;
+            height: 100%;
+
+            /* Cards ficam um embaixo do outro. */
+            display: flex;
+            flex-direction: column;
+
+            /* Espaço vertical entre os cards. */
+            gap: 20px;
+
+            /* Centraliza os cards no eixo horizontal. */
+            align-items: center;
+
+            /* background-color: transparent; */
+
+            /*
+                .cardsAlertas é cada card individual de alerta.
+                Ele mostra ícone, texto do alerta, divisor e horário/tempo.
+            */
+            .cardsAlertas {
+                width: 100%;
+                height: 110px;
+                background-color: #F0EAE3;
+                border-radius: 15px;
+
+                /* Organiza o conteúdo interno do card em linha. */
+                display: flex;
+
+                /* Alinha verticalmente os elementos no centro. */
+                align-items: center;
+
+                /* Distribui espaço entre ícone, texto, divisor e tempo. */
+                justify-content: space-between;
+
+                /* Espaçamento interno nas laterais. */
+                padding: 0 25px;
+
+                /*
+                    Sombra leve para dar profundidade ao card.
+                    O código #0000000d é preto com transparência bem baixa.
+                */
+                box-shadow: 0 4px 10px #0000000d;
+
+                /* Caixa do ícone do alerta. */
+                .iconeAlerta {
+                    width: 70px;
+                    height: 70px;
+                    background-color: #f3e3e3;
+                    border-radius: 15px;
+
+                    /* Centraliza a imagem dentro da caixa. */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 35px;
+                    }
+                }
+
+                /* Área com título e descrição do alerta. */
+                .infoAlerta {
+                    width: 50%;
+
+                    h3 {
+                        font-size: 1.4rem;
+                        color: #42090e;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: #4A4141;
+                    }
+                }
+
+                /*
+                    .divisor cria uma linha vertical separando as informações.
+                */
+                .divisor {
+                    width: 1px;
+                    height: 60%;
+                    background-color: #d6cfc7;
+                }
+
+                /* Área que mostra há quanto tempo ou quando ocorreu o alerta. */
+                .tempoAlerta {
+                    width: 20%;
+                    text-align: center;
+
+                    p {
+                        font-size: 0.9rem;
+                        color: #7a6f6f;
+                    }
+
+                    span {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #42090e;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* #endregion */
+
+
+/* #region vinicola */
+/*
+    Esta região estiliza a página Vinícola.
+    Ela exibe informações cadastrais da vinícola em caixas/cards.
+*/
+
+/* Área principal da página da vinícola. */
+.vinicola {
+    width: 80%;
+    margin: 15px 15px;
+    height: auto;
+    background-color: #E2D8CA;
+    border-radius: 15px;
+
+    /* Centraliza o container interno. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Container interno da página da vinícola. */
+    .container-vinicola {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+
+        /* Título e descrição da página. */
+        .titulo {
+            display: flex;
+            width: 100%;
+            height: 100px;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                font-family: 'DM Serif Display', serif;
+                font-weight: 500;
+                color: #42090e;
+                font-size: 2rem;
+            }
+
+            p {
+                color: #4A4141;
+                font-size: 1rem;
+            }
+        }
+
+        /*
+            .container-caixas guarda as caixas de informação da vinícola.
+            Como usa display flex, essas caixas ficam lado a lado.
+        */
+        .container-caixas {
+            width: 100%;
+            height: 90%;
+            display: flex;
+            justify-content: space-between;
+
+            /*
+                .caixas-vinicola é cada card grande de informação.
+            */
+            .caixas-vinicola {
+                /*
+                    48% permite que duas caixas fiquem lado a lado,
+                    sobrando espaço entre elas.
+                */
+                width: 48%;
+                height: 100%;
+                background-color: #F0EAE3;
+                border-radius: 15px;
+
+                /* Organiza o conteúdo interno em coluna. */
+                display: flex;
+                flex-direction: column;
+
+                /* Espaçamento interno do card. */
+                padding: 20px;
+
+                /* Cabeçalho da caixa da vinícola. */
+                .titulo-vinicola {
+                    width: 100%;
+                    height: 70px;
+
+                    /* Ícone e título ficam lado a lado. */
+                    display: flex;
+                    align-items: center;
+
+                    /* Pequeno deslocamento para a direita. */
+                    margin-left: 12px;
+
+                    /* Círculo onde fica o ícone do título. */
+                    .bolinha-titulo {
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        background-color: #42090e;
+
+                        /* Centraliza o ícone dentro da bolinha. */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        /* Espaço entre a bolinha e o texto do título. */
+                        margin-right: 15px;
+
+                        img {
+                            width: 30px;
+                        }
+                    }
+
+                    h2 {
+                        color: #42090e;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                }
+
+                /*
+                    .container-info é cada linha de informação da vinícola,
+                    como nome, telefone, CNPJ, endereço etc.
+                */
+                .container-info {
+                    width: 100%;
+                    height: 75px;
+
+                    /* Coloca ícone e textos lado a lado. */
+                    display: flex;
+                    align-items: center;
+
+                    /* Fundo levemente diferente para destacar a linha. */
+                    background-color: #E8DED4;
+
+                    /* Bordas arredondadas na linha de informação. */
+                    border-radius: 12px;
+
+                    /* Espaço entre uma linha e outra. */
+                    margin-top: 10px;
+
+                    /* Bolinha do ícone da informação. */
+                    .bolinha-info {
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        background-color: #42090e;
+
+                        /* Centraliza o ícone dentro da bolinha. */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        /* Afasta a bolinha da borda esquerda. */
+                        margin-left: 15px;
+
+                        img {
+                            width: 30px;
+                        }
+                    }
+
+                    /* Bloco textual da informação. */
+                    .infos {
+                        /* Coloca subtítulo e valor em coluna. */
+                        display: flex;
+                        flex-direction: column;
+
+                        /* Espaço entre o ícone e os textos. */
+                        margin-left: 15px;
+
+                        /* Nome do campo, como "Telefone" ou "Cidade". */
+                        .subtitulo {
+                            color: #6b6262;
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+
+                        /* Valor do campo. */
+                        p {
+                            color: #1f1717;
+                            font-size: 1.05rem;
+                            font-weight: 600;
+                        }
+                    }
+
+                    /*
+                        .linha está escondida.
+                        Pode ter sido criada para uma divisão visual, mas no layout atual
+                        ela não aparece porque display: none remove o elemento da tela.
+                    */
+                    .linha {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* #endregion */
+
+
+/* #region conta */
+/*
+    Esta região estiliza a página Conta.
+    Ela mostra informações do usuário, como nome, e-mail e senha/conta.
+*/
+
+/* Área principal da página Conta. */
+.conta {
+    width: 80%;
+    margin: 15px 15px;
+    height: auto;
+    background-color: #E2D8CA;
+    border-radius: 15px;
+
+    /* Centraliza o conteúdo interno. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Container interno da página Conta. */
+    .container-conta {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+
+        /* Título e descrição da página. */
+        .titulo {
+            display: flex;
+            width: 100%;
+            height: 100px;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                font-family: 'DM Serif Display', serif;
+                font-weight: 500;
+                color: #42090e;
+                font-size: 2rem;
+            }
+
+            p {
+                color: #4A4141;
+                font-size: 1rem;
+            }
+        }
+
+        /*
+            .caixa-conta é o card principal com as informações da conta.
+        */
+        .caixa-conta {
+            width: 80%;
+            height: 65%;
+            background-color: #F0EAE3;
+            border-radius: 15px;
+
+            /* Espaço interno do card. */
+            padding: 25px;
+
+            /* Organiza o conteúdo em coluna. */
+            display: flex;
+            flex-direction: column;
+
+            /* Afasta o card do título. */
+            margin-top: 20px;
+
+            /* Sombra suave para destacar o card do fundo. */
+            box-shadow: 0 4px 10px #0000000d;
+
+            /* Cabeçalho do card de conta. */
+            .titulo-conta {
+                width: 100%;
+                height: 70px;
+
+                /* Ícone e título lado a lado. */
+                display: flex;
+                align-items: center;
+
+                /* Pequeno afastamento da esquerda. */
+                margin-left: 5px;
+
+                /* Bolinha do ícone do cabeçalho. */
+                .bolinha-titulo {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    background-color: #42090e;
+
+                    /* Centraliza o ícone dentro da bolinha. */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    /* Espaço entre ícone e título. */
+                    margin-right: 15px;
+
+                    img {
+                        width: 28px;
+                    }
+                }
+
+                h2 {
+                    color: #42090e;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+            }
+
+            /*
+                .container-info-conta representa cada linha de informação da conta.
+                Exemplo: nome completo, e-mail, senha etc.
+            */
+            .container-info-conta {
+                width: 100%;
+                height: 100px;
+
+                /* Coloca ícone e texto lado a lado. */
+                display: flex;
+                align-items: center;
+
+                /* Linha inferior separando uma informação da outra. */
+                border-bottom: 1px solid #d6cfc7;
+
+                /* Bolinha do ícone de cada informação. */
+                .bolinha-info {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    background-color: #42090e;
+
+                    /* Centraliza o ícone dentro da bolinha. */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    /* Espaço entre a bolinha e os textos. */
+                    margin-right: 25px;
+
+                    img {
+                        width: 35px;
+                    }
+                }
+
+                /* Bloco dos textos da informação. */
+                .infos-conta {
+                    display: flex;
+                    flex-direction: column;
+
+                    /* Espaço entre o subtítulo e o valor. */
+                    gap: 5px;
+
+                    /* Nome do campo. */
+                    .subtitulo {
+                        color: #6b6262;
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+
+                    /* Valor do campo. */
+                    p {
+                        color: #1f1717;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            /*
+                :last-child é uma pseudo-classe.
+                Ela seleciona somente o último .container-info-conta dentro da caixa.
+                Aqui ela remove a borda inferior do último item, porque não faz sentido
+                ter uma linha separadora depois da última informação.
+            */
+            .container-info-conta:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/* #endregion */

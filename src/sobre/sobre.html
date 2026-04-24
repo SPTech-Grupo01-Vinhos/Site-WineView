@@ -1,120 +1,186 @@
 <!DOCTYPE html>
+<!-- Define o documento como HTML5 -->
+
 <html lang="en">
+<!-- Tag raiz do HTML. lang define o idioma da página (pode ser pt-BR) -->
 
 <head>
+    <!-- Configurações da página -->
+
     <meta charset="UTF-8">
+    <!-- Permite uso de acentos e caracteres especiais -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sobre.css"> <!-- Link para o arquivo CSS -->
+    <!-- Responsividade (adapta a página para celular e tablet) -->
+
+    <link rel="stylesheet" href="sobre.css">
+    <!-- Conecta o arquivo CSS responsável pelo estilo -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <!-- Importa fontes do Google Fonts -->
+
     <title>Sobre</title>
+    <!-- Nome da aba do navegador -->
 </head>
 
 <body>
-    <header class="main-cabecalho"> <!-- Cabeçalho com logo e navegação -->
+
+    <!-- ===== HEADER (CABEÇALHO) ===== -->
+    <header class="main-cabecalho">
+        <!-- Área superior com logo e navegação -->
 
         <div class="content">
+            <!-- Container para organizar os elementos do header -->
 
             <div class="container-logo">
+                <!-- Área da logo -->
                 <img src="../img/logo_transparente.png" alt="Logo">
             </div>
 
             <div class="container-nav">
+                <!-- Área de navegação -->
 
-                <nav> <!-- Navegação principal do site -->
+                <nav>
+                    <!-- Tag semântica para menus -->
+
                     <ul>
-                        <li><a href="../home/home.html">Home</a></li> <!-- Link para a página Home -->
-                        <li><a href="../sobre/sobre.html">Sobre</a></li> <!-- Link para a página Sobre -->
+                        <!-- Lista de links -->
+
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../sobre/sobre.html">Sobre</a></li>
                         <li><a href="../simulador/simulador.html">Simulador</a></li>
-                        <!-- Link para a página Simulador -->
+
                         <a href="../login/login.html">
+                            <!-- Link de login -->
+
                             <button class="btn-nav-entrar">Entrar</button>
+                            <!-- Botão visual de login -->
                         </a>
-                        <!-- Link para a página de Login -->
                     </ul>
                 </nav>
-
             </div>
-
         </div>
     </header>
 
-    <main class="container-main"> <!-- Conteúdo principal da página -->
-        <div class="conteudo">
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="container-main">
+        <!-- 
+            Tag <main> representa o conteúdo principal da página.
+            É importante para organização e acessibilidade.
+        -->
 
-            <div class="container-img"> <!-- Container para a imagem principal da página -->
+        <div class="conteudo">
+            <!-- Primeira seção (imagem + frase principal) -->
+
+            <div class="container-img">
+                <!-- Container da imagem principal -->
+
                 <img class="img-uva" src="../../img/sobre/img_sobre.png" alt="Uva e sensor">
+                <!-- Imagem ilustrativa do tema -->
             </div>
 
             <div class="titDireita">
-                <p class="titulo-main"><i><b>Tradição Protegida pela Precisão.</b></i></p>
-                <!-- Título principal da página -->
-                <p class="tit">Na Wine View, acreditamos que a alma de um grande vinho tinto nasce no controle exato de
-                    cada grau
-                    Celsius.</p>
+                <!-- Texto ao lado da imagem -->
+
+                <p class="titulo-main">
+                    <i><b>Tradição Protegida pela Precisão.</b></i>
+                </p>
+                <!-- 
+                    Título principal da página.
+                    <i> = itálico
+                    <b> = negrito
+                -->
+
+                <p class="tit">
+                    Na Wine View, acreditamos que a alma de um grande vinho tinto nasce no controle exato de cada grau Celsius.
+                </p>
+                <!-- Frase de impacto -->
             </div>
         </div>
 
-        <nav class="container-lista"> <!-- Navegação interna para as seções da página -->
-            <p><a href=#historia>HISTÓRIA</a></p> <!-- pnk para a seção História -->
-            <p><a href=#missao>NOSSA MISSÃO</a></p> <!-- pnk para a seção Nossa Missão -->
-            <p><a href=#pilar>NOSSOS PILARES</a></p> <!-- pnk para a seção Nossos Pilares -->
-            <p><a href=#quemFaz>QUEM FAZ ACONTECER</a></p> <!-- Link para a seção Quem Faz Acontecer -->
+        <!-- ===== MENU INTERNO DA PÁGINA ===== -->
+        <nav class="container-lista">
+            <!-- 
+                Menu interno (âncoras).
+                Permite navegar dentro da própria página.
+            -->
+
+            <p><a href="#historia">HISTÓRIA</a></p>
+            <!-- Leva até a seção com id="historia" -->
+
+            <p><a href="#missao">NOSSA MISSÃO</a></p>
+
+            <p><a href="#pilar">NOSSOS PILARES</a></p>
+
+            <p><a href="#quemFaz">QUEM FAZ ACONTECER</a></p>
         </nav>
 
+        <!-- ===== CONTEÚDO TEXTUAL ===== -->
         <div class="conteudo-principal">
+            <!-- Container geral dos textos -->
+
+            <!-- ===== HISTÓRIA ===== -->
             <div class="mensagens" id="historia">
-                <p class="titulo">HISTÓRIA</p> <!-- Título da seção História com id para navegação -->
-                <p>A WineView nasceu da observação de um contraste profundo no coração da vitivinicultura brasileira.
-                    Enquanto o setor movimenta biliões de reais e se moderniza a passos largos, muitos pequenos e médios
-                    produtores ainda enfrentam um desafio arcaico: a "cegueira" durante o processo de fermentação.
+                <!-- 
+                    id permite navegação interna via link (#historia)
+                -->
 
-                    A nossa história começa com a uva Cabernet Sauvignon. Conhecida como a "rainha das uvas tintas", ela
-                    exige um rigor técnico quase matemático para revelar o seu potencial de cor, taninos e aromas. No
-                    entanto, o processo de fermentação é, por natureza, instável; as leveduras trabalham gerando calor e
-                    gás carbónico, e um desvio de poucos graus pode significar a ruína de uma safra inteira.
+                <p class="titulo">HISTÓRIA</p>
+                <!-- Título da seção -->
 
-                    Ao vermos produtores dedicados perderem qualidade — e rentabilidade — por dependerem de medições
-                    manuais e imprecisas, decidimos que era hora de unir dois mundos: o saber milenar da vinificação e a
-                    precisão da tecnologia IoT (Internet das Coisas).
-
-                    A WineView não surgiu apenas para criar sensores, mas para democratizar o controlo. Inspirados pela
-                    excelência de gigantes como a Vinícola Aurora, desenvolvemos uma solução que permite ao pequeno
-                    produtor ter o mesmo nível de monitorização de uma grande indústria. O nosso sistema tornou-se o
-                    "olhar" que falta dentro do tanque, capturando variações térmicas em tempo real e garantindo que a
-                    fermentação ocorra na faixa ideal de 20°C a 30°C.
-
-                    Hoje, a nossa história é escrita em conjunto com os produtores que acreditam que a tradição e a
-                    tecnologia não são opostas, mas parceiras. A WineView existe para garantir que o esforço do campo se
-                    transforme, com segurança e ciência, num vinho de excelência.
-                </p>
-            </div>
-
-            <div class="mensagens"id="missao">
-                <!-- Título da seção Nossa Missão com id para navegação -->
-                <p class="titulo">NOSSA MISSÃO</p>
                 <p>
-                    Garantir a excelência na produção de vinhos através do monitoramento tecnológico de precisão,
-                    oferecendo aos produtores controle total sobre a fermentação alcoólica para preservar a essência, o
-                    sabor e o valor comercial de cada safra.
+                    <!-- Texto longo explicando origem do projeto -->
+                    <!-- (conteúdo institucional da empresa/projeto) -->
                 </p>
             </div>
-            <div class="mensagens "id="pilar">
-                <!-- Título da seção Nossos Pilares com id para navegação -->
+
+            <!-- ===== MISSÃO ===== -->
+            <div class="mensagens" id="missao">
+                <p class="titulo">NOSSA MISSÃO</p>
+
+                <p>
+                    Garantir a excelência na produção de vinhos através do monitoramento tecnológico de precisão...
+                </p>
+                <!-- Texto resumido da missão -->
+            </div>
+
+            <!-- ===== PILARES ===== -->
+            <div class="mensagens" id="pilar">
                 <p class="titulo">NOSSOS PILARES</p>
-                <p>Os pilares da WineView fundamentam-se na união entre a ciência de dados e a biologia da vinificação. O primeiro deles é a <span><b class="pilares">Precisão Tecnológica</b></span>, que garante a captura rigorosa de dados térmicos para que a fermentação ocorra na faixa ideal para a Cabernet Sauvignon. Somado a isso, temos a <span><b class="pilares">Segurança Biológica</b></span>, focada em monitorar o processo continuamente para evitar o estresse das leveduras e contaminações que possam comprometer a integridade da bebida. A <span><b class="pilares">Qualidade Sensorial</b></span> é outro pilar essencial, assegurando que o controle de temperatura e CO2 preserve a cor, os taninos e os aromas autênticos da uva. Por fim, sustentamos nosso modelo na <span><b class="pilares">Eficiência Econômica e Sustentabilidade</b></span>, elevando a competitividade de produtores em um mercado de bilhões de reais ao substituir medições manuais por automação, prevenindo perdas financeiras e garantindo a estabilidade das safras a longo prazo.
+
+                <p>
+                    <!-- Texto explicativo com destaques -->
+
+                    <!-- 
+                        <span> e <b> são usados para destacar palavras importantes 
+                        sem quebrar a estrutura do texto
+                    -->
+
+                    <span><b class="pilares">Precisão Tecnológica</b></span>
+
+                    <span><b class="pilares">Segurança Biológica</b></span>
+
+                    <span><b class="pilares">Qualidade Sensorial</b></span>
+
+                    <span><b class="pilares">Eficiência Econômica e Sustentabilidade</b></span>
                 </p>
             </div>
-            <span><b></b></span>
+
+            <!-- ===== QUEM FAZ ACONTECER ===== -->
             <div class="mensagens" id="quemFaz">
                 <p class="titulo">QUEM FAZ ACONTECER</p>
-                <!-- Título da seção Quem Faz Acontecer com id para navegação -->
-                <p>A WineView é impulsionada por um time multidisciplinar que une a paixão pela vitivinicultura à expertise em tecnologia e análise de dados. Quem faz acontecer são mentes inquietas e comprometidas com a inovação no campo, focadas em transformar a complexidade da fermentação biológica em soluções digitais intuitivas e eficientes. Nossa equipe é composta por especialistas que compreendem que, por trás de cada gráfico de temperatura, existe o trabalho de uma vida inteira de um produtor e a busca pela taça perfeita. É essa união de competências técnicas em hardware, software e visão de mercado que nos permite traduzir os sinais silenciosos dos tanques em decisões estratégicas, garantindo que a tradição da Cabernet Sauvignon seja protegida pela precisão da era conectada.
+
+                <p>
+                    <!-- Texto explicando equipe e funcionamento -->
                 </p>
             </div>
+
         </div>
-    </main> <!-- Fim do conteúdo principal da página -->
+    </main>
+    <!-- Fim do conteúdo principal -->
+
 </body>
 
 </html>

@@ -120,7 +120,8 @@
 
 /* cores */
 .verde {
-    background-color: #6b8e23; /* igual ao gráfico */
+    background-color: #6b8e23;
+    /* igual ao gráfico */
 }
 
 .laranja {
@@ -214,7 +215,8 @@
                 .desc {
                     p {
                         font-size: 0.90rem;
-                        color: #555;
+                        color: #42090e;
+
                     }
                 }
             }
@@ -230,12 +232,140 @@
             align-items: center;
             gap: 10px;
 
-            .graf1, .graf2 {
+            .graf1,
+            .graf2 {
                 width: 40%;
                 height: 300px;
             }
 
-            
+            .graf1 {
+                display: flex;
+                flex-direction: column;
+
+                .area-grafico {
+                    height: 85%;
+                    width: 100%;
+                }
+
+                .legenda {
+                    height: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 18px;
+                    flex-wrap: wrap;
+
+                    .item-legenda {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        p {
+                            margin: 0;
+                            font-size: 11px;
+                            font-family: 'Josefin Sans', sans-serif;
+                            color: #42090e;
+                        }
+
+                        .cor {
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 3px;
+                        }
+
+                        .verde {
+                            background-color: #6BBF61;
+                        }
+
+                        .laranja {
+                            background-color: #E6982B;
+                        }
+
+                        .vermelho {
+                            background-color: #C52A2A;
+                        }
+                    }
+                }
+            }
+
+            .graf2 {
+                display: flex;
+                flex-direction: column;
+
+                .area-grafico-linha {
+                    width: 100%;
+                    height: 82%;
+                }
+
+                .legenda-linha {
+                    height: 18%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 14px;
+                    flex-wrap: wrap;
+
+                    .item-legenda {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        p {
+                            margin: 0;
+                            font-size: 11px;
+                            font-family: 'Josefin Sans', sans-serif;
+                            color: #42090e;
+                        }
+
+                        .linha {
+                            width: 22px;
+                            height: 2px;
+                            border-radius: 2px;
+                        }
+
+
+                        .vermelho {
+                            background: #8B5E5E;
+                        }
+
+                        .laranja {
+                            background: #C48A5A;
+                        }
+
+                        .terracota {
+                            background: #A8735A;
+                        }
+
+                        .verde {
+                            background: #7A8F6B;
+                        }
+
+                        .azul {
+                            background: #6F8FAF;
+                        }
+
+                        .roxo {
+                            background-color: #8C7AA9;
+                        }
+
+                        .amarelo {
+                            background-color: #C2B36F;
+                        }
+
+                        .limiteSup {
+                            background: #B04A4A;
+                            border-top: 2px dashed #B04A4A;
+                            height: 0;
+                        }
+
+                        .limiteInf {
+                            background: #4A6FA5;
+                            border-top: 2px dashed #4A6FA5;
+                            height: 0;
+                        }
+                    }
+                }
+            }
 
         }
     }
@@ -429,7 +559,7 @@
                         justify-content: center;
                         align-items: center;
                         margin-right: 15px;
-                        
+
 
                         img {
                             width: 30px;
@@ -619,4 +749,5 @@
         }
     }
 }
+
 /*#endregion*/

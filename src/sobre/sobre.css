@@ -1,179 +1,352 @@
 * {
     margin: 0;
+    /* Remove a margem padrão de todos os elementos */
+
     padding: 0;
+    /* Remove o espaçamento interno padrão */
+
     border: none;
+    /* Remove bordas padrões */
+
     box-sizing: border-box;
-    /* font-family: "Libre Bodoni", serif; */
+    /* Faz largura e altura incluírem padding e borda */
+
     font-family: "Libre Bodoni", serif;
+    /* Define uma fonte padrão para a página */
+
     text-decoration: none;
+    /* Remove sublinhado de links */
 }
 
 
-/* cabeçalho */
+/* ===== CABEÇALHO ===== */
+
 .main-cabecalho {
     display: flex;
+    /* Ativa o flexbox */
+
     flex-direction: column;
+    /* Organiza os elementos em coluna */
+
     width: 100%;
+    /* Ocupa toda a largura da tela */
+
     background-color: transparent;
+    /* Fundo transparente */
 }
 
 .content {
     display: flex;
+    /* Coloca logo e menu lado a lado */
+
     flex-direction: row;
+    /* Direção horizontal */
+
     width: 100%;
+    /* Ocupa toda a largura */
+
     background-color: #e2d8ca;
+    /* Cor de fundo do cabeçalho */
 }
 
 .container-logo {
     img {
         display: flex;
+        /* Permite alinhamento flexível da imagem */
+
         align-items: center;
+        /* Alinha verticalmente */
+
         padding-left: 40px;
+        /* Espaço à esquerda da logo */
+
         padding-top: 10px;
+        /* Espaço acima da logo */
+
         width: 200px;
+        /* Largura da logo */
+
         margin-bottom: 10px;
+        /* Espaço abaixo da logo */
     }
-
 }
-
-
 
 .container-nav {
     width: 100%;
+    /* Menu ocupa o restante do cabeçalho */
 
     a {
         color: #4a0e0e;
+        /* Cor dos links */
+
         text-align: center;
+        /* Centraliza o texto */
+
         font-family: 'Josefin Sans', sans-serif;
+        /* Fonte dos links */
+
         font-size: 15px;
+        /* Tamanho do texto */
+
         font-weight: 500;
+        /* Peso médio da fonte */
+
         text-decoration: none;
+        /* Remove sublinhado */
     }
 
     a:hover {
         color: #cf5c5c;
+        /* Cor quando passa o mouse por cima */
     }
 
     ul {
         display: flex;
+        /* Deixa os itens do menu lado a lado */
+
         flex-direction: row;
+        /* Direção horizontal */
+
         justify-content: flex-end;
+        /* Empurra os itens para a direita */
+
         align-items: center;
+        /* Centraliza verticalmente */
+
         width: 100%;
+        /* Ocupa toda a largura */
+
         padding-right: 130px;
+        /* Espaço interno à direita */
+
         padding-top: 20px;
+        /* Espaço interno superior */
+
         gap: 80px;
+        /* Espaço entre os itens */
+
         list-style: none;
+        /* Remove bolinhas da lista */
     }
 
     .btn-nav-entrar {
         padding: 10px;
+        /* Espaço interno do botão */
+
         border-radius: 8px;
+        /* Arredonda as bordas */
+
         background-color: #4a0e0e;
+        /* Cor de fundo */
+
         color: #fefcf8;
+        /* Cor do texto */
+
         cursor: pointer;
+        /* Mostra mãozinha ao passar o mouse */
+
         font-family: 'Josefin Sans', sans-serif;
+        /* Fonte do botão */
+
         transition: 200ms;
+        /* Suaviza mudanças visuais */
     }
 
     .btn-nav-entrar:hover {
         transition: 200ms;
+        /* Mantém a transição suave */
+
         background-color: #7f6969;
+        /* Altera cor no hover */
     }
 }
 
 
+/* ===== PRIMEIRA SEÇÃO DA PÁGINA SOBRE ===== */
+
 .conteudo {
     width: 100%;
+    /* Ocupa toda a largura */
+
     height: 550px;
+    /* Altura fixa da seção */
+
     background-color: #F1F1F0;
+    /* Fundo claro */
+
     display: flex;
+    /* Divide imagem e texto lado a lado */
 }
 
 .titDireita {
     width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 10px;
+    /* Ocupa metade da tela */
 
+    height: 100%;
+    /* Usa toda a altura da seção */
+
+    display: flex;
+    /* Ativa flexbox */
+
+    flex-direction: column;
+    /* Organiza título e texto em coluna */
+
+    justify-content: center;
+    /* Centraliza verticalmente */
+
+    align-items: flex-start;
+    /* Alinha à esquerda */
+
+    padding: 10px;
+    /* Espaço interno */
 
     .titulo-main {
         font-family: 'DM Serif Display', serif;
+        /* Fonte elegante para título */
+
         font-size: 4rem;
+        /* Tamanho grande */
+
         color: #4E0E0E;
+        /* Cor vinho escuro */
+
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        /* Sombra no texto para dar destaque */
     }
 
     .tit {
         margin-top: 15px;
+        /* Espaço entre título e subtítulo */
+
         font-family: 'Josefin Sans', sans-serif;
+        /* Fonte do texto */
+
         font-size: 2rem;
+        /* Tamanho do subtítulo */
+
         color: #4A4141;
+        /* Cor cinza escuro */
     }
 }
 
 .container-img {
     width: 50%;
+    /* Ocupa metade da tela */
+
     display: flex;
+    /* Permite centralizar a imagem */
+
     align-items: center;
+    /* Centraliza verticalmente */
+
     justify-content: center;
+    /* Centraliza horizontalmente */
 
     .img-uva {
         width: 500px;
+        /* Define largura da imagem */
+
         height: auto;
+        /* Mantém proporção original */
     }
 }
 
+
+/* ===== MENU INTERNO DA PÁGINA SOBRE ===== */
+
 .container-lista {
     width: 100%;
+    /* Ocupa toda a largura */
+
     height: 100px;
+    /* Altura do menu interno */
+
     background-color: #F0EAE3;
+    /* Fundo bege */
+
     display: flex;
+    /* Coloca os links lado a lado */
+
     align-items: center;
+    /* Centraliza verticalmente */
+
     justify-content: center;
+    /* Centraliza horizontalmente */
 
     p {
         padding: 50px;
+        /* Espaço ao redor de cada item */
 
         a {
             color: #4E0E0E;
-            font-family: 'Josefin Sans', sans-serif;
+            /* Cor dos links */
 
+            font-family: 'Josefin Sans', sans-serif;
+            /* Fonte dos links */
         }
     }
 }
 
+
+/* ===== CONTEÚDO TEXTUAL PRINCIPAL ===== */
+
 .conteudo-principal {
     width: 100%;
+    /* Ocupa toda a largura */
+
     height: 950px;
+    /* Altura da área dos textos */
+
     background-color: #E2D8CA;
+    /* Fundo bege */
+
     display: flex;
+    /* Ativa flexbox */
+
     flex-direction: column;
+    /* Coloca as seções uma abaixo da outra */
+
     align-items: center;
+    /* Centraliza as caixas de texto */
+
     justify-content: center;
+    /* Centraliza verticalmente */
+
     font-family: 'Josefin Sans', sans-serif;
+    /* Fonte padrão dessa seção */
 
     .titulo {
         color: #4E0E0E;
+        /* Cor dos títulos das seções */
+
         padding: 10px 0;
+        /* Espaço acima e abaixo */
+
         font-size: 1.2rem;
+        /* Tamanho do título */
     }
 
     .mensagens {
         width: 80%;
+        /* Textos ocupam 80% da largura */
+
         color: #4A4141;
+        /* Cor do texto principal */
+
         padding: 30px 0;
+        /* Espaçamento entre as seções */
 
         .pilares {
             color: #4E0E0E;
+            /* Destaca palavras importantes */
+
             font-family: 'Josefin Sans', sans-serif;
+            /* Mantém a fonte */
         }
 
         p {
             font-family: 'Josefin Sans', sans-serif;
+            /* Define a fonte dos parágrafos */
         }
     }
 }
