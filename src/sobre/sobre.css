@@ -9,6 +9,80 @@
 }
 
 
+/* cabeçalho */
+.main-cabecalho {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #e2d8ca;
+}
+
+.container-logo {
+    img {
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+        padding-top: 10px;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+
+.container-nav {
+    width: 100%;
+
+    a {
+        color: #4a0e0e;
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #cf5c5c;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-right: 130px;
+        padding-top: 20px;
+        gap: 80px;
+        list-style: none;
+    }
+
+    .btn-nav-entrar {
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #4a0e0e;
+        color: #fefcf8;
+        cursor: pointer;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: 200ms;
+    }
+
+    .btn-nav-entrar:hover {
+        transition: 200ms;
+        background-color: #7f6969;
+    }
+}
+
+
 .conteudo {
     width: 100%;
     height: 550px;
@@ -97,7 +171,7 @@
             color: #4E0E0E;
             font-family: 'Josefin Sans', sans-serif;
         }
-        
+
         p {
             font-family: 'Josefin Sans', sans-serif;
         }

@@ -113,11 +113,9 @@
                 </div>
                 <div class="graficos">
                     <div class="graf1">
-                        <h3>Temperatura atual</h3>
                         <canvas id="graficoBarra"></canvas>
                     </div>
                     <div class="graf2">
-                        <h3>Oscilação ao longo do tempo</h3>
                         <canvas id="graficoLinha"></canvas>
                     </div>
                 </div>
@@ -129,124 +127,136 @@
 
     <!-- GRAFICO MAIS SIMPLES -->
     <script>
-// -------- BARRAS --------
-let labelsBarra = ['T1','T2','T3','T4','T5','T6','T7'];
-let dadosBarra = [22, 32, 21, 27, 19, 33, 24];
+        // -------- BARRAS --------
+        let labelsBarra = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+        let dadosBarra = [22, 32, 21, 27, 19, 33, 24];
 
-let cores = [];
+        let cores = [];
 
-for (let i = 0; i < dadosBarra.length; i++) {
-    let v = dadosBarra[i];
+        for (let i = 0; i < dadosBarra.length; i++) {
+            let v = dadosBarra[i];
 
-    if (v < 20) {
-        cores.push('orange');
-    } else if (v > 30) {
-        cores.push('red');
-    } else {
-        cores.push('green');
-    }
-}
-
-new Chart(document.getElementById('graficoBarra'), {
-    type: 'bar',
-    data: {
-        labels: labelsBarra,
-        datasets: [{
-            label: 'Temperatura',
-            data: dadosBarra,
-            backgroundColor: cores
-        }]
-    },
-    plugins: [ChartDataLabels],
-    options: {
-        plugins: {
-            legend: { position: 'bottom' },
-            datalabels: {
-                anchor: 'end',
-                align: 'top'
+            if (v < 20) {
+                cores.push('orange');
+            } else if (v > 30) {
+                cores.push('red');
+            } else {
+                cores.push('green');
             }
         }
-    }
-});
 
-
-// -------- LINHA --------
-let labelsLinha = ['00','03','06','09','12','15','18','21','00'];
-
-let limiteSup = [];
-let limiteInf = [];
-
-for (let i = 0; i < labelsLinha.length; i++) {
-    limiteSup.push(30);
-    limiteInf.push(20);
-}
-
-new Chart(document.getElementById('graficoLinha'), {
-    type: 'line',
-    data: {
-        labels: labelsLinha,
-        datasets: [
-            {
-                label: 'T1',
-                data: [24,27,22,29,25,30,26,28,27],
-                borderColor: 'brown'
+        new Chart(document.getElementById('graficoBarra'), {
+            type: 'bar',
+            data: {
+                labels: labelsBarra,
+                datasets: [{
+                    label: 'Temperatura',
+                    data: dadosBarra,
+                    backgroundColor: cores
+                }]
             },
-            {
-                label: 'T2',
-                data: [22,26,19,27,24,23,25,30,16],
-                borderColor: 'orange'
-            },
-            {
-                label: 'T3',
-                data: [18,27,22,29,25,30,26,28,27],
-                borderColor: 'darkorange'
-            },
-            {
-                label: 'T4',
-                data: [26,26,29,27,30,23,25,30,16],
-                borderColor: 'green'
-            },
-            {
-                label: 'T5',
-                data: [23,27,22,29,25,30,26,28,27],
-                borderColor: 'blue'
-            },
-            {
-                label: 'T6',
-                data: [21,26,29,27,30,19,25,24,26],
-                borderColor: 'purple'
-            },
-            {
-                label: 'T7',
-                data: [20,25,24,27,24,23,25,24,26],
-                borderColor: 'yellow'
-            },
-            {
-                label: 'Limite superior',
-                data: limiteSup,
-                borderColor: 'red',
-                borderDash: [5,5]
-            },
-            {
-                label: 'Limite inferior',
-                data: limiteInf,
-                borderColor: 'green',
-                borderDash: [5,5]
+            plugins: [ChartDataLabels],
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50
+                    }
+                }
             }
-        ]
-    },
-    options: {
-        plugins: {
-            legend: { position: 'bottom' }
+        });
+
+
+        // -------- LINHA --------
+        let labelsLinha = ['00', '03', '06', '09', '12', '15', '18', '21', '00'];
+
+        let limiteSup = [];
+        let limiteInf = [];
+
+        for (let i = 0; i < labelsLinha.length; i++) {
+            limiteSup.push(30);
+            limiteInf.push(20);
         }
-    }
-});
-</script>
+
+        new Chart(document.getElementById('graficoLinha'), {
+            type: 'line',
+            data: {
+                labels: labelsLinha,
+                datasets: [
+                    {
+                        label: 'T1',
+                        data: [24, 27, 22, 29, 25, 30, 26, 28, 27],
+                        borderColor: 'brown'
+                    },
+                    {
+                        label: 'T2',
+                        data: [22, 26, 19, 27, 24, 23, 25, 30, 16],
+                        borderColor: 'orange'
+                    },
+                    {
+                        label: 'T3',
+                        data: [18, 27, 22, 29, 25, 30, 26, 28, 27],
+                        borderColor: 'darkorange'
+                    },
+                    {
+                        label: 'T4',
+                        data: [26, 26, 29, 27, 30, 23, 25, 30, 16],
+                        borderColor: 'green'
+                    },
+                    {
+                        label: 'T5',
+                        data: [23, 27, 22, 29, 25, 30, 26, 28, 27],
+                        borderColor: 'lightblue'
+                    },
+                    {
+                        label: 'T6',
+                        data: [21, 26, 29, 27, 30, 19, 25, 24, 26],
+                        borderColor: 'purple'
+                    },
+                    {
+                        label: 'T7',
+                        data: [20, 25, 24, 27, 24, 23, 25, 24, 26],
+                        borderColor: 'yellow'
+                    },
+                    {
+                        label: 'Limite superior',
+                        data: limiteSup,
+                        borderColor: 'red',
+                        borderDash: [5, 5]
+                    },
+                    {
+                        label: 'Limite inferior',
+                        data: limiteInf,
+                        borderColor: 'blue',
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    </script>
     <!-- GRAFICO MAIS DETALHADO -->
     <!-- <script>
         // ------------------- GRÁFICO DE BARRAS -------------------
         const labelsBarra = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
-        const dadosBarra = [22, 32, 21, 27, 19, 33, 24];
+        const dadosBarra = [42, 32, 21, 27, 19, 33, 24];
 
         let cores = [];
 
@@ -317,7 +327,7 @@ new Chart(document.getElementById('graficoLinha'), {
             {
                 label: 'T1',
                 data: [24, 27, 22, 29, 25, 30, 26, 28, 27],
-                borderColor: 'brown',
+                borderColor: '#ff009d',
                 fill: false,
                 tension: 0.4,
                 pointRadius: 0
@@ -356,7 +366,7 @@ new Chart(document.getElementById('graficoLinha'), {
             {
                 label: 'Limite inferior',
                 data: limiteInferior,
-                borderColor: '#7A8F6B',
+                borderColor: '#2135c6',
                 borderDash: [6, 6],
                 pointRadius: 0
             }

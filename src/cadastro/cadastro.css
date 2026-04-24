@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +47,7 @@
   p {
     color: #aea9a4;
     text-align: center;
-    font-family: "Josefin Sans";
+    font-family: "Montserrat";
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
@@ -59,7 +61,7 @@
 
     color: #221515;
     text-align: center;
-    font-family: "Josefin Sans";
+    font-family: "Montserrat";
     font-size: 15px;
     font-style: italic;
     font-weight: 700;
@@ -117,7 +119,7 @@
 
   p {
     color: #270e0e;
-    font-family: "Josefin Sans";
+    font-family: "Montserrat";
     font-size: 15px;
     font-weight: 500;
 
@@ -141,7 +143,7 @@
     background: #4a0e0e;
 
     color: #fefbf8;
-    font-family: "Josefin Sans";
+    font-family: "Montserrat";
     text-align: center;
     font-size: 15px;
     font-style: italic;

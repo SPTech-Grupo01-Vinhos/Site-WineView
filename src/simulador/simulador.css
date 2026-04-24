@@ -1,14 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
 
+/* cabeçalho */
+.main-cabecalho {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #e2d8ca;
+}
+
+.container-logo img {
+  padding-left: 40px;
+  padding-top: 10px;
+  width: 200px;
+}
+
+.container-nav {
+  width: 100%;
+
+  a {
+    color: #4a0e0e;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #cf5c5c;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 130px;
+    padding-top: 20px;
+    gap: 80px;
+    list-style: none;
+  }
+
+  .btn-nav-entrar {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #4a0e0e;
+    color: #fefcf8;
+    cursor: pointer;
+
+    transition: 200ms;
+  }
+
+  .btn-nav-entrar:hover {
+    transition: 200ms;
+    background-color: #7f6969;
+  }
+}
+
+/* conteúdo da página */
 body {
   background-color: #e2d8ca;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: "Montserrat";
 }
 .container-principal {
   display: flex;
@@ -30,6 +98,7 @@ body {
 .conteudo h1,
 .conteudo h3 {
   color: #4a0e0e;
+  font-family: "DM Serif Display";
 }
 
 input {
