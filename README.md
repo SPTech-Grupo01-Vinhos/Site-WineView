@@ -20,10 +20,10 @@ O projeto foi construído utilizando as disciplinas do 1º semestre de ADS:
 
 ## 📊 Funcionalidades
 
-- **Página Home:** 
-- **Login & Cadastro:** Identificação de perfil.
-- **Dashboard:** Gráficos em tempo real que analisam e alertam se a temperatura do vinho esta fora do ideal.
-- **Sobre:** 
+- **Página Home:** Apresenta uma visão geral do sistema, destacando seu objetivo principal: o monitoramento de temperatura durante a fermentação do vinho. Contém informações introdutórias, beneficios da solução e acesso rápido á demais áreas da plataforma.
+- **Login & Cadastro:** Permite o registro e autenticação de usuários no sistema. Garante a identificação do perfil (como administrador ou usuário comum), assegurando o acesso personalizado e seguro ás funcionalidades da plataforma.
+- **Dashboard:** Exibe Gráficos em tempo real com os dados captados pelos sensores de temperatura. Possibilita a análise contínua do processo de fermentação, além de gerar alertas automáticos quando a temperatura estiver fora da faixa ideal, auxiliando na tomada de decisão rápida.
+- **Sobre:** Apresenta informações detalhadas sobre p projeto, incluindo seu objetivo, funcionamento, tecnologias usadas e a importância do controle de temperatura na fermentação do vinho. Também pode conter dados sobre a equipe desenvolvedora e o contexto de criação da solução.
 
 ---
 
