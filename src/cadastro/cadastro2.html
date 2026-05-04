@@ -44,10 +44,9 @@
                 <p>Confirme a senha:</p>
                 <input type="password" id="ipt_senha_confirmacao" placeholder="Digite aqui...">
 
-                <button onclick="verificarCadastro()">Verificar Cadastro</button>
-                <a href="./cadastro-continuacao.html">
-                    <button class="btn-proximo">Próximo</button>
-                </a>
+                
+                    <button onclick="verificarCadastro()" class="btn-proximo">Próximo</button>
+                
 
             </div>
 
@@ -69,18 +68,25 @@
         let email = ipt_email.value
         let posicaoArroba = email.indexOf('@')
         let posicaoCom = email.indexOf('.com')
+        let senhaValida = false
+        let emailValido = false
 
         // verificação da senha 
         if (senha.length >= 8 && senha != '' && senha != senha.toUpperCase() && senha != senha.toLowerCase() &&
-        senha.includes('!') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') || senha.includes('&') || senha.includes('_')) {
-            alert('Senha válida')
-        }
-        else{alert('Senha inválida')}
+        senha.includes('!') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') || senha.includes('&') || senha.includes('_'))
+         {senhaValida = true}
 
         //verificação e-mail
         if(email != '' && email.includes('@') && email.includes('.com') && posicaoArroba < posicaoCom && email.endsWith('.com'))
-        {alert('E-mail válido')}
-        else{alert('E-mail inválido')}
+        {emailValido = true}
+        
+    
+    if (senhaValida == true && emailValido == true) {
+        alert('Senha e E-mail válidos!')
+        window.location.href = "cadastro-continuacao.html"
+    } else {
+        alert('Senha e/ou E-mail inválidos! Tente novamente')
+    }
 
         
     }

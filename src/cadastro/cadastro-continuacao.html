@@ -62,25 +62,23 @@
 <script>
 
     function cadastrar() {
-        let nome = ipt_nome.value;
-        let email = ipt_email.value;
-        let cnpj = ipt_cnpj.value;
-        let senha = ipt_senha.value;
-        let senhaConfirmacao = ipt_senha_confirmacao.value;
+        let nomeVinicola = ipt_nomeVinicola.value
+        let qtdTanques = Number(ipt_tanques.value)
+        let ruaLogradouro = ipt_rua.value
+        let cidade = ipt_cidade.value
+        let estadoUF = ipt_uf.value
+        let numero = Number(ipt_num.value)
+        let CEP = ipt_cep.value
 
         let mensagem = "";
 
-        if (!email.indexOf('@') == -1 && !email.indexOf('.') == -1) {
-            alert('Insira um email válido!')
-        } else if (senha <= 6 && senhaConfirmacao != senha) {
-            alert('Insira uma senha válida!')
-        } else if (nome.length <= 1) {
-            alert('Insira um nome válido!')
-        } else if (cnpj.length != 14) {
-            alert('Insira um CNPJ válido!')
-        } else {
-            window.location.href = "../dashboard/dashboard.html"
-            mensagem += 'Cadastro realizado com sucesso!'
+        if(nomeVinicola != '' && qtdTanques != '' && qtdTanques >= 0 && ruaLogradouro != '' && cidade != '' &&
+            estadoUF != '' && numero != '' && numero > 0 && CEP != '')
+        {
+            window.location.href = "../login/login.html"
+            mensagem += 'Cadastro realizado com sucesso!'}
+         else {
+            alert('Preencha todos os campos corretamente!')
         }
 
         exibir.innerHTML = mensagem;
