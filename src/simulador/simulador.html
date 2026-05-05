@@ -1,149 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador</title>
+    <title>Simulador Wine View</title>
     <link rel="stylesheet" href="simulador.css">
 </head>
-
 <body>
-    <header class="main-cabecalho"> <!-- Cabeçalho com logo e navegação -->
-
+    <header class="main-cabecalho">
         <div class="content">
-
             <div class="container-logo">
                 <img src="../img/logo_transparente.png" alt="Logo">
             </div>
-
             <div class="container-nav">
-
-                <nav> <!-- Navegação principal do site -->
+                <nav>
                     <ul>
-                        <li><a href="../home/home.html">Home</a></li> <!-- Link para a página Home -->
-                        <li><a href="../sobre/sobre.html">Sobre</a></li> <!-- Link para a página Sobre -->
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../sobre/sobre.html">Sobre</a></li>
                         <li><a href="../simulador/simulador.html">Simulador</a></li>
-                        <!-- Link para a página Simulador -->
-                        <a href="../login/login.html">
-                            <button class="btn-nav-entrar">Entrar</button>
-                        </a>
-                        <!-- Link para a página de Login -->
+                        <li>
+                            <a href="../login/login.html">
+                                <button class="btn-nav-entrar">Entrar</button>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
-
             </div>
-
         </div>
     </header>
 
-    <div class="container-principal">
-
-        <div class="conteudo">
-
-            <div class="titulo">
-                <h1>Simulador Wine View</h1>
+    <main class="container-principal">
+        <div class="flex-content">
+            <!-- Lado Esquerdo: Formulário -->
+            <div class="conteudo">
+                <div class="titulo">
+                    <h1>Simulador Wine View</h1>
+                </div>
+                <p>Quantos litros de vinho você produz por mês?</p>
+                <input type="number" id="input_producao_mensal" placeholder="Ex: 1000">
+                <p>Qual o custo de produção de 1 litro de vinho?</p>
+                <input type="number" id="input_custo_litro" placeholder="Ex: 15.00">
+                <p>Qual o valor médio de venda de uma garrafa (750ml)?</p>
+                <input type="number" id="input_valor_garrafa" placeholder="Ex: 50.00">
+                <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
             </div>
 
-            <p>Quantos litros de vinho você produz por mês?</p>
-            <input type="text" id="input_producao_mensal" placeholder="Digite aqui...">
-            <p>Qual o custo de produção de 1 litro de vinho?</p>
-            <input type="text" id="input_custo_litro" placeholder="Digite aqui...">
-            <p>Qual o valor médio de venda de uma garrafa (750ml)?</p>
-            <input type="text" id="input_valor_garrafa" placeholder="Digite aqui...">
-            <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
+            <!-- Lado Direito: Resultado -->
+            <div id="div_mensagem"></div>
         </div>
+    </main>
 
-        <span id="div_mensagem">
-    </div>
-    </div>
-
-        <footer class="footer">
-        <!-- Rodapé da página -->
-
+    <footer class="footer">
         <div class="footer-logo">
-            <!-- Área da logo no rodapé -->
-
             <img src="../img/logo_transparente.png" alt="Logo Wine View">
-            <!-- Logo da empresa/projeto -->
         </div>
-
         <nav class="footer-nav">
-            <!-- Navegação do rodapé -->
-
             <a href="../home/home.html">PÁGINA INICIAL</a>
-            <!-- Link para voltar ao início -->
-
             <a href="#id_contato">CONTATO</a>
-            <!-- 
-                Link interno.
-                Ele leva para a seção que tem id="id_contato".
-            -->
-
             <a href="../sobre/sobre.html">SOBRE</a>
-            <!-- Link para a página Sobre -->
-
             <a href="../login/login.html">CADASTRE-SE / ENTRE</a>
-            <!-- Link para login ou cadastro -->
         </nav>
-
         <div class="footer-email">
-            <!-- Área com email de contato -->
-
             <span>✉</span>
-            <!-- Ícone de email -->
-
             <p>contato@wine.view.com</p>
-            <!-- Email de contato do projeto -->
         </div>
     </footer>
-    
-</body>
 
+</body>
 </html>
 
-<script>
-    function simular_vinho() {
-        let litros_mes = Number(input_producao_mensal.value)
-        let custo_litro = Number(input_custo_litro.value)
-        let valor_garrafa = Number(input_valor_garrafa.value)
+ <script>
+        function simular_vinho() {
+            let litros_mes = Number(input_producao_mensal.value);
+            let custo_litro = Number(input_custo_litro.value);
+            let valor_garrafa = Number(input_valor_garrafa.value);
 
-        let total_garrafas_mes = litros_mes / 0.75
-        let custo_total_mes = litros_mes * custo_litro
-        let receita_total_mes = total_garrafas_mes * valor_garrafa
-        let lucro_estimado_mes = receita_total_mes - custo_total_mes
+            let total_garrafas_mes = litros_mes / 0.75;
+            let custo_total_mes = litros_mes * custo_litro;
+            let receita_total_mes = total_garrafas_mes * valor_garrafa;
+            let lucro_estimado_mes = receita_total_mes - custo_total_mes;
 
-        // novo cálculo: custo por garrafa
-        let custo_por_garrafa = custo_litro * 0.75
+            let custo_por_garrafa = custo_litro * 0.75;
+            let perda_10_porcento = receita_total_mes * 0.10;
+            let perda_2_porcento = receita_total_mes * 0.02;
 
-        let perda_10_porcento = receita_total_mes * 0.10
-        let perda_2_porcento = receita_total_mes * 0.02
+            let economia_mensal = perda_10_porcento - perda_2_porcento;
+            let economia_anual = economia_mensal * 12;
 
-        let economia_mensal = perda_10_porcento - perda_2_porcento
-        let economia_anual = economia_mensal * 12
-
-        div_mensagem.innerHTML = `
-        <div class="card-resultado">
-        <h3>Análise de Produção</h3>
-        <p>Você produz <span class="destaque">${litros_mes}</span> litros por mês.</p>
-        <p>Equivale a aprox. <span class="destaque">${total_garrafas_mes.toFixed(0)}</span> garrafas/mês.</p>
-        
-        <hr>
-
-        <div class="financeiro">
-            <p>Custo por litro: <b>R$ ${custo_litro.toFixed(2)}</b></p>
-            <p>Custo por garrafa: <b>R$ ${custo_por_garrafa.toFixed(2)}</b></p>
-            <p class="custo-total">Custo total mensal: <span>R$ ${custo_total_mes.toFixed(2)}</span></p>
-        </div>
-
-        <div class="lucro-box">
-            Lucro bruto estimado: <b>R$ ${lucro_estimado_mes.toFixed(2)}</b>
-        </div>
-
-        <h3>Solução Wine View</h3>
-        <p class="economia">Economia Mensal: <span>R$ ${economia_mensal.toFixed(2)}</span></p>
-        <p class="economia">Economia Anual: <span>R$ ${economia_anual.toFixed(2)}</span></p>
-         </div>
-`;
-    }
-</script>
+            div_mensagem.innerHTML = `
+                <div class="card-resultado">
+                    <h3>Análise de Produção</h3>
+                    <p>Produção mensal: <span class="destaque">${litros_mes}L</span></p>
+                    <p>Total de garrafas: <span class="destaque">${total_garrafas_mes.toFixed(0)}</span></p>
+                    <hr>
+                    <div class="financeiro">
+                        <p>Custo por garrafa: <b>R$ ${custo_por_garrafa.toFixed(2)}</b></p>
+                        <p class="custo-total">Custo total mensal: <b>R$ ${custo_total_mes.toFixed(2)}</b></p>
+                    </div>
+                    <div class="lucro-box">
+                        Lucro bruto estimado: <b>R$ ${lucro_estimado_mes.toFixed(2)}</b>
+                    </div>
+                    <h3>Solução Wine View</h3>
+                    <p class="economia">Economia Mensal: <span class="destaque">R$ ${economia_mensal.toFixed(2)}</span></p>
+                    <p class="economia">Economia Anual: <span class="destaque">R$ ${economia_anual.toFixed(2)}</span></p>
+                </div>
+            `;
+        }
+    </script>
