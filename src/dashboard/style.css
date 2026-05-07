@@ -221,6 +221,19 @@
                 }
             }
         }
+        .titulos-graficos {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 0 40px;
+            }
+
+        .titulo-grafico {
+        color: #42090e;
+        font-size: 16px;
+        font-family: 'DM Serif Display', serif;
+            }
 
         .graficos {
             width: 100%;
