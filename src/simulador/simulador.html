@@ -46,11 +46,11 @@
             </div>
 
             <p>Quantos litros de vinho você produz por mês?</p>
-            <input type="text" id="input_producao_mensal" placeholder="Digite aqui...">
+            <input type="text" id="input_producao_mensal" placeholder="Ex: 87000">
             <p>Qual o custo de produção de 1 litro de vinho?</p>
-            <input type="text" id="input_custo_litro" placeholder="Digite aqui...">
+            <input type="text" id="input_custo_litro" placeholder="Ex: 15">
             <p>Qual o valor médio de venda de uma garrafa (750ml)?</p>
-            <input type="text" id="input_valor_garrafa" placeholder="Digite aqui...">
+            <input type="text" id="input_valor_venda_garrafa" placeholder="Ex: 60">
             <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
         </div>
 
@@ -104,45 +104,62 @@
 
 <script>
     function simular_vinho() {
-        let litros_mes = Number(input_producao_mensal.value)
-        let custo_litro = Number(input_custo_litro.value)
-        let valor_garrafa = Number(input_valor_garrafa.value)
+        let producao_litros_mes = Number(input_producao_mensal.value) // 87000
+        let custo_litro = Number(input_custo_litro.value) // 15
+        let valor_venda_garrafa = Number(input_valor_venda_garrafa.value) // 60
 
-        let total_garrafas_mes = litros_mes / 0.75
-        let custo_total_mes = litros_mes * custo_litro
-        let receita_total_mes = total_garrafas_mes * valor_garrafa
-        let lucro_estimado_mes = receita_total_mes - custo_total_mes
+        // Quantidade de garrafas cheias, onde 750 ml = 0,75 litros
+        let total_garrafas_mes = producao_litros_mes / 0.75  
+        //                               87000      / 0.75
 
-        // novo cálculo: custo por garrafa
-        let custo_por_garrafa = custo_litro * 0.75
+        // Quanto gastou para ter o vinho dentro da garrafa 
+        let custo_total_litro_mes = custo_litro * producao_litros_mes 
+        //                                15    *  87000
 
-        let perda_10_porcento = receita_total_mes * 0.10
-        let perda_2_porcento = receita_total_mes * 0.02
+        // Quantidade que ele ganha vendendo todas as garrafas cheias 
+        let total_bruto_mes = total_garrafas_mes * valor_venda_garrafa
+        //                        (87000/0.75)   *   60
+        
+        // Quanto ele ganha tirando os custos de produção (total do vinho dentro)
+        let lucro_estimado_mes = total_bruto_mes - custo_total_litro_mes
+        //                     ((87000/0.75)   *   60) - (15    *  87000)
+
+        //====================================================================================
+        
+        // Supondo que ao fermentar o vinho, perde 10% 
+        let perda_10_porcento = total_bruto_mes * 0.10 
+        //               ((87000/0.75)   *   60)  *  0.10
+        let perda_10_anual = perda_10_porcento * 12
+        //               (((87000/0.75)   *   60)  *  0.10)  * 12  
+
+        // Supondo que usando o monitoramento ele só perde 2%
+        let perda_2_porcento = total_bruto_mes * 0.02
+        //               ((87000/0.75)   *   60) * 0.02
 
         let economia_mensal = perda_10_porcento - perda_2_porcento
+        //                (((87000/0.75)   *   60)  *  0.10) - (((87000/0.75)   *   60) * 0.02)
         let economia_anual = economia_mensal * 12
+        // 
 
         div_mensagem.innerHTML = `
         <div class="card-resultado">
         <h3>Análise de Produção</h3>
-        <p>Você produz <span class="destaque">${litros_mes}</span> litros por mês.</p>
-        <p>Equivale a aprox. <span class="destaque">${total_garrafas_mes.toFixed(0)}</span> garrafas/mês.</p>
-        
+        <p>Você produz <span class="destaque">${producao_litros_mes}</span> litros por mês.</p>
+        <p>Custo por litro: <b> ${custo_litro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b></p>
+        <p>Venda da garrafa: <b> ${valor_venda_garrafa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b></p>
         <hr>
 
         <div class="financeiro">
-            <p>Custo por litro: <b>R$ ${custo_litro.toFixed(2)}</b></p>
-            <p>Custo por garrafa: <b>R$ ${custo_por_garrafa.toFixed(2)}</b></p>
-            <p class="custo-total">Custo total mensal: <span>R$ ${custo_total_mes.toFixed(2)}</span></p>
+            <p class="custo-total">Custo total mensal da produção: <span> ${custo_total_litro_mes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span></p>
         </div>
 
         <div class="lucro-box">
-            Lucro bruto estimado: <b>R$ ${lucro_estimado_mes.toFixed(2)}</b>
+            Lucro bruto estimado: <b> ${lucro_estimado_mes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b>
         </div>
 
         <h3>Solução Wine View</h3>
-        <p class="economia">Economia Mensal: <span>R$ ${economia_mensal.toFixed(2)}</span></p>
-        <p class="economia">Economia Anual: <span>R$ ${economia_anual.toFixed(2)}</span></p>
+        <p class="economia">Quanto você perde anualmente sem WV: <span> ${perda_10_anual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span></p>
+        <p class="economia">Economia Anual com solução WV: <span> ${economia_anual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span></p>
          </div>
 `;
     }
