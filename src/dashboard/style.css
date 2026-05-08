@@ -150,6 +150,7 @@
         width: 95%;
         display: flex;
         flex-direction: column;
+        /* gap: 10px; */
         height: 90%;
 
         .titulo {
@@ -177,12 +178,14 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            overflow-y: hidden;
 
             .caixas {
                 width: 270px;
                 height: 150px;
                 border-radius: 12px;
                 background-color: #F0EAE3;
+
 
                 display: flex;
                 flex-direction: column;
@@ -221,22 +224,28 @@
                 }
             }
         }
-            .titulos-graficos {
+
+        .titulos-graficos {
             width: 100%;
             display: flex;
+            /* align-items: center; */
             justify-content: space-between;
-            margin-top: 30px;
+            /* padding-top: 10px; */
+            /* background-color: #5c00f1; */
         }
 
         .titulos-graficos h3 {
-        width: 40%;
+            width: 40%;
         }
 
-    .titulo-grafico {
-    color: #42090e;
-    font-size: 20px;
-    font-family: 'DM Serif Display', serif;
-}
+        .titulo-grafico {
+            color: #42090e;
+            font-size: 20px;
+            font-family: 'DM Serif Display', serif;
+            overflow-y: hidden;
+
+        }
+
         .graficos {
             width: 100%;
             height: 300px;
@@ -246,6 +255,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
+            overflow-y: hidden;
 
             .graf1,
             .graf2 {
