@@ -45,13 +45,7 @@
                 <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
             </div>
 
-            <p>Quantos litros de vinho você produz por mês?</p>
-            <input type="text" id="input_producao_mensal" placeholder="Ex: 87000">
-            <p>Qual o custo de produção de 1 litro de vinho?</p>
-            <input type="text" id="input_custo_litro" placeholder="Ex: 15">
-            <p>Qual o valor médio de venda de uma garrafa (750ml)?</p>
-            <input type="text" id="input_valor_venda_garrafa" placeholder="Ex: 60">
-            <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
+            <div id="div_mensagem"></div>
         </div>
     </main>
 
@@ -78,7 +72,7 @@
     function simular_vinho() {
         let producao_litros_mes = Number(input_producao_mensal.value) // 87000
         let custo_litro = Number(input_custo_litro.value) // 15
-        let valor_venda_garrafa = Number(input_valor_venda_garrafa.value) // 60
+        let valor_venda_garrafa = Number(input_valor_garrafa.value) // 60
 
         // Quantidade de garrafas cheias, onde 750 ml = 0,75 litros
         let total_garrafas_mes = producao_litros_mes / 0.75  
