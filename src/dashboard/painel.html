@@ -140,494 +140,360 @@
             </div>
         </div>
 
-        <div class="painel">
-            <!--
-                Área principal do dashboard.
-                Fica ao lado do menu e contém o conteúdo do painel.
-            -->
+      <div class="painel">
 
-            <div class="container-painel">
-                <!-- Container interno que organiza título, KPIs e gráficos. -->
+    <div class="container-painel">
 
-                <div class="titulo">
-                    <!-- Área do título e descrição do painel. -->
-                    <h2>Painel</h2>
-                    <!-- Título principal da seção. -->
-                    <p>Acompanhe em tempo real a fermentação dos seus tanques e mantenha seus vinhos na temperatura
-                        ideal.
-                    </p>
-                    <!-- Parágrafo explicativo sobre a função do painel. -->
+        <div class="titulo">
+            <h2>Painel</h2>
+
+            <p>
+                Acompanhe em tempo real a fermentação dos tanques e monitore as temperaturas.
+            </p>
+        </div>
+
+
+  <div class="conteudo-dashboard">
+
+    <!-- KPIS -->
+    <div class="kpis-lateral">
+
+        <!-- KPI DATA -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>DATA</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2 id="dataAtual">16/05/2026</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Data atual do sistema</p>
+            </div>
+
+        </div>
+
+
+        <!-- KPI TEMPERATURA IDEAL -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>TEMPERATURA IDEAL</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2>20°C - 30°C</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Faixa ideal da fermentação</p>
+            </div>
+
+        </div>
+
+
+        <!-- KPI ALERTAS -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>TOTAL DE ALERTAS</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2>2</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Tanques fora da faixa ideal</p>
+            </div>
+
+        </div>
+
+
+        <!-- KPI TOTAL TANQUES -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>TOTAL DE TANQUES</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2>7</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Quantidade cadastrada</p>
+            </div>
+
+        </div>
+
+
+        <!-- KPI TANQUES ATIVOS -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>TANQUES ATIVOS</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2>4</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Tanques em funcionamento</p>
+            </div>
+
+        </div>
+
+
+        <!-- KPI MAIOR QUE 30 -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>TEMPERATURA &gt; 30°C</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2>1</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Temperatura acima do ideal</p>
+            </div>
+
+        </div>
+
+
+        <!-- KPI MENOR QUE 20 -->
+        <div class="caixa-kpi-nova">
+
+            <div class="titulo-kpi-nova">
+                <h3>TEMPERATURA &lt; 20°C</h3>
+            </div>
+
+            <div class="numero-kpi-nova">
+                <h2>1</h2>
+            </div>
+
+            <div class="descricao-kpi-nova">
+                <p>Temperatura abaixo do ideal</p>
+            </div>
+
+        </div>
+
+
+      <!-- KPI CRITICIDADE -->
+<div class="caixa-kpi-nova">
+
+    <div class="titulo-kpi-nova">
+        <h3>NÍVEL DE CRITICIDADE</h3>
+    </div>
+
+    <div class="numero-kpi-nova">
+        <h2 id="nivelCriticidade">ALTO</h2>
+    </div>
+
+    <div class="descricao-kpi-nova">
+        <p>Status geral dos tanques</p>
+    </div>
+
+</div>
+
+<!-- BOTÃO VER DETALHES -->
+<div class="botao-detalhes-container">
+
+    <a href="detalhes.html" class="botao-detalhes">
+        Ver mais detalhes
+    </a>
+
+</div>
+
+</div> 
+
+    <!-- GRÁFICO -->
+<div class="grafico-dashboard-direita">
+
+    <div class="titulos-graficos">
+
+        <h3 class="titulo-grafico">
+            Temperatura por tanque
+        </h3>
+
+    </div>
+
+    <div class="graficos">
+
+        <div class="graf1">
+
+            <div class="area-grafico">
+                <canvas id="graficoBarra"></canvas>
+            </div>
+
+            <div class="legenda">
+
+                <div class="item-legenda">
+                    <span class="cor verde"></span>
+                    <p>Temperatura ideal (20°C - 30°C)</p>
                 </div>
 
-                <div class="kpis">
-                    <!--
-                        Área dos KPIs.
-                        KPI significa indicador-chave de desempenho.
-                        Aqui são exibidos números importantes de forma rápida e resumida.
-                    -->
-
-                    <div class="caixas">
-                        <!-- Caixa de KPI sobre capacidade total de tanques. -->
-                        <div class="tituloKpi">
-                            <h3>CAPACIDADE DE TANQUES</h3>
-                        </div>
-                        <div class="num">
-                            <h2>10</h2>
-                        </div>
-                        <div class="desc">
-                            <p>Total de tanques suportados</p>
-                        </div>
-                    </div>
-
-                    <div class="caixas">
-                        <!-- Caixa de KPI sobre tanques ativos. -->
-                        <div class="tituloKpi">
-                            <h3>TANQUES ATIVOS</h3>
-                        </div>
-                        <div class="num">
-                            <h2>7</h2>
-                        </div>
-                        <div class="desc">
-                            <p>Tanques em operação</p>
-                        </div>
-                    </div>
-
-                    <div class="caixas">
-                        <!-- Caixa de KPI sobre tanques críticos. -->
-                        <div class="tituloKpi">
-                            <h3>TANQUES CRÍTICOS</h3>
-                        </div>
-                        <div class="num">
-                            <h2>2</h2>
-                        </div>
-                        <div class="desc">
-                            <p>Abaixo de 20°C ou acima de 30°C</p>
-                        </div>
-                    </div>
-
-                    <div class="caixas">
-                        <!-- Caixa de KPI informando a faixa de temperatura ideal. -->
-                        <div class="tituloKpi">
-                            <h3>FAIXA IDEAL DE TEMPERATURA</h3>
-                        </div>
-                        <div class="num">
-                            <h2><span class="numEspcial">20°C - 30°C</span></h2>
-                            <!--
-                                A tag <span> serve para destacar ou estilizar apenas uma parte do texto.
-                                Aqui ela envolve a faixa de temperatura para permitir uma estilização específica no CSS.
-                            -->
-                        </div>
-                        <div class="desc">
-                            <p>Temperatura ideal para fermentação</p>
-                        </div>
-                    </div>
-                </div>
-                 
-                
-                <div class="titulos-graficos">
-                    
-                    <h3 class="titulo-grafico">Temperatura por tanque</h3>
-                    <h3 class="titulo-grafico">Oscilação de temperatura por hora</h3>
+                <div class="item-legenda">
+                    <span class="cor laranja"></span>
+                    <p>Abaixo do ideal (&lt; 20°C)</p>
                 </div>
 
-
-                <div class="graficos">
-                    <!-- Área que agrupa os dois gráficos da página. -->
-
-                    <div class="graf1">
-                        <!-- Container do primeiro gráfico: gráfico de barras. -->
-                        <div class="area-grafico">
-                            <!-- Área responsável por controlar o tamanho e posicionamento do gráfico de barras. -->
-                            <canvas id="graficoBarra"></canvas>
-                            <!--
-                                A tag <canvas> cria uma área de desenho no HTML.
-                                O Chart.js usa esse canvas para desenhar o gráfico com JavaScript.
-                                O id="graficoBarra" é usado no script para encontrar este canvas e montar o gráfico nele.
-                            -->
-                        </div>
-
-                        <div class="legenda">
-                            <!--
-                                Legenda manual do gráfico de barras.
-                                Ela foi feita em HTML em vez da legenda automática do Chart.js,
-                                permitindo mais controle visual pelo CSS.
-                            -->
-                            <div class="item-legenda">
-                                <span class="cor verde"></span>
-                                <!-- Quadradinho/elemento colorido da legenda, estilizado pelo CSS. -->
-                                <p>Temperatura ideal (20°C - 30°C)</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="cor laranja"></span>
-                                <p>Abaixo do ideal (&lt; 20°C)</p>
-                                <!--
-                                    &lt; representa o símbolo de menor que (<) em HTML.
-                                    Isso evita que o navegador confunda o símbolo com abertura de tag.
-                                -->
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="cor vermelho"></span>
-                                <p>Acima do ideal (&gt; 30°C)</p>
-                                <!--
-                                    &gt; representa o símbolo de maior que (>) em HTML.
-                                -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="graf2">
-                        <!-- Container do segundo gráfico: gráfico de linhas. -->
-                        <div class="area-grafico-linha">
-                            <!-- Área responsável por controlar o tamanho e posicionamento do gráfico de linhas. -->
-                            <canvas id="graficoLinha"></canvas>
-                            <!--
-                                Canvas onde o gráfico de linhas será desenhado pelo Chart.js.
-                                O script acessa esse elemento pelo id="graficoLinha".
-                            -->
-                        </div>
-
-                        <div class="legenda-linha">
-                            <!--
-                                Legenda manual do gráfico de linhas.
-                                Cada item representa uma linha do gráfico: tanques T1 a T7 e limites superior/inferior.
-                            -->
-                            <div class="item-legenda">
-                                <span class="linha vermelho"></span>
-                                <p>T1</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha laranja"></span>
-                                <p>T2</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha terracota"></span>
-                                <p>T3</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha verde"></span>
-                                <p>T4</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha azul"></span>
-                                <p>T5</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha roxo"></span>
-                                <p>T6</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha amarelo"></span>
-                                <p>T7</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha limiteSup"></span>
-                                <p>Limite superior</p>
-                            </div>
-
-                            <div class="item-legenda">
-                                <span class="linha limiteInf"></span>
-                                <p>Limite inferior</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="item-legenda">
+                    <span class="cor vermelho"></span>
+                    <p>Acima do ideal (&gt; 30°C)</p>
                 </div>
 
             </div>
+
         </div>
+
     </div>
 
 
-    <!--
-        SCRIPT DOS GRÁFICOS
-        Este bloco contém o JavaScript responsável por criar os gráficos usando Chart.js.
-        O primeiro gráfico é de barras e mostra a temperatura atual de cada tanque.
-        O segundo gráfico é de linhas e mostra a variação das temperaturas ao longo do dia.
-    -->
-    <script>
-        // ================================
-        // GRÁFICO DE BARRAS
-        // ================================
+    <!-- PAINEL EXPLICATIVO -->
+    <div class="painel-explicacao">
 
-        // labelsBarra guarda os nomes que aparecem no eixo X do gráfico de barras.
-        // Cada item representa um tanque: T1, T2, T3, etc.
-        let labelsBarra = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+        <h3>Níveis de criticidade</h3>
 
-        // dadosBarra guarda a temperatura atual de cada tanque.
-        // A posição de cada número corresponde à mesma posição do tanque em labelsBarra.
-        // Exemplo: T1 está com 22°C, T2 está com 32°C, T3 está com 21°C, e assim por diante.
-        let dadosBarra = [22, 32, 21, 27, 19, 33, 24];
+        <div class="linha-explicacao">
+            <strong>Atenção:</strong>
+            Temperatura até 20% fora da faixa ideal.
+        </div>
 
-        // cores começa como um array vazio.
-        // Ele será preenchido com uma cor para cada barra do gráfico,
-        // dependendo se a temperatura está abaixo, acima ou dentro da faixa ideal.
-        let cores = [];
+        <div class="linha-explicacao">
+            <strong>Moderado:</strong>
+            Temperatura até 30% fora da faixa ideal.
+        </div>
 
-        // Este for percorre todos os valores do array dadosBarra.
-        // Ele serve para analisar temperatura por temperatura e decidir a cor de cada barra.
-        for (let i = 0; i < dadosBarra.length; i++) {
-            // i é o índice atual do loop.
-            // dadosBarra[i] pega a temperatura que está na posição atual.
-            // Exemplo: quando i vale 0, dadosBarra[i] é 22.
-            let v = dadosBarra[i];
+        <div class="linha-explicacao">
+            <strong>Alto:</strong>
+            Temperatura até 49% fora da faixa ideal.
+        </div>
 
-            // Se a temperatura for menor que 20°C, ela está abaixo da faixa ideal.
-            if (v < 20) {
-                // Adiciona a cor laranja ao array cores.
-                // Essa cor será usada na barra correspondente a esse tanque.
-                cores.push('#E6982B');
+        <div class="linha-explicacao">
+            <strong>Muito Alto:</strong>
+            Temperatura acima de 50% fora da faixa ideal.
+        </div>
 
-            // Se a temperatura for maior que 30°C, ela está acima da faixa ideal.
-            } else if (v > 30) {
-                // Adiciona a cor vermelha ao array cores.
-                // Essa cor indica alerta por temperatura acima do ideal.
-                cores.push('#C52A2A');
+    </div>
 
-            // Se não for menor que 20 e nem maior que 30, está dentro da faixa ideal.
-            } else {
-                // Adiciona a cor verde ao array cores.
-                // Essa cor indica que a temperatura está adequada.
-                cores.push('#6BBF61');
-            }
-        }
+</div>
+<script>
 
-        // Cria uma nova instância de gráfico usando a biblioteca Chart.js.
-        // document.getElementById('graficoBarra') encontra o canvas com esse id no HTML.
-        // O objeto depois da vírgula contém toda a configuração do gráfico.
-        new Chart(document.getElementById('graficoBarra'), {
-            // Define o tipo do gráfico.
-            // 'bar' significa gráfico de barras.
-            type: 'bar',
+let labelsBarra = ['T1', 'T2', 'T3', 'T4'];
 
-            // data guarda os dados que serão exibidos no gráfico.
-            data: {
-                // labels define os nomes que aparecem no eixo horizontal.
-                labels: labelsBarra,
+let dadosBarra = [22, 32, 21, 27];
 
-                // datasets é uma lista de conjuntos de dados.
-                // Mesmo tendo apenas um conjunto aqui, o Chart.js exige que ele fique dentro de um array.
-                datasets: [{
-                    // Nome do conjunto de dados.
-                    // Esse nome poderia aparecer na legenda automática, mas a legenda automática foi desativada.
-                    label: 'Temperatura',
+let cores = [];
 
-                    // Valores das barras.
-                    // Cada número vira uma barra no gráfico.
-                    data: dadosBarra,
+for (let i = 0; i < dadosBarra.length; i++) {
 
-                    // Define a cor de fundo de cada barra.
-                    // Como cores é um array, cada barra recebe uma cor correspondente.
-                    backgroundColor: cores
-                }]
+    let v = dadosBarra[i];
+
+    if (v < 20) {
+
+        cores.push('#E6982B');
+
+    } else if (v > 30) {
+
+        cores.push('#C52A2A');
+
+    } else {
+
+        cores.push('#6BBF61');
+    }
+}
+
+new Chart(document.getElementById('graficoBarra'), {
+
+    type: 'bar',
+
+    data: {
+
+        labels: labelsBarra,
+
+        datasets: [{
+
+            label: 'Temperatura',
+
+            data: dadosBarra,
+
+            backgroundColor: cores,
+
+            borderRadius: 8
+        }]
+    },
+
+    plugins: [ChartDataLabels],
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            legend: {
+                display: false
             },
 
-            // plugins adiciona recursos extras ao gráfico.
-            // Aqui está sendo ativado o ChartDataLabels, importado no <head>.
-            plugins: [ChartDataLabels],
+            datalabels: {
 
-            // options guarda configurações visuais e de comportamento do gráfico.
-            options: {
-                // responsive: true faz o gráfico se adaptar ao tamanho do container.
-                responsive: true,
+                color: '#42090e',
 
-                // maintainAspectRatio: false permite que o gráfico use a altura e largura definidas no CSS.
-                // Sem isso, o Chart.js tenta manter uma proporção padrão e pode atrapalhar o layout.
-                maintainAspectRatio: false,
+                anchor: 'end',
 
-                // Configurações de plugins específicos dentro do gráfico.
-                plugins: {
-                    // Configura a legenda automática do Chart.js.
-                    legend: {
-                        // display: false esconde a legenda padrão do Chart.js.
-                        // Isso acontece porque a legenda já foi feita manualmente no HTML.
-                        display: false
-                    },
+                align: 'top',
 
-                    // Configura o plugin ChartDataLabels.
-                    datalabels: {
-                        // anchor: 'end' prende o valor no final da barra.
-                        anchor: 'end',
-
-                        // align: 'top' coloca o texto do valor acima da barra.
-                        align: 'top'
-                    }
-                },
-
-                // Configura os eixos do gráfico.
-                scales: {
-                    // Configuração do eixo Y, que representa os valores de temperatura.
-                    y: {
-                        // beginAtZero: true faz o eixo Y começar no zero.
-                        beginAtZero: true,
-
-                        // max: 50 define que o valor máximo mostrado no eixo Y será 50.
-                        max: 50
-                    }
+                font: {
+                    weight: 'bold',
+                    size: 14
                 }
             }
-        });
+        },
 
+        scales: {
 
-        // ================================
-        // GRÁFICO DE LINHAS
-        // ================================
+            y: {
 
-        // labelsLinha guarda os horários que aparecem no eixo X do gráfico de linhas.
-        // Eles representam medições feitas ao longo do dia, de 3 em 3 horas.
-        let labelsLinha = ['00', '03', '06', '09', '12', '15', '18', '21', '00'];
+                beginAtZero: true,
 
-        // limiteSup será usado para criar uma linha horizontal no valor 30°C.
-        // Essa linha representa o limite máximo ideal de temperatura.
-        let limiteSup = [];
-
-        // limiteInf será usado para criar uma linha horizontal no valor 20°C.
-        // Essa linha representa o limite mínimo ideal de temperatura.
-        let limiteInf = [];
-
-        // Este for preenche os arrays limiteSup e limiteInf.
-        // Ele roda uma vez para cada horário existente em labelsLinha.
-        // Assim, as linhas de limite terão a mesma quantidade de pontos que as linhas dos tanques.
-        for (let i = 0; i < labelsLinha.length; i++) {
-            // Adiciona o valor 30 para cada horário.
-            // Isso cria uma linha reta no gráfico inteiro no nível de 30°C.
-            limiteSup.push(30);
-
-            // Adiciona o valor 20 para cada horário.
-            // Isso cria uma linha reta no gráfico inteiro no nível de 20°C.
-            limiteInf.push(20);
+                max: 50
+            }
         }
+    }
+});
 
-        // Cria o gráfico de linhas dentro do canvas com id="graficoLinha".
-        new Chart(document.getElementById('graficoLinha'), {
-            // Define que o gráfico será do tipo linha.
-            type: 'line',
 
-            // Define os dados do gráfico.
-            data: {
-                // Horários exibidos no eixo X.
-                labels: labelsLinha,
 
-                // Cada objeto dentro de datasets representa uma linha diferente no gráfico.
-                // Aqui existem linhas para os tanques T1 a T7 e também para os limites ideal superior e inferior.
-                datasets: [
-                    {
-                        // Nome da linha.
-                        label: 'T1',
+// DATA AUTOMÁTICA
 
-                        // Temperaturas do tanque T1 ao longo dos horários definidos em labelsLinha.
-                        data: [24, 27, 22, 29, 25, 32, 26, 28, 27],
+let data = new Date();
 
-                        // Cor da linha do tanque T1.
-                        borderColor: '#6f2d1c'
-                    },
-                    {
-                        label: 'T2',
-                        // Temperaturas do tanque T2 ao longo do dia.
-                        data: [22, 26, 19, 27, 24, 23, 25, 30, 16],
-                        // Cor da linha do tanque T2.
-                        borderColor: '#C48A5A'
-                    },
-                    {
-                        label: 'T3',
-                        // Temperaturas do tanque T3 ao longo do dia.
-                        data: [18, 27, 22, 29, 25, 30, 26, 28, 27],
-                        // Cor da linha do tanque T3.
-                        borderColor: '#a31576'
-                    },
-                    {
-                        label: 'T4',
-                        // Temperaturas do tanque T4 ao longo do dia.
-                        data: [26, 26, 29, 27, 30, 23, 25, 30, 16],
-                        // Cor da linha do tanque T4.
-                        borderColor: '#000000'
-                    },
-                    {
-                        label: 'T5',
-                        // Temperaturas do tanque T5 ao longo do dia.
-                        data: [23, 27, 22, 29, 25, 30, 26, 28, 27],
-                        // Cor da linha do tanque T5.
-                        borderColor: '#ffffff'
-                    },
-                    {
-                        label: 'T6',
-                        // Temperaturas do tanque T6 ao longo do dia.
-                        data: [21, 26, 29, 27, 30, 19, 25, 24, 26],
-                        // Cor da linha do tanque T6.
-                        borderColor: '#5c00f1'
-                    },
-                    {
-                        label: 'T7',
-                        // Temperaturas do tanque T7 ao longo do dia.
-                        data: [20, 25, 24, 27, 24, 23, 25, 24, 26],
-                        // Cor da linha do tanque T7.
-                        borderColor: '#ffd001'
-                    },
-                    {
-                        // Linha do limite superior da temperatura ideal.
-                        label: 'Limite superior',
+let dia = data.getDate();
 
-                        // Usa o array limiteSup, que contém vários valores 30.
-                        // Por isso, a linha aparece reta no nível de 30°C.
-                        data: limiteSup,
+let mes = data.getMonth() + 1;
 
-                        // Cor da linha do limite superior.
-                        borderColor: '#C52A2A',
+let ano = data.getFullYear();
 
-                        // borderDash transforma a linha em tracejada.
-                        // [5, 5] significa 5 pixels desenhados e 5 pixels de espaço.
-                        borderDash: [5, 5]
-                    },
-                    {
-                        // Linha do limite inferior da temperatura ideal.
-                        label: 'Limite inferior',
+if (dia < 10) {
+    dia = '0' + dia;
+}
 
-                        // Usa o array limiteInf, que contém vários valores 20.
-                        // Por isso, a linha aparece reta no nível de 20°C.
-                        data: limiteInf,
+if (mes < 10) {
+    mes = '0' + mes;
+}
 
-                        // Cor da linha do limite inferior.
-                        borderColor: '#4A6FA5',
+let dataFormatada = dia + '/' + mes + '/' + ano;
 
-                        // Também deixa a linha tracejada.
-                        borderDash: [5, 5]
-                    }
-                ]
-            },
+document.getElementById('dataAtual').innerHTML = dataFormatada;
 
-            // Configurações visuais e comportamentais do gráfico de linhas.
-            options: {
-                // Faz o gráfico se ajustar ao tamanho do container.
-                responsive: true,
-
-                // Permite controlar melhor o tamanho pelo CSS, sem o Chart.js forçar uma proporção fixa.
-                maintainAspectRatio: false,
-
-                plugins: {
-                    // Desativa a legenda automática do Chart.js.
-                    // A legenda foi criada manualmente no HTML para ficar mais personalizada e limpa.
-                    legend: { display: false }
-                },
-
-                scales: {
-                    // Configuração do eixo Y, onde aparecem os valores de temperatura.
-                    y: {
-                        // max define o maior valor exibido no eixo Y.
-                        max: 40,
-
-                        // min define o menor valor exibido no eixo Y.
-                        min: 10
-                    }
-                }
-            }
-        });
-    </script>
+</script>
 </body>
 </html>
