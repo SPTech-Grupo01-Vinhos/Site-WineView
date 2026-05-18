@@ -1,142 +1,74 @@
 <!DOCTYPE html>
-<!--
-    Define que este documento está usando HTML5.
-    Essa linha ajuda o navegador a interpretar corretamente as tags modernas do HTML.
--->
+
 <html lang="pt-BR">
-<!--
-    A tag <html> envolve todo o conteúdo da página.
-    O atributo lang="pt-BR" informa que o idioma principal da página é português do Brasil.
--->
 
 <head>
-    <!--
-        A tag <head> guarda informações de configuração da página.
-        Normalmente, o que fica aqui não aparece diretamente no corpo visual do site,
-        mas é essencial para o navegador carregar estilos, fontes, scripts e metadados.
-    -->
+   
 
     <meta charset="UTF-8">
-    <!--
-        Define a codificação de caracteres como UTF-8.
-        Isso permite usar acentos, cedilha e símbolos como °C sem quebrar o texto.
-    -->
+ 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-        Faz a página se adaptar melhor a diferentes tamanhos de tela.
-        width=device-width usa a largura real do dispositivo.
-        initial-scale=1.0 define o zoom inicial padrão da página.
-    -->
+    
 
     <link rel="stylesheet" href="style.css">
-    <!--
-        Importa o arquivo CSS externo chamado style.css.
-        Esse arquivo é responsável pela aparência da página: cores, tamanhos,
-        posicionamento, espaçamentos, fontes, bordas e responsividade.
-    -->
+   
 
-    <!-- Importa a biblioteca Chart.js, usada para criar os gráficos na página. -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!--
-        Importa o plugin chartjs-plugin-datalabels.
-        Esse plugin permite mostrar valores escritos diretamente em cima ou perto dos dados do gráfico,
-        por exemplo, mostrar o número da temperatura acima de cada barra.
-    -->
+    
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <!--
-        Importa fontes do Google Fonts.
-        Neste caso, estão sendo carregadas as fontes DM Serif Display e Josefin Sans.
-        Elas podem ser usadas no CSS através da propriedade font-family.
-    -->
+   
 
     <title>Dashboard</title>
-    <!--
-        Define o título da aba do navegador.
-        Esse texto aparece no topo da guia do navegador.
-    -->
+   
 </head>
 
 <body>
-    <!--
-        A tag <body> contém tudo o que aparece visualmente na página:
-        menu lateral, painel, textos, KPIs, gráficos e legendas.
-    -->
+    
 
     <div class="container-principal">
-        <!--
-            Container principal da página.
-            Ele provavelmente organiza toda a estrutura do dashboard,
-            incluindo o menu lateral e a área principal do painel.
-        -->
+     
 
         <div class="menu">
-            <!--
-                Área do menu lateral.
-                Aqui ficam a logo, os links de navegação e o botão para voltar ao site.
-            -->
+           
 
             <img src="../../img/dash/logoBranca.png" alt="logo" class="logo">
-            <!--
-                Mostra a imagem da logo.
-                src indica o caminho da imagem.
-                alt é o texto alternativo caso a imagem não carregue ou para acessibilidade.
-                class="logo" permite estilizar essa imagem no CSS.
-            -->
+           
 
             <div class="itens">
-                <!-- Agrupa os itens principais de navegação do menu. -->
 
                 <div class="item" id="p1">
-                    <!--
-                        Item do menu referente à página Painel.
-                        O id="p1" pode estar sendo usado no CSS para destacar o item ativo.
-                    -->
+                  
                     <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
-                    <!-- Ícone visual do item Painel. -->
                     <a href="./painel.html">Painel</a>
-                    <!-- Link que leva para a página painel.html. -->
                 </div>
 
                 <div class="item">
-                    <!-- Item do menu referente à página de Alertas. -->
                     <img src="../../img/dash/iconeSininho.png" alt="" class="imgItens">
-                    <!-- Ícone visual do item Alertas. -->
                     <a href="./alerta.html">Alertas</a>
-                    <!-- Link que leva para a página alerta.html. -->
                 </div>
 
                 <div class="item">
-                    <!-- Item do menu referente à página Vinícola. -->
                     <img src="../../img/dash/iconeVinicola.png" alt="" class="imgItens">
-                    <!-- Ícone visual do item Vinícola. -->
                     <a href="./vinicola.html">Vinícola</a>
-                    <!-- Link que leva para a página vinicola.html. -->
                 </div>
 
                 <div class="item">
-                    <!-- Item do menu referente à página Conta. -->
                     <img src="../../img/dash/iconeConta.png" alt="" class="imgItens">
-                    <!-- Ícone visual do item Conta. -->
                     <a href="./conta.html">Conta</a>
-                    <!-- Link que leva para a página conta.html. -->
                 </div>
             </div>
 
             <div class="voltar">
-                <!--
-                    Área separada do menu para voltar ao site principal.
-                    Geralmente fica no fim do menu lateral.
-                -->
+                
+               
                 <img src="../../img/dash/iconePorta.png" alt="" class="imgItens">
-                <!-- Ícone de porta, representando saída ou retorno. -->
                 <a href="../home/home.html">Voltar ao Site</a>
-                <!-- Link que leva o usuário de volta para a página home do site. -->
             </div>
         </div>
 
