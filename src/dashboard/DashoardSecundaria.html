@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="DashboardSecundaria.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 class="titulo" style="text-align: center;">Tela de Gráficos (Tanque/Data)</h1>
+    <div class="botoes">
+        <button onclick="location.href='#linhaTanque1'">Tanque 1</button><br>
+        <button onclick="location.href='#linhaTanque2'">Tanque 2</button><br>
+        <button onclick="location.href='#linhaTanque3'">Tanque 3</button><br>
+        <button onclick="location.href='#linhaTanque4'">Tanque 4</button><br>
+    </div>
+
+
+    <div class="dashboards">
+         <h4 style="margin-top: 300px;">Tanque 1</h4>
+        <div class="card1">
+            <canvas id="linhaTanque1" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+        </div>
+        <hr>
+         <h4 style="margin-top: 300px;">Tanque 2</h4>
+        <div class="card2">
+            <canvas id="linhaTanque2" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+        </div>
+        <hr>
+          <h4 style="margin-top: 300px;"2>Tanque 3</h4>
+        <div class="card3">
+            <canvas id="linhaTanque3" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+        </div>
+        <hr>
+          <h4 style="margin-top: 300px;"2>Tanque 4</h4>
+        <div class="card4">
+            <canvas id="linhaTanque4" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+    // dash tanque 1
+const ctx1 = document.getElementById('linhaTanque1').getContext('2d');
+const linhaTanque1 = new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['a', 'b', 'c'],
+        datasets: [{
+          label: 'Temperatura',
+          data: [20, 25, 28, 30],
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: false,
+          tension: 0.0
+        }]
+      },
+      options: {
+       responsive: true,
+       maintainAspectRatio: false,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Temperatura'
+          },
+          legend: {
+            position: 'bottom'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // dash tanque 2
+const ctx2 = document.getElementById('linhaTanque2').getContext('2d')
+const linhaTanque2 = new Chart (ctx2, {
+    type: 'line',
+    data: {
+        labels: ['a', 'b', 'c'],
+        datasets: [{
+            label: 'Temperatura ',
+            data: [20, 25, 28, 30],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: false,
+            tension: 0.0
+        }]
+    },
+    options: {
+       responsive: true,
+       maintainAspectRatio: false,
+        plugins:{
+            title:{
+                display: true,
+                text: 'Tanque 2'
+            },
+            legend: {
+                position: 'bottom'
+            }
+        },
+        scales: {
+            y:{
+                beginAtZero: true
+            }
+        }
+    }
+})
+
+// tanque 3
+
+const ctx3 = document.getElementById('linhaTanque3').getContext('2d')
+const linhaTanque3 = new Chart (ctx3, {
+    type: 'line',
+    data: {
+        labels: ['a', 'b', 'c'],
+        datasets: [{
+            label: 'Temperatura ',
+            data: [20, 25, 28, 30],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: false,
+            tension: 0.0
+        }]
+    },
+    options: {
+       responsive: true,
+       maintainAspectRatio: false,
+        plugins:{
+            title:{
+                display: true,
+                text: 'Tanque 3'
+            },
+            legend: {
+                position: 'bottom'
+            }
+        },
+        scales: {
+            y:{
+                beginAtZero: true
+            }
+        }
+    }
+})
+
+// tanque linha 4
+
+const ctx4 = document.getElementById('linhaTanque4').getContext('2d')
+const linhaTanque4 = new Chart (ctx4, {
+    type: 'line',
+    data: {
+        labels: ['a', 'b', 'c'],
+        datasets: [{
+            label: 'Temperatura ',
+            data: [20, 25, 28, 30],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: false,
+            tension: 0.0
+        }]
+    },
+    options: {
+       responsive: true,
+       maintainAspectRatio: false,
+        plugins:{
+            title:{
+                display: true,
+                text: 'Tanque 4'
+            },
+            legend: {
+                position: 'bottom'
+            }
+        },
+        scales: {
+            y:{
+                beginAtZero: true
+            }
+        }
+    }
+})
+  </script>
