@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- Define o documento como HTML5 -->
+
+<html lang="en">
+<!-- Tag raiz do HTML. lang define o idioma da página (pode ser pt-BR) -->
+
+<head>
+    <!-- Configurações da página -->
+
+    <meta charset="UTF-8">
+    <!-- Permite uso de acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsividade (adapta a página para celular e tablet) -->
+
+    <link rel="stylesheet" href="sobre.css">
+    <!-- Conecta o arquivo CSS responsável pelo estilo -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Importa fontes do Google Fonts -->
+
+    <title>Sobre</title>
+    <!-- Nome da aba do navegador -->
+</head>
+
+<body>
+
+    <!-- ===== HEADER (CABEÇALHO) ===== -->
+    <header class="main-cabecalho">
+        <!-- Área superior com logo e navegação -->
+
+        <div class="content">
+            <!-- Container para organizar os elementos do header -->
+
+            <div class="container-logo">
+                <!-- Área da logo -->
+                <img src="../img/logo_transparente.png" alt="Logo">
+            </div>
+
+            <div class="container-nav">
+                <!-- Área de navegação -->
+
+                <nav>
+                    <!-- Tag semântica para menus -->
+
+                    <ul>
+                        <!-- Lista de links -->
+
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../sobre/sobre.html">Sobre</a></li>
+                        <li><a href="../simulador/simulador.html">Simulador</a></li>
+
+                        <a href="../login/login.html">
+                            <!-- Link de login -->
+
+                            <button class="btn-nav-entrar">Entrar</button>
+                            <!-- Botão visual de login -->
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="container-main">
+        <!-- 
+            Tag <main> representa o conteúdo principal da página.
+            É importante para organização e acessibilidade.
+        -->
+
+        <div class="conteudo">
+            <!-- Primeira seção (imagem + frase principal) -->
+
+            <div class="container-img">
+                <!-- Container da imagem principal -->
+
+                <img class="img-uva" src="../../img/sobre/img_sobre.png" alt="Uva e sensor">
+                <!-- Imagem ilustrativa do tema -->
+            </div>
+
+            <div class="titDireita">
+                <!-- Texto ao lado da imagem -->
+
+                <p class="titulo-main">
+                    <i><b>Tradição Protegida pela Precisão.</b></i>
+                </p>
+                <!-- 
+                    Título principal da página.
+                    <i> = itálico
+                    <b> = negrito
+                -->
+
+                <p class="tit">
+                    Na Wine View, acreditamos que a alma de um grande vinho tinto nasce no controle exato de cada grau Celsius.
+                </p>
+                <!-- Frase de impacto -->
+            </div>
+        </div>
+
+        <!-- ===== MENU INTERNO DA PÁGINA ===== -->
+        <nav class="container-lista">
+            <!-- 
+                Menu interno (âncoras).
+                Permite navegar dentro da própria página.
+            -->
+
+            <p><a href="#historia">HISTÓRIA</a></p>
+            <!-- Leva até a seção com id="historia" -->
+
+            <p><a href="#missao">NOSSA MISSÃO</a></p>
+
+            <p><a href="#pilar">NOSSOS PILARES</a></p>
+
+            <p><a href="#quemFaz">QUEM FAZ ACONTECER</a></p>
+        </nav>
+
+        <!-- ===== CONTEÚDO TEXTUAL ===== -->
+        <div class="conteudo-principal">
+            <!-- Container geral dos textos -->
+
+            <!-- ===== HISTÓRIA ===== -->
+            <div class="mensagens" id="historia">
+                <!-- 
+                    id permite navegação interna via link (#historia)
+                -->
+
+                <p class="titulo">HISTÓRIA</p>
+                <!-- Título da seção -->
+
+                <p>
+                    A Wine View nasceu dentro da SPTech, no curso de Análise e Desenvolvimento de Sistemas, a partir de um desafio: usar a tecnologia para criar algo útil, funcional e relevante. 
+
+                    Mais do que criar um website, buscamos construir uma solução que conecte dados, design, usabilidade e impacto positivo. 
+
+                    Este projeto representa nossa formação, nossa criatividade e a vontade de transformar aprendizado em prática. 
+                </p>
+            </div>
+
+            <!-- ===== MISSÃO ===== -->
+            <div class="mensagens" id="missao">
+                <p class="titulo">NOSSA MISSÃO</p>
+
+                <p>
+                Garantir a excelência na produção de vinhos por meio do monitoramento tecnológico, oferecendo soluções inteligentes que auxiliem no controle de temperatura, na análise de dados e na tomada de decisões na etapa do processo de fermentação alcoólica do vinho tinto. 
+
+                Buscamos unir tradição e inovação, utilizando a tecnologia para otimizar resultados, aumentar a eficiência e valorizar a qualidade final de cada safra. 
+                </p>
+                <!-- Texto resumido da missão -->
+            </div>
+
+            <!-- ===== PILARES ===== -->
+            <div class="mensagens" id="pilar">
+                <p class="titulo">NOSSOS PILARES</p>
+
+                <p>
+                    <!-- Texto explicativo com destaques -->
+
+                    <!-- 
+                        <span> e <b> são usados para destacar palavras importantes 
+                        sem quebrar a estrutura do texto
+                    -->
+
+                    <span><b class="pilares">Soluções Tecnológicas </b></span>
+                    <p>Utilizamos a inovação para modernizar processos e criar ferramentas eficientes para o setor vitivinícola. </p><br>
+
+                    <span><b class="pilares">Decisões Baseadas em Dados </b></span>
+                    <p>Transformamos informações em insights estratégicos que apoiam escolhas mais seguras e assertivas.</p><br>
+
+                    <span><b class="pilares">Sustentabilidade </b></span>
+                    <p>Valorizamos práticas conscientes que reduzem desperdícios e incentivam uma produção mais responsável.</p><br>
+
+                    <span><b class="pilares">Simplicidade</b></span>
+                    <p>Acreditamos que boas soluções devem ser intuitivas, acessíveis e fáceis de aplicar no dia a dia. </p><br>
+                </p>
+            </div>
+
+            <!-- ===== QUEM FAZ ACONTECER ===== -->
+            <div class="mensagens" id="quemFaz">
+                <p class="titulo">QUEM FAZ ACONTECER</p>
+
+                <p>
+                    Somos alunos do primeiro período do curso de Análise e Desenvolvimento de Sistemas da SPTech School, unidos pelo desafio de transformar aprendizado em soluções reais por meio da tecnologia. 
+
+Nossa equipe é formada por: 
+
+Gabrielle Fuchs, 
+
+Paola Veloso,
+
+Samara Machata,
+
+Leticia Peres, 
+
+Matheus Lopes, 
+
+Elisandro Santana.
+                </p>
+            </div>
+
+        </div>
+    </main>
+    <!-- Fim do conteúdo principal -->
+
+            <footer class="footer">
+        <!-- Rodapé da página -->
+
+        <div class="footer-logo">
+            <!-- Área da logo no rodapé -->
+
+            <img src="../img/logo_transparente.png" alt="Logo Wine View">
+            <!-- Logo da empresa/projeto -->
+        </div>
+
+        <nav class="footer-nav">
+            <!-- Navegação do rodapé -->
+
+            <a href="../home/home.html">PÁGINA INICIAL</a>
+            <!-- Link para voltar ao início -->
+
+            <a href="#id_contato">CONTATO</a>
+            <!-- 
+                Link interno.
+                Ele leva para a seção que tem id="id_contato".
+            -->
+
+            <a href="../sobre/sobre.html">SOBRE</a>
+            <!-- Link para a página Sobre -->
+
+            <a href="../login/login.html">CADASTRE-SE / ENTRE</a>
+            <!-- Link para login ou cadastro -->
+        </nav>
+
+        <div class="footer-email">
+            <!-- Área com email de contato -->
+
+            <span>✉</span>
+            <!-- Ícone de email -->
+
+            <p>contato@wine.view.com</p>
+            <!-- Email de contato do projeto -->
+        </div>
+    </footer>
+    
+</body>
+
+</html>

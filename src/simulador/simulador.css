@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fefbf8;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.main-cabecalho {
+  width: 100%;
+  background-color: #fdf6eb;
+  border-bottom: 1px solid #e2d8ca;
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container-logo {
+  width: 180px;
+}
+.container-logo img {
+  width: 100%;
+  display: block;
+}
+.container-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+.container-nav a {
+  color: #4a0e0e;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-nav-entrar {
+  padding: 10px 25px;
+  border-radius: 8px;
+  background-color: #4a0e0e;
+  color: #fefcf8;
+  border: none;
+  cursor: pointer;
+}
+
+/* Área Principal */
+.container-principal {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 40px 0;
+}
+
+.flex-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: flex-start;
+  gap: 30px;
+  width: 90%;
+  max-width: 1100px;
+}
+
+.conteudo {
+  flex: 1;
+  min-width: 320px;
+  max-width: 450px;
+  padding: 30px;
+  background-color: #fdf6eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+/* Resultado */
+#div_mensagem {
+  flex: 1;
+  min-width: 320px;
+  max-width: 450px;
+}
+
+#div_mensagem:empty {
+  display: none; 
+}
+
+.titulo h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #4a0e0e;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px 0;
+  border: 1px solid #d2c7b7;
+  border-radius: 8px;
+}
+.btn-simulacao {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a0e0e;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.card-resultado {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 8px solid #4a0e0e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.destaque {
+  color: #b32d2d;
+  font-weight: bold;
+}
+.lucro-box {
+  background: #fdf6eb;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #4a0e0e;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+}
+.footer-logo {
+  width: 120px;
+}
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: #4a0e0e;
+  font-size: 12px;
+  font-weight: bold;
+}
+.footer-email {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #4a0e0e;
+}

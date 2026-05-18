@@ -1,0 +1,992 @@
+/* 
+  Importa a fonte Montserrat diretamente do Google Fonts.
+  O @import permite trazer uma fonte externa para ser usada no CSS.
+  Depois de importada, ela pode ser chamada com font-family: "Montserrat".
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* 
+  O seletor * é o seletor universal.
+  Ele aplica as regras abaixo em todos os elementos da página.
+  É usado para remover configurações padrão do navegador e deixar o layout mais previsível.
+*/
+* {
+  margin: 0;
+  /* Remove a margem padrão dos elementos. */
+
+  padding: 0;
+  /* Remove o espaçamento interno padrão dos elementos. */
+
+  box-sizing: border-box;
+  /* 
+    Faz com que width e height incluam também padding e border.
+    Isso facilita o controle dos tamanhos, porque o elemento não cresce além do valor definido.
+  */
+
+  border: none;
+  /* Remove bordas padrões, principalmente de botões e inputs. */
+}
+
+/* #region cabeçalho */
+/* 
+  A região abaixo estiliza o cabeçalho da página.
+  No HTML, essa parte corresponde à tag <header class="main-cabecalho">.
+*/
+
+/* cabeçalho */
+.main-cabecalho {
+  display: flex;
+  /* 
+    Ativa o Flexbox, que ajuda a organizar os elementos internos.
+    Mesmo que aqui tenha apenas um container principal, isso permite controlar melhor o layout.
+  */
+
+  flex-direction: column;
+  /* Organiza os elementos internos em coluna, ou seja, um embaixo do outro. */
+
+  width: 100%;
+  /* Faz o cabeçalho ocupar toda a largura da tela. */
+
+  background-color: transparent;
+  /* Deixa o fundo transparente. */
+
+  border-bottom: 1px solid white;
+  /* Cria uma linha fina branca na parte de baixo do cabeçalho. */
+}
+
+.content {
+  display: flex;
+  /* Coloca logo e menu lado a lado. */
+
+  flex-direction: row;
+  /* Organiza os elementos em linha, um ao lado do outro. */
+
+  justify-content: space-around;
+  /* Distribui os elementos com espaço ao redor deles. */
+
+  width: 100%;
+  /* Ocupa toda a largura do cabeçalho. */
+
+  background-color: #6c7272;
+  /* Define a cor de fundo da barra do cabeçalho. */
+}
+
+.container-logo {
+  width: 220px;
+  /* Define a largura da área onde a logo fica. */
+
+  padding: .5rem 0;
+  /* 
+    Cria espaçamento interno em cima e embaixo.
+    .5rem equivale a metade do tamanho base da fonte do navegador.
+  */
+}
+
+.container-nav {
+  width: 70%;
+  /* O menu ocupa 70% da largura disponível. */
+
+  display: flex;
+  /* Ativa Flexbox para alinhar o menu. */
+
+  align-items: center;
+  /* Alinha verticalmente os itens ao centro. */
+
+  justify-content: flex-end;
+  /* Joga os itens do menu para o lado direito. */
+
+  /* 
+    Como o CSS está aninhado, esse a só vale para os links dentro de .container-nav.
+    Ele estiliza os links da navegação do cabeçalho.
+  */
+  a {
+    color: #4a0e0e;
+    /* Cor do texto dos links. */
+
+    text-align: center;
+    /* Centraliza o texto dentro do próprio link. */
+
+    font-family: "Montserrat";
+    /* Usa a fonte Montserrat importada no início do arquivo. */
+
+    font-size: 17px;
+    /* Define o tamanho da letra. */
+
+    font-weight: 500;
+    /* Define a espessura da fonte. 500 é um peso médio. */
+
+    text-decoration: none;
+    /* Remove o sublinhado padrão dos links. */
+
+    transition: 200ms;
+    /* 
+      Faz mudanças visuais acontecerem suavemente em 200 milissegundos.
+      Aqui ajuda principalmente no efeito hover.
+    */
+  }
+
+  a:hover {
+    color: #ffffff;
+    /* Quando o mouse passa em cima do link, a cor muda para branco. */
+  }
+
+  ul {
+    display: flex;
+    /* Coloca os itens da lista lado a lado. */
+
+    flex-direction: row;
+    /* Mantém os itens em linha horizontal. */
+
+    justify-content: flex-end;
+    /* Alinha os itens para a direita. */
+
+    align-items: center;
+    /* Centraliza os itens verticalmente. */
+
+    width: 100%;
+    /* A lista ocupa toda a largura do container de navegação. */
+
+    gap: 80px;
+    /* Cria espaço de 80px entre cada item do menu. */
+
+    list-style: none;
+    /* Remove as bolinhas padrão da lista <ul>. */
+  }
+
+  .btn-nav-entrar {
+    padding: 10px;
+    /* Espaçamento interno do botão. */
+
+    width: 100px;
+    /* Largura fixa do botão. */
+
+    border-radius: 8px;
+    /* Arredonda as bordas do botão. */
+
+    background-color: #4a0e0e;
+    /* Cor de fundo do botão. */
+
+    color: #fefcf8;
+    /* Cor do texto do botão. */
+
+    cursor: pointer;
+    /* Mostra a mãozinha ao passar o mouse, indicando que é clicável. */
+
+    font-size: 17px;
+    /* Tamanho da fonte do botão. */
+
+    transition: 200ms;
+    /* Suaviza a mudança de cor no hover. */
+  }
+
+  .btn-nav-entrar:hover {
+    transition: 200ms;
+    /* Mantém a transição suave. */
+
+    background-color: #7f6969;
+    /* Muda a cor de fundo quando o mouse passa por cima. */
+  }
+}
+
+.container-principal {
+  display: flex;
+  /* Ativa Flexbox no container principal da home. */
+
+  flex-direction: column;
+  /* Organiza as seções da página uma abaixo da outra. */
+}
+
+/* Container 1: Primeira parte da tela */
+.container-banner {
+  position: relative;
+  /* 
+    Permite que elementos internos com position: absolute sejam posicionados em relação a este container.
+    Isso é usado no .texto-banner, que fica por cima da imagem.
+  */
+
+  width: 100%;
+  /* Ocupa toda a largura da tela. */
+
+  height: 800px;
+  /* Define a altura fixa do banner principal. */
+
+  overflow: hidden;
+  /* Esconde qualquer parte da imagem/conteúdo que ultrapasse o tamanho do container. */
+}
+
+img {
+  width: 100%;
+  /* Todas as imagens ocupam 100% da largura do elemento onde estão. */
+
+  height: 100%;
+  /* Todas as imagens ocupam 100% da altura do elemento onde estão. */
+
+  object-fit: cover;
+  /* 
+    Faz a imagem preencher o espaço sem distorcer.
+    Se necessário, corta partes da imagem para manter a proporção correta.
+  */
+}
+
+.texto-banner {
+  display: flex;
+  /* Organiza título, parágrafo e botão usando Flexbox. */
+
+  flex-direction: column;
+  /* Coloca os textos e o botão um embaixo do outro. */
+
+  align-items: flex-start;
+  /* Alinha os elementos no começo, à esquerda. */
+
+  position: absolute;
+  /* 
+    Coloca o texto sobre a imagem do banner.
+    Ele sai do fluxo normal da página e pode ser posicionado com top, left, etc.
+  */
+
+  gap: 15px;
+  /* Espaço entre título, parágrafo e botão. */
+
+  padding: 150px;
+  /* Espaçamento interno grande, afastando o conteúdo das bordas. */
+
+  top: 10%;
+  /* Move o bloco de texto 10% para baixo em relação ao topo do banner. */
+
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  /* 
+    Adiciona sombra no texto para melhorar a leitura sobre a imagem.
+    Ordem: deslocamento horizontal, vertical, desfoque e cor.
+  */
+
+  text-align: start;
+  /* Alinha o texto ao início da linha, normalmente à esquerda. */
+
+  width: 80%;
+  /* O bloco de texto ocupa 80% da largura do banner. */
+
+  h1 {
+    font-family: "DM Serif Display";
+    /* Fonte usada no título principal. */
+
+    font-weight: 600;
+    /* Espessura do título. */
+
+    color: #e2d8ca;
+    /* Cor clara para destacar sobre a imagem escura. */
+
+    font-size: 80px;
+    /* Tamanho grande para o título principal da home. */
+  }
+
+  p {
+    font-family: "Montserrat";
+    /* Fonte usada no parágrafo do banner. */
+
+    font-weight: 400;
+    /* Peso normal da fonte. */
+
+    color: #aea9a4;
+    /* Cor do texto secundário. */
+
+    font-size: 30px;
+    /* Tamanho do parágrafo. */
+
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    /* Sombra para facilitar a leitura sobre a imagem. */
+  }
+
+  .btn-paginaSobre-container1 {
+    border-radius: 10px;
+    /* Arredonda os cantos do botão. */
+
+    padding: 10px 15px;
+    /* Espaçamento interno: 10px em cima/baixo e 15px nas laterais. */
+
+    background: #4a0e0e;
+    /* Cor de fundo do botão. */
+
+    color: #fefbf8;
+    /* Cor do texto do botão. */
+
+    font-family: "Montserrat";
+    /* Fonte do botão. */
+
+    text-align: center;
+    /* Centraliza o texto dentro do botão. */
+
+    font-size: 15px;
+    /* Tamanho da letra do botão. */
+
+    font-style: italic;
+    /* Deixa o texto em itálico. */
+
+    font-weight: 700;
+    /* Deixa a fonte mais grossa. */
+
+    border: 1px solid #ffffff00;
+    /* 
+      Cria uma borda transparente.
+      Isso evita que o botão mude de tamanho quando a borda aparecer no hover.
+    */
+
+    height: 2.5rem;
+    /* Altura do botão baseada no tamanho da fonte raiz. */
+
+    cursor: pointer;
+    /* Mostra que o botão é clicável. */
+
+    transition: 200ms;
+    /* Suaviza as mudanças visuais no hover. */
+  }
+
+  .btn-paginaSobre-container1:hover {
+    background-color: #a69696;
+    /* Muda a cor de fundo ao passar o mouse. */
+
+    border: 1px solid #4a0e0e;
+    /* Mostra uma borda vinho no hover. */
+
+    color: white;
+    /* Muda a cor do texto para branco. */
+
+    border-radius: 10px;
+    /* Mantém o arredondamento. */
+
+    transition: 200ms;
+    /* Mantém o efeito suave. */
+  }
+}
+
+/*Container 2: Segunda parte da tela */
+.container-descricao {
+  display: flex;
+  /* Coloca imagem e texto lado a lado. */
+
+  flex-direction: row;
+  /* Organiza os elementos em linha horizontal. */
+
+  justify-content: center;
+  /* Centraliza os elementos horizontalmente. */
+
+  align-items: center;
+  /* Centraliza os elementos verticalmente. */
+
+  background-color: #e2d8ca;
+  /* Cor de fundo da seção. */
+
+  height: 100%;
+  /* A altura se ajusta ao conteúdo. */
+
+  width: 100%;
+  /* Ocupa toda a largura da tela. */
+
+  padding: 50px;
+  /* Espaçamento interno da seção. */
+
+  .imagem-vinho img {
+    display: flex;
+    /* Aplica flex à imagem, embora imagem normalmente não precise disso. */
+
+    flex: 1;
+    /* Permite que a imagem participe da divisão de espaço. */
+
+    width: 100%;
+    /* Faz a imagem ocupar toda a largura disponível dentro do container. */
+  }
+
+  .texto-descricao {
+    display: flex;
+    /* Organiza os textos internos com Flexbox. */
+
+    flex-direction: column;
+    /* Coloca span, h2, p e link em coluna. */
+
+    flex: 1;
+    /* Faz o texto ocupar uma parte proporcional do espaço disponível. */
+
+    padding: 70px;
+    /* Espaçamento interno ao redor do texto. */
+
+    gap: 30px;
+    /* Espaço entre os elementos textuais. */
+
+    span {
+      color: #756d61;
+      /* Cor do texto pequeno acima do título. */
+
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      /* Sombra para dar destaque ao texto. */
+
+      font-family: "Montserrat";
+      /* Fonte do texto de destaque. */
+
+      font-size: 20px;
+      /* Tamanho da fonte. */
+
+      font-weight: 400;
+      /* Espessura normal. */
+
+      letter-spacing: 4.8px;
+      /* Aumenta o espaço entre as letras, criando um estilo mais elegante. */
+    }
+
+    h2 {
+      color: #221515;
+      /* Cor do título da seção. */
+
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      /* Sombra no título. */
+
+      font-family: "DM Serif Display";
+      /* Fonte serifada para dar destaque visual. */
+
+      font-size: 96px;
+      /* Tamanho grande do título. */
+
+      font-style: normal;
+      /* Garante que o texto não fique em itálico. */
+
+      font-weight: 600;
+      /* Peso semibold. */
+
+      line-height: 85px;
+      /* 
+        Controla a altura da linha.
+        Como é menor que o font-size, aproxima as linhas caso o título quebre.
+      */
+    }
+
+    p {
+      color: rgba(34, 21, 21, 0.6);
+      /* Cor escura com transparência de 60%. */
+
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      /* Sombra no parágrafo. */
+
+      font-family: "Montserrat";
+      /* Fonte do parágrafo. */
+
+      font-size: 25px;
+      /* Tamanho do texto. */
+
+      font-weight: 400;
+      /* Peso normal. */
+    }
+
+    a {
+      color: #756d61;
+      /* Cor do link VER MAIS. */
+
+      text-align: start;
+      /* Alinha o link ao início. */
+
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      /* Sombra no link. */
+
+      font-family: "Montserrat";
+      /* Fonte do link. */
+
+      font-size: 20px;
+      /* Tamanho da fonte. */
+
+      font-weight: 400;
+      /* Peso normal. */
+
+      letter-spacing: 4.8px;
+      /* Espaçamento entre letras. */
+
+      text-decoration: none;
+      /* Remove o sublinhado padrão do link. */
+
+      cursor: pointer;
+      /* Indica que o link é clicável. */
+
+      transition: 200ms;
+      /* Suaviza a mudança de cor no hover. */
+    }
+
+    a:hover {
+      transition: 200ms;
+      /* Mantém a transição suave. */
+
+      color: #fefbf8;
+      /* Muda a cor do link ao passar o mouse. */
+    }
+  }
+}
+
+/* #endregion */
+/* #region cards */
+/* 
+  Região responsável pela seção dos cards da home.
+  Cada card mostra uma funcionalidade/benefício do sistema.
+*/
+.container-cards {
+  width: 100%;
+  /* A seção ocupa toda a largura da tela. */
+
+  height: 130vh;
+  /* 
+    Define a altura como 130% da altura da tela.
+    vh significa viewport height, ou seja, altura visível da tela.
+  */
+
+  background-color: #270E0E;
+  /* Fundo vinho escuro da seção dos cards. */
+
+  display: flex;
+  /* Usa Flexbox para posicionar os cards. */
+
+  align-items: center;
+  /* Centraliza os cards verticalmente. */
+
+  justify-content: center;
+  /* Centraliza os cards horizontalmente. */
+
+  gap: 100px;
+  /* Espaço entre um card e outro. */
+
+  .card {
+    width: 25%;
+    /* Cada card ocupa 25% da largura do container. */
+
+    height: 65%;
+    /* Cada card ocupa 65% da altura da seção. */
+
+    /* background-color: #fefbf8; */
+    /* Comentado: poderia ser usado para visualizar o fundo do card durante testes. */
+
+    display: flex;
+    /* Organiza imagem, texto e link dentro do card. */
+
+    flex-direction: column;
+    /* Coloca os elementos do card um embaixo do outro. */
+
+    gap: 10px;
+    /* Espaço entre os elementos internos do card. */
+
+    img {
+      width: 100%;
+      /* A imagem ocupa toda a largura do card. */
+
+      height: auto;
+      /* Mantém a proporção original da imagem. */
+    }
+
+    .subtitulo {
+      width: 100%;
+      /* O bloco de texto ocupa toda a largura do card. */
+
+      height: 30%;
+      /* Define a altura da área textual. */
+
+      display: flex;
+      /* Usa Flexbox para organizar título e descrição. */
+
+      flex-direction: column;
+      /* Coloca título e descrição um abaixo do outro. */
+
+      gap: 30px;
+      /* Espaço entre o título do card e o parágrafo. */
+
+      /* background-color: #6c7272; */
+      /* Comentado: poderia ser usado para testar visualmente a área do texto. */
+
+      .container-subtitulo-cards {
+        font-family: 'DM Serif Display', serif;
+        /* Fonte mais elegante usada no título do card. */
+
+        font-size: 2rem;
+        /* Tamanho do título do card. rem usa como base o tamanho de fonte do navegador. */
+
+        color: #E2D8CA;
+        /* Cor clara para contrastar com o fundo vinho escuro. */
+      }
+
+      p {
+        font-family: 'Josefin Sans', sans-serif;
+        /* Fonte usada na descrição do card. */
+
+        color: #E2D8CA;
+        /* Cor do texto do card. */
+
+        font-size: 1rem;
+        /* Tamanho padrão da descrição. */
+      }
+    }
+
+    a {
+      font-family: 'Josefin Sans', sans-serif;
+      /* Fonte do link VER MAIS. */
+
+      color: #E2D8CA;
+      /* Cor clara do link. */
+
+      font-size: 1rem;
+      /* Tamanho do texto do link. */
+
+      text-decoration: none;
+      /* Remove o sublinhado padrão. */
+    }
+  }
+}
+
+/* #endregion */
+
+/* #region contato */
+/* 
+  Região da seção de contato.
+  Essa parte contém o texto chamativo e o formulário para o usuário enviar uma mensagem.
+*/
+.container-contato {
+  width: 100%;
+  /* A seção ocupa toda a largura da página. */
+
+  height: 120vh;
+  /* A altura é 120% da altura da tela visível. */
+
+  background-color: #E2D8CA;
+  /* Cor clara de fundo da seção de contato. */
+
+  display: flex;
+  /* Coloca o bloco de texto e o formulário lado a lado. */
+
+  align-items: center;
+  /* Centraliza verticalmente os elementos dentro da seção. */
+
+  justify-content: center;
+  /* Centraliza horizontalmente os elementos. */
+
+  .container-titulo-contato {
+    width: 40%;
+    /* O texto ocupa 40% da largura da seção. */
+
+    height: 80%;
+    /* O bloco ocupa 80% da altura da seção. */
+
+    /* background-color: #4a0e0e; */
+    /* Comentado: poderia ser usado para enxergar a área durante testes. */
+
+    display: flex;
+    /* Organiza os textos internamente. */
+
+    flex-direction: column;
+    /* Coloca os textos um embaixo do outro. */
+
+    justify-content: center;
+    /* Centraliza os textos verticalmente dentro do bloco. */
+
+    gap: 20px;
+    /* Espaço entre o texto de destaque e o texto complementar. */
+
+    .texto-destaque {
+      width: 100%;
+      /* O texto de destaque ocupa toda a largura do bloco. */
+
+      font-family: 'DM Serif Display', serif;
+      /* Fonte elegante usada para o destaque. */
+
+      font-size: 3rem;
+      /* Tamanho grande para chamar atenção. */
+
+      font-style: italic;
+      /* Deixa o texto inclinado/itálico. */
+
+      font-weight: 400;
+      /* Peso normal. */
+
+      color: #4a0e0e;
+      /* Cor vinho usada na identidade visual. */
+    }
+
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      /* Fonte dos textos comuns dessa área. */
+
+      color: #756d61;
+      /* Cor mais suave para o texto secundário. */
+
+      font-size: 1.5rem;
+      /* Tamanho do texto complementar. */
+    }
+  }
+
+  .container-form {
+    width: 50%;
+    /* O formulário ocupa metade da largura da seção. */
+
+    height: 65%;
+    /* Altura do card do formulário. */
+
+    background-color: #FEFBF8;
+    /* Fundo quase branco para destacar o formulário. */
+
+    display: flex;
+    /* Usado para centralizar o conteúdo do formulário. */
+
+    justify-content: center;
+    /* Centraliza horizontalmente o conteúdo interno. */
+
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo interno. */
+
+    border-radius: 20px;
+    /* Arredonda as bordas do formulário. */
+
+    .container-info-form {
+      width: 90%;
+      /* Conteúdo interno ocupa 90% da largura do card. */
+
+      height: 90%;
+      /* Conteúdo interno ocupa 90% da altura do card. */
+
+      display: flex;
+      /* Organiza título, inputs e botão. */
+
+      flex-direction: column;
+      /* Coloca os campos um embaixo do outro. */
+
+      gap: 20px;
+      /* Espaço entre os elementos do formulário. */
+
+      .texto-destaque-form {
+        font-family: 'DM Serif Display', serif;
+        /* Fonte do título do formulário. */
+
+        font-size: 2rem;
+        /* Tamanho do título do formulário. */
+
+        color: #4a0e0e;
+        /* Cor vinho do título. */
+      }
+
+      .container-caixinha {
+        width: 100%;
+        /* Cada campo ocupa toda a largura disponível. */
+
+        display: flex;
+        /* Organiza label e campo. */
+
+        flex-direction: column;
+        /* Coloca o nome do campo acima do input. */
+
+        gap: 5px;
+        /* Pequeno espaço entre o texto e o campo. */
+
+        .texto-comum {
+          font-family: 'Josefin Sans', sans-serif;
+          /* Fonte dos rótulos Nome, Email e Mensagem. */
+
+          font-size: 1rem;
+          /* Tamanho do texto do rótulo. */
+
+          color: #4a0e0e;
+          /* Cor vinho para manter a identidade visual. */
+        }
+
+        .inp-form {
+          width: 100%;
+          /* O input ocupa toda a largura do formulário. */
+
+          height: 40px;
+          /* Altura dos campos de nome e email. */
+
+          border-radius: 10px;
+          /* Arredonda os campos. */
+
+          outline: none;
+          /* Remove a borda externa padrão que aparece ao clicar no input. */
+
+          padding-left: 10px;
+          /* Afasta o texto digitado da borda esquerda. */
+
+          background-color: #E4E4E3;
+          /* Cor de fundo dos inputs. */
+
+          box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.249);
+          /* 
+            Sombra do campo.
+            4px desloca para a direita, 0px não desloca verticalmente, 5px é o desfoque.
+          */
+        }
+
+        #ipt_cont_msg {
+          width: 100%;
+          /* O campo de mensagem ocupa toda a largura disponível. */
+
+          height: 160px;
+          /* Campo maior porque a mensagem costuma ser mais longa. */
+
+          border-radius: 10px;
+          /* Arredonda as bordas do textarea. */
+
+          outline: none;
+          /* Remove a borda de foco padrão do navegador. */
+
+          padding: 10px;
+          /* Espaçamento interno em todos os lados. */
+
+          background-color: #E4E4E3;
+          /* Fundo cinza claro do textarea. */
+
+          box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.249);
+          /* Sombra para dar profundidade ao campo. */
+
+          resize: none;
+          /* Impede que o usuário redimensione o textarea manualmente. */
+        }
+      }
+
+      .container-btn {
+        width: 100%;
+        /* O container do botão ocupa toda a largura disponível. */
+
+        display: flex;
+        /* Permite controlar o alinhamento do botão. */
+
+        justify-content: flex-start;
+        /* Alinha o botão à esquerda. */
+
+        .btn-contato {
+          width: 160px;
+          /* Largura do botão ENVIAR. */
+
+          height: 40px;
+          /* Altura do botão. */
+
+          background-color: #4a0e0e;
+          /* Fundo vinho do botão. */
+
+          font-family: 'Josefin Sans', sans-serif;
+          /* Fonte do texto do botão. */
+
+          border-radius: 14px;
+          /* Bordas arredondadas. */
+
+          color: #FEFBF8;
+          /* Cor clara do texto. */
+
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.188);
+          /* Sombra leve para destacar o botão. */
+
+          font-size: 1.1rem;
+          /* Tamanho do texto do botão. */
+
+          cursor: pointer;
+          /* Mostra a mãozinha ao passar o mouse. */
+        }
+      }
+    }
+  }
+}
+/* #endregion */
+
+/* #region footer */
+/* 
+  Região do rodapé da página.
+  O footer aparece no final do site e reúne logo, links e email de contato.
+*/
+.footer {
+  width: 100%;
+  /* O rodapé ocupa toda a largura da página. */
+
+  height: 70px;
+  /* Altura fixa do rodapé. */
+
+  background-color: #f5f5f3;
+  /* Cor clara de fundo. */
+
+  border-top: 1px solid #4a0e0e;
+  /* Linha superior vinho separando o rodapé do conteúdo. */
+
+  display: flex;
+  /* Coloca logo, navegação e email lado a lado. */
+
+  align-items: center;
+  /* Centraliza verticalmente os elementos do rodapé. */
+
+  justify-content: space-around;
+  /* Distribui os elementos com espaço ao redor. */
+
+  .footer-logo {
+    width: 150px;
+    /* Define a largura da área da logo no rodapé. */
+
+    height: 100%;
+    /* A logo ocupa a altura total do rodapé. */
+
+    display: flex;
+    /* Usado para alinhar a imagem da logo. */
+
+    align-items: center;
+    /* Centraliza a logo verticalmente. */
+
+    img {
+      width: 100%;
+      /* A imagem da logo ocupa toda a largura do container. */
+
+      height: auto;
+      /* Mantém a proporção original da imagem. */
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+    /* Coloca os links do rodapé em linha. */
+
+    align-items: center;
+    /* Centraliza os links verticalmente. */
+
+    gap: 80px;
+    /* Espaço entre os links. */
+
+    a {
+      font-family: 'Josefin Sans', sans-serif;
+      /* Fonte dos links do rodapé. */
+
+      font-size: 0.9rem;
+      /* Tamanho dos links. */
+
+      font-weight: 600;
+      /* Deixa os links mais destacados. */
+
+      color: #4a0e0e;
+      /* Cor vinho dos links. */
+
+      text-decoration: none;
+      /* Remove o sublinhado padrão. */
+    }
+  }
+
+  .footer-email {
+    display: flex;
+    /* Coloca o ícone de email e o texto lado a lado. */
+
+    align-items: center;
+    /* Centraliza verticalmente o ícone e o texto. */
+
+    gap: 5px;
+    /* Pequeno espaço entre o ícone e o email. */
+
+    color: #4a0e0e;
+    /* Define a cor geral dessa área. */
+
+    span {
+      font-size: 1rem;
+      /* Tamanho do ícone de email. */
+    }
+
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      /* Fonte do email. */
+
+      font-size: 0.9rem;
+      /* Tamanho do texto do email. */
+
+      font-weight: 600;
+      /* Deixa o email mais destacado. */
+    }
+  }
+}
+/* #endregion */

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Wine View</title>
+    <link rel="stylesheet" href="simulador.css">
+</head>
+<body>
+    <header class="main-cabecalho">
+        <div class="content">
+            <div class="container-logo">
+                <img src="../img/logo_transparente.png" alt="Logo">
+            </div>
+            <div class="container-nav">
+                <nav>
+                    <ul>
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../sobre/sobre.html">Sobre</a></li>
+                        <li><a href="../simulador/simulador.html">Simulador</a></li>
+                        <li>
+                            <a href="../login/login.html">
+                                <button class="btn-nav-entrar">Entrar</button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-principal">
+        <div class="flex-content">
+            <!-- Lado Esquerdo: Formulário -->
+            <div class="conteudo">
+                <div class="titulo">
+                    <h1>Simulador Wine View</h1>
+                </div>
+                <p>Quantos litros de vinho você produz por mês?</p>
+                <input type="number" id="input_producao_mensal" placeholder="Ex: 1000">
+                <p>Qual o custo de produção de 1 litro de vinho?</p>
+                <input type="number" id="input_custo_litro" placeholder="Ex: 15.00">
+                <p>Qual o valor médio de venda de uma garrafa (750ml)?</p>
+                <input type="number" id="input_valor_garrafa" placeholder="Ex: 50.00">
+                <button class="btn-simulacao" onclick="simular_vinho()">Simular</button>
+            </div>
+
+            <div id="div_mensagem"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="../img/logo_transparente.png" alt="Logo Wine View">
+        </div>
+        <nav class="footer-nav">
+            <a href="../home/home.html">PÁGINA INICIAL</a>
+            <a href="#id_contato">CONTATO</a>
+            <a href="../sobre/sobre.html">SOBRE</a>
+            <a href="../login/login.html">CADASTRE-SE / ENTRE</a>
+        </nav>
+        <div class="footer-email">
+            <span>✉</span>
+            <p>contato@wine.view.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    function simular_vinho() {
+        let producao_litros_mes = Number(input_producao_mensal.value) // 87000
+        let custo_litro = Number(input_custo_litro.value) // 15
+        let valor_venda_garrafa = Number(input_valor_garrafa.value) // 60
+
+        // Quantidade de garrafas cheias, onde 750 ml = 0,75 litros
+        let total_garrafas_mes = producao_litros_mes / 0.75  
+        //                               87000      / 0.75
+
+        // Quanto gastou para ter o vinho dentro da garrafa 
+        let custo_total_litro_mes = custo_litro * producao_litros_mes 
+        //                                15    *  87000
+
+        // Quantidade que ele ganha vendendo todas as garrafas cheias 
+        let total_bruto_mes = total_garrafas_mes * valor_venda_garrafa
+        //                        (87000/0.75)   *   60
+        
+        // Quanto ele ganha tirando os custos de produção (total do vinho dentro)
+        let lucro_estimado_mes = total_bruto_mes - custo_total_litro_mes
+        //                     ((87000/0.75)   *   60) - (15    *  87000)
+
+        //====================================================================================
+        
+        // Supondo que ao fermentar o vinho, perde 10% 
+        let perda_10_porcento = total_bruto_mes * 0.10 
+        //               ((87000/0.75)   *   60)  *  0.10
+        let perda_10_anual = perda_10_porcento * 12
+        //               (((87000/0.75)   *   60)  *  0.10)  * 12  
+
+        // Supondo que usando o monitoramento ele só perde 2%
+        let perda_2_porcento = total_bruto_mes * 0.02
+        //               ((87000/0.75)   *   60) * 0.02
+
+        let economia_mensal = perda_10_porcento - perda_2_porcento
+        //                (((87000/0.75)   *   60)  *  0.10) - (((87000/0.75)   *   60) * 0.02)
+        let economia_anual = economia_mensal * 12
+        // 
+
+        div_mensagem.innerHTML = `
+        <div class="card-resultado">
+        <h3>Análise de Produção</h3>
+        <p>Você produz <span class="destaque">${producao_litros_mes}</span> litros por mês.</p>
+        <p>Custo por litro: <b> ${custo_litro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b></p>
+        <p>Venda da garrafa: <b> ${valor_venda_garrafa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b></p>
+        <hr>
+
+        <div class="financeiro">
+            <p class="custo-total">Custo total mensal da produção: <span> ${custo_total_litro_mes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span></p>
+        </div>
+
+        <div class="lucro-box">
+            Lucro bruto estimado: <b> ${lucro_estimado_mes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b>
+        </div>
+
+        <h3>Solução Wine View</h3>
+        <p class="economia">Quanto você perde anualmente sem WV: <span> ${perda_10_anual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span></p>
+        <p class="economia">Economia Anual com solução WV: <span> ${economia_anual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span></p>
+         </div>
+`;
+    }
+</script>
