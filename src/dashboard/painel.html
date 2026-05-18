@@ -284,31 +284,8 @@
         </div>
 
 
-      <!-- KPI CRITICIDADE -->
-<div class="caixa-kpi-nova">
 
-    <div class="titulo-kpi-nova">
-        <h3>NÍVEL DE CRITICIDADE</h3>
-    </div>
 
-    <div class="numero-kpi-nova">
-        <h2 id="nivelCriticidade">ALTO</h2>
-    </div>
-
-    <div class="descricao-kpi-nova">
-        <p>Status geral dos tanques</p>
-    </div>
-
-</div>
-
-<!-- BOTÃO VER DETALHES -->
-<div class="botao-detalhes-container">
-
-    <a href="detalhes.html" class="botao-detalhes">
-        Ver mais detalhes
-    </a>
-
-</div>
 
 </div> 
 
@@ -349,40 +326,17 @@
                 </div>
 
             </div>
+             <!-- BOTÃO VER DETALHES -->
+             <div class="botao-detalhes-container">
+             <a href="detalhes.html" class="botao-detalhes">Ver mais detalhes</a>
+        </div>
 
         </div>
 
     </div>
 
 
-    <!-- PAINEL EXPLICATIVO -->
-    <div class="painel-explicacao">
-
-        <h3>Níveis de criticidade</h3>
-
-        <div class="linha-explicacao">
-            <strong>Atenção:</strong>
-            Temperatura até 20% fora da faixa ideal.
-        </div>
-
-        <div class="linha-explicacao">
-            <strong>Moderado:</strong>
-            Temperatura até 30% fora da faixa ideal.
-        </div>
-
-        <div class="linha-explicacao">
-            <strong>Alto:</strong>
-            Temperatura até 49% fora da faixa ideal.
-        </div>
-
-        <div class="linha-explicacao">
-            <strong>Muito Alto:</strong>
-            Temperatura acima de 50% fora da faixa ideal.
-        </div>
-
-    </div>
-
-</div>
+   
 <script>
 
 let labelsBarra = ['T1', 'T2', 'T3', 'T4'];
@@ -493,6 +447,13 @@ if (mes < 10) {
 let dataFormatada = dia + '/' + mes + '/' + ano;
 
 document.getElementById('dataAtual').innerHTML = dataFormatada;
+
+let criticidadeTanques = ["ALTO", "MODERADO", "BAIXO", "ALTO"];
+
+document.getElementById("t1").innerHTML = criticidadeTanques[0];
+document.getElementById("t2").innerHTML = criticidadeTanques[1];
+document.getElementById("t3").innerHTML = criticidadeTanques[2];
+document.getElementById("t4").innerHTML = criticidadeTanques[3];
 
 </script>
 </body>

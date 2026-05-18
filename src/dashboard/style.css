@@ -184,7 +184,8 @@
 }
 
 
-/* ÁREA DAS KPIS */
+
+/* COLUNA DAS KPIS */
 .kpis-lateral {
     width: 36%;
 
@@ -194,11 +195,10 @@
     gap: 18px;
 }
 
-
 /* CARD KPI */
 .caixa-kpi-nova {
     width: 100%;
-    min-height: 170px;
+    height: 170px;
 
     background-color: #F0EAE3;
 
@@ -219,38 +219,86 @@
     box-shadow: 0 4px 10px #00000010;
 }
 
+/* PAINEL DE CRITICIDADE (IMPORTANTE) */
+.kpi-criticidade-grande {
+    width: 100%;
 
-/* TÍTULO KPI */
+    background-color: #F0EAE3;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    box-shadow: 0 4px 10px #00000010;
+    
+}
+
+/* GRID DOS TANQUES */
+.grid-tanques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+/* CARD INTERNO DOS TANQUES */
+.tanque-kpi {
+    background: #fff;
+    border-radius: 12px;
+
+    padding: 10px;
+
+    min-height: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow: 0 2px 5px #00000010;
+}
+
+.tanque-kpi h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.tanque-kpi p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+/* TÍTULOS */
 .titulo-kpi-nova h3 {
     color: #42090e;
 
     font-size: 0.72rem;
-
     font-weight: 700;
-
     line-height: 1rem;
 }
 
-
-/* NÚMERO KPI */
+/* VALOR */
 .numero-kpi-nova h2 {
     color: #42090e;
 
     font-size: 1.4rem;
-
     font-weight: 700;
 }
 
-
-/* DESCRIÇÃO KPI */
+/* DESCRIÇÃO */
 .descricao-kpi-nova p {
     color: #5e5555;
 
     font-size: 0.75rem;
-
     line-height: 1rem;
 }
-
 
 /* ÁREA DO GRÁFICO */
 .grafico-dashboard-direita {
@@ -335,39 +383,53 @@
 
 .botao-detalhes-container {
     width: 100%;
+
     display: flex;
     justify-content: center;
+
     margin-top: 15px;
-}
-
-.botao-detalhes {
-    width: 85%;
-    padding: 12px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center; /* <- adiciona isso para garantir centralização do texto */
-
-    border-radius: 14px;
-
-    background-color: #F0EAE3;
-    border: 1px solid #d6cfc7;
-
-    color: #5a3a2e;
-    text-decoration: none;
-
-    font-weight: 600;
-
-    box-shadow: 0 2px 6px #00000010;
-
-    transition: 0.2s;
 }
 
 .botao-detalhes:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px #00000015;
+}
+
+.botao-detalhes {
+    display: inline-flex;
+    list-style: none;
+}
+
+.botao-detalhes::before,
+.botao-detalhes::after {
+    content: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.botao-detalhes {
+    all: unset;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    max-width: 320px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+    background-color: #F0EAE3;
+    border: 1px solid #d6cfc7;
+
+    color: #5a3a2e;
+    font-weight: 600;
+    font-size: 14px;
+
+    box-shadow: 0 2px 6px #00000010;
+    cursor: pointer;
 }
 /* TÍTULO */
 
