@@ -1,185 +1,231 @@
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    font-family: 'Josefin Sans', sans-serif;
 }
 
 body{
-    width: 100%;
-    min-height: 100vh;
-
     background-color: #F0EAE3;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 40px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    padding: 30px;
 }
 
-
-
-.dashboard-header{
-    width: 90%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 25px;
-
-    margin-bottom: 40px;
-}
-
-.dashboard-titulo{
+.titulo{
     color: #42090e;
-
-    font-size: 2.4rem;
-    font-family: 'DM Serif Display', serif;
-    font-weight: 500;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
 }
 
+/* Botões laterais */
 
+.botoes{
+    position: fixed;
+    top: 120px;
+    left: 30px;
 
-.dashboard-botoes{
     display: flex;
-    flex-wrap: wrap;
-
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.botao-tanque{
-    width: 170px;
-    height: 50px;
+.botoes button{
+    width: 150px;
+    height: 45px;
 
     background-color: #42090e;
-    color: #F0EAE3;
+    color: white;
 
-    border-radius: 12px;
-
-    font-size: 1rem;
-    font-weight: 600;
+    border: none;
+    border-radius: 10px;
 
     cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
 
     transition: 0.3s;
 }
 
-.botao-tanque:hover{
-    background-color: #60292d;
-
+.botoes button:hover{
+    background-color: #5d1f25;
     transform: translateY(-2px);
+}
 
-    box-shadow: 0 4px 10px #00000020;
+.voltar-container{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-voltar{
+    width: 150px;
+    height: 45px;
+
+    background-color: #42090e;
+    color: white;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-voltar:hover{
+    background-color: #5d1f25;
+    transform: translateY(-2px);
 }
 
 
+/* Área dos gráficos */
 
-
-
-.dashboard-container{
-    width: 90%;
+.dashboards{
+    width: 80%;
+    margin: auto;
+    margin-left: 220px;
 
     display: flex;
     flex-direction: column;
-
-    gap: 50px;
+    gap: 15px;
 }
 
-
-
-.dashboard-section{
-    width: 100%;
-
-    background-color: #E2D8CA;
-
-    border-radius: 22px;
-
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 25px;
-
-    box-shadow: 0 4px 12px #00000010;
-}
-
-
-
-.dashboard-section-titulo{
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-.dashboard-section-titulo h2{
+.dashboards h4{
     color: #42090e;
-
-    font-size: 2rem;
-    font-family: 'DM Serif Display', serif;
-
-    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.dashboard-section-titulo p{
-    color: #5e5555;
+/* Cards */
 
-    font-size: 1rem;
-}
+.card1,
+.card2,
+.card3,
+.card4{
+    background-color: white;
 
-
-
-.dashboard-card-grafico{
     width: 100%;
-    height: 500px;
-
-    background-color: #F0EAE3;
+    height: 320px;
 
     border-radius: 20px;
 
-    padding: 25px;
+    padding: 15px;
 
-    box-shadow: 0 4px 10px #00000010;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+/* Canvas */
 
-
-.dashboard-area-canvas{
-    width: 100%;
-    height: 100%;
-}
-
-
-
-.dashboard-canvas{
+canvas{
     width: 100% !important;
     height: 100% !important;
 }
 
+/* Linha divisória */
 
+hr{
+    border: none;
+    height: 2px;
+    background-color: #c7b9a7;
+    margin-top: 10px;
+}
+
+/* Responsividade */
 
 @media(max-width: 900px){
 
-    .dashboard-titulo{
-        text-align: center;
+    .botoes{
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .dashboards{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .titulo{
         font-size: 2rem;
     }
 
-    .dashboard-card-grafico{
-        height: 380px;
+    .card1,
+    .card2,
+    .card3,
+    .card4{
+        height: 350px;
     }
+}
 
-    .botao-tanque{
-        width: 140px;
-    }
+.menu{
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 220px;
+    height: 100vh;
+
+    background-color: #42090e;
+
+   .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    padding: 20px 0;
+}
+
+.logo{
+    width: 140px;
+    margin-top: 0px;
+     margin-bottom: 10px;
+}
+
+.itens{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 0;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    transition: 0.3s;
+}
+
+.item:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.imgItens{
+    width: 24px;
+    height: 24px;
 }
 

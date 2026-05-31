@@ -3,40 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard Secundária</title>
+
     <link rel="stylesheet" href="DashboardSecundaria.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    <h1 class="titulo" style="text-align: center;">Tela de Gráficos (Tanque/Data)</h1>
-    <div class="botoes">
-        <button onclick="location.href='#linhaTanque1'">Tanque 1</button><br>
-        <button onclick="location.href='#linhaTanque2'">Tanque 2</button><br>
-        <button onclick="location.href='#linhaTanque3'">Tanque 3</button><br>
-        <button onclick="location.href='#linhaTanque4'">Tanque 4</button><br>
+
+
+    <h1 class="titulo" style="text-align: center;">
+        Oscilação de temperatura por hora
+    </h1>
+<div class="menu">
+
+    <img src="../../img/dash/logoBranca.png" alt="logo" class="logo">
+
+    <div class="itens">
+
+        <div class="item">
+            <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
+            <a href="#linhaTanque1">Tanque 1</a>
+        </div>
+
+        <div class="item">
+            <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
+            <a href="#linhaTanque2">Tanque 2</a>
+        </div>
+
+        <div class="item">
+            <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
+            <a href="#linhaTanque3">Tanque 3</a>
+        </div>
+
+        <div class="item">
+            <img src="../../img/dash/iconeGrafico.png" alt="" class="imgItens">
+            <a href="#linhaTanque4">Tanque 4</a>
+        </div>
+
+        <div class="item">
+        <img src="../../img/dash/iconePorta.png" alt="" class="imgItens">
+        <a href="./painel.html">Voltar ao Painel</a>
     </div>
 
+    </div>
+
+    
+
+</div>
 
     <div class="dashboards">
-         <h4 style="margin-top: 300px;">Tanque 1</h4>
+
+        <h4 style="margin-top: 40px;">Tanque 1</h4>
         <div class="card1">
-            <canvas id="linhaTanque1" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+            <canvas id="linhaTanque1"></canvas>
         </div>
+
         <hr>
-         <h4 style="margin-top: 300px;">Tanque 2</h4>
+
+        <h4 style="margin-top: 40px;">Tanque 2</h4>
         <div class="card2">
-            <canvas id="linhaTanque2" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+            <canvas id="linhaTanque2"></canvas>
         </div>
+
         <hr>
-          <h4 style="margin-top: 300px;"2>Tanque 3</h4>
+
+        <h4 style="margin-top: 40px;">Tanque 3</h4>
         <div class="card3">
-            <canvas id="linhaTanque3" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+            <canvas id="linhaTanque3"></canvas>
         </div>
+
         <hr>
-          <h4 style="margin-top: 300px;"2>Tanque 4</h4>
+
+        <h4 style="margin-top: 40px;">Tanque 4</h4>
         <div class="card4">
-            <canvas id="linhaTanque4" style="width: 700px; height: 400px; margin-left: 5px;"></canvas>
+            <canvas id="linhaTanque4"></canvas>
         </div>
+    <hr>
     </div>
 
 </body>
