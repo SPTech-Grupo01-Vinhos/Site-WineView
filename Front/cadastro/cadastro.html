@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css"> <!-- Link para o arquivo de estilo -->
+    <script src="../JS/cadastro.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="container-main">
+
+        <div class="container-esquerda">
+
+            <div class="content">
+                <h1>Seja bem-vindo!</h1>
+                <p>Caso já possua cadastro, <br> clique para logar em sua conta.</p>
+
+                <a href="../login/login.html"> <!-- Link para a página de login, estilizado como um botão -->
+                    <button class="btn-pagina-login" type="button">Login</button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container-direita">
+
+            <div class="content">
+                <h2>Cadastro</h2>
+
+                <p>Nome Completo:</p>
+                <input id="ipt_nome" placeholder="Digite aqui...">
+                <p>E-mail Corporativo:</p>
+                <input id="ipt_email" placeholder="Digite aqui...">
+                <p>CNPJ:</p>
+                <input id="ipt_cnpj" placeholder="Digite aqui...">
+                <p>Telefone:</p>
+                <input id="ipt_celular" placeholder="Digite aqui...">
+                <p>Senha:</p>
+                <input type="password" id="ipt_senha" placeholder="Digite aqui...">
+                <p>Confirme a senha:</p>
+                <input type="password" id="ipt_senha_confirmacao" placeholder="Digite aqui...">
+
+                <a href="./cadastro-continuacao.html">
+                    <button class="btn-proximo" onclick="proximo()">Próximo</button>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div id="exibir"></div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css"> <!--link do css-->
+    <script src="../JS/login.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container-main"> <!--conteúdo principal da página-->
+
+        <div class="container-esquerda"> <!--título e introdução da página-->
+
+            <div class="content">
+                <h1>Seja bem-vindo!</h1>
+                <p>Caso ainda não tenha cadastro, <br> clique para criar sua conta.</p>
+    
+                <a href="../cadastro/cadastro.html"> <!--link para a página de cadastro-->
+                    <button class="btn-pagina-cadastro" type="button">Cadastrar-se</button>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="container-direita">
+
+            <div class="content">
+                <h2>Login</h2> <!--título do formulário de login-->
+                <p>Email:</p>
+                <input id="ipt_login_email" placeholder="Digite o email...">
+                <p>Senha:</p>
+                <input type="password" id="ipt_login_senha" placeholder="Digite sua senha...">
+    
+                    <!--link para a página do dashboard, que é a página principal do usuário após o login-->
+                    <button class="btn-pagina-dash" type="button" onclick="logar()">Entrar</button>
+
+    
+    
+                <!-- <label class="check-login"> 
+                    <input type="checkbox">
+                    Permanecer conectado?
+                </label> -->
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
