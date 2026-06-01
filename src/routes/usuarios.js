@@ -13,12 +13,4 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.post("/gravar-quiz", function (req, res) {
-    usuarioController.gravarQuiz(req, res);
-});
-
-router.post("/buscar-quiz", function (req, res) {
-    usuarioController.buscarQuiz(req, res);
-});
-
 module.exports = router;
