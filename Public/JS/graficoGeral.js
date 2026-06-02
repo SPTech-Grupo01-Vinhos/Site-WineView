@@ -1,115 +1,131 @@
-let labelsBarra = ['T1', 'T2', 'T3', 'T4'];
+function carregarDadosSensor() {
+  let idUsuario = sessionStorage.getItem("ID_USUARIO");
 
-let dadosBarra = [22, 32, 21, 27];
+  fetch("/dashboard/buscar-dados-sensor", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      idUsuario: idUsuario,
+    }),
+  })
+    .then(function (resposta) {
+      if (resposta.ok) {
+        console.log(resposta);
 
-let cores = [];
+        resposta.json().then((json) => {
+          console.log(json);
 
-for (let i = 0; i < dadosBarra.length; i++) {
+          gerarGrafico(json);
+        });
+      } else {
+        alert("Erro ao buscar dados do sensor!");
+      }
+    })
+    .catch(function (erro) {
+      alert("Erro ao buscar dados do sensor!");
+    });
 
+  // DATA AUTOMÁTICA
+
+  let data = new Date();
+
+  let dia = data.getDate();
+
+  let mes = data.getMonth() + 1;
+
+  let ano = data.getFullYear();
+
+  if (dia < 10) {
+    dia = "0" + dia;
+  }
+
+  if (mes < 10) {
+    mes = "0" + mes;
+  }
+
+  let dataFormatada = dia + "/" + mes + "/" + ano;
+
+  document.getElementById("dataAtual").innerHTML = dataFormatada;
+}
+
+function gerarGrafico(data) {
+  let labelsBarra = [];
+  let dadosBarra = [];
+
+
+  for(let i = 0; i < data.length; i++) {
+    labelsBarra.push(data[i].codigoTanque)
+    dadosBarra.push(Number(data[i].temperatura).toFixed(0))
+  }
+
+  let cores = [];
+
+  for (let i = 0; i < dadosBarra.length; i++) {
     let v = dadosBarra[i];
 
     if (v < 20) {
-
-        cores.push('#E6982B');
-
+      cores.push("#E6982B");
     } else if (v > 30) {
-
-        cores.push('#C52A2A');
-
+      cores.push("#C52A2A");
     } else {
-
-        cores.push('#6BBF61');
+      cores.push("#6BBF61");
     }
-}
+  }
 
-new Chart(document.getElementById('graficoBarra'), {
-
-    type: 'bar',
+  new Chart(document.getElementById("graficoBarra"), {
+    type: "bar",
 
     data: {
+      labels: labelsBarra,
 
-        labels: labelsBarra,
+      datasets: [
+        {
+          label: "Temperatura",
 
-        datasets: [{
+          data: dadosBarra,
 
-            label: 'Temperatura',
+          backgroundColor: cores,
 
-            data: dadosBarra,
-
-            backgroundColor: cores,
-
-            borderRadius: 8
-        }]
+          borderRadius: 8,
+        },
+      ],
     },
 
     plugins: [ChartDataLabels],
 
     options: {
+      responsive: true,
 
-        responsive: true,
+      maintainAspectRatio: false,
 
-        maintainAspectRatio: false,
-
-        plugins: {
-
-            legend: {
-                display: false
-            },
-
-            datalabels: {
-
-                color: '#42090e',
-
-                anchor: 'end',
-
-                align: 'top',
-
-                font: {
-                    weight: 'bold',
-                    size: 14
-                }
-            }
+      plugins: {
+        legend: {
+          display: false,
         },
 
-        scales: {
+        datalabels: {
+          color: "#42090e",
 
-            y: {
+          anchor: "end",
 
-                beginAtZero: true,
+          align: "top",
 
-                max: 50
-            }
-        }
-    }
-});
+          font: {
+            weight: "bold",
+            size: 14,
+          },
+        },
+      },
 
+      scales: {
+        y: {
+          beginAtZero: true,
 
-
-// DATA AUTOMÁTICA
-
-let data = new Date();
-
-let dia = data.getDate();
-
-let mes = data.getMonth() + 1;
-
-let ano = data.getFullYear();
-
-if (dia < 10) {
-    dia = '0' + dia;
+          max: 50,
+        },
+      },
+    },
+  });
 }
-
-if (mes < 10) {
-    mes = '0' + mes;
-}
-
-let dataFormatada = dia + '/' + mes + '/' + ano;
-
-document.getElementById('dataAtual').innerHTML = dataFormatada;
-
-let criticidadeTanques = ["ALTO", "MODERADO", "BAIXO", "ALTO"];
-
-document.getElementById("t1").innerHTML = criticidadeTanques[0];
-document.getElementById("t2").innerHTML = criticidadeTanques[1];
-document.getElementById("t3").innerHTML = criticidadeTanques[2];
-document.getElementById("t4").innerHTML = criticidadeTanques[3];
