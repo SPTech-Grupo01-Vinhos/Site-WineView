@@ -32,6 +32,12 @@
   margin-top: 35px;
 }
 
+#select_especifico {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 10px #00000010;
+}
+
 /* KPIS */
 .caixa-kpi {
   width: 100%;

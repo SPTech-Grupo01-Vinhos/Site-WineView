@@ -28,6 +28,12 @@ function carregarDadosSensor() {
     });
 }
 
+function atualizarDadosGrafico() {
+  console.log("Atualizei os dados!");
+  carregarDadosSensor();
+  setInterval(carregarDadosSensor, 7000);
+}
+
 function gerarGrafico(data) {
   let labelsBarra = [];
   let dadosBarra = [];
@@ -102,4 +108,25 @@ function gerarGrafico(data) {
       },
     },
   });
+}
+
+function mudarParaEspecifico() {
+  let select = document.getElementById("select_especifico");
+  let tanqueSelecionado = select.value;
+
+  if (tanqueSelecionado == "#") {
+    return;
+  } else if (tanqueSelecionado == "t1") {
+    window.location.href = "../dashboard/painelT1.html";
+  } else if (tanqueSelecionado == "t2") {
+    window.location.href = "../dashboard/painelT2.html";
+  } else if (tanqueSelecionado == "t3") {
+    window.location.href = "../dashboard/painelT3.html";
+  } else if (tanqueSelecionado == "t4") {
+    window.location.href = "../dashboard/painelT4.html";
+  }
+
+  console.log("O usuário escolheu o tanque: " + tanqueEscolhido);
+
+
 }
