@@ -67,7 +67,7 @@
 }
 
 /* MARCADORES DE PÁGINA ATIVA */
-#p1, #p2, #p3, #p4 {
+.menu-ativo {
     background-color: #60292d;
     border-radius: 10px;
 }
