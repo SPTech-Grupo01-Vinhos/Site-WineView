@@ -9,11 +9,8 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <link rel="stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="styleGlobal.css">
+    <link rel="stylesheet" href="painelGeral.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="../JS/graficoGeral.js"></script>
@@ -29,20 +26,12 @@
 
 <body onload="carregarDadosSensor()">
 
-
     <div class="container-principal">
-
-
         <div class="menu">
-
-
             <img src="../img/dash/logoBranca.png" alt="logo" class="logo">
 
-
             <div class="itens">
-
                 <div class="item" id="p1">
-
                     <img src="../img/dash/iconeGrafico.png" alt="" class="imgItens">
                     <a href="./painel.html">Painel</a>
                 </div>
@@ -65,7 +54,6 @@
 
             <div class="voltar">
 
-
                 <img src="../img/dash/iconePorta.png" alt="" class="imgItens">
                 <a href="../home/home.html">Voltar ao Site</a>
             </div>
@@ -77,34 +65,11 @@
 
                 <div class="titulo">
                     <h2>Painel</h2>
-
-                    <p>
-                        Acompanhe em tempo real a fermentação dos tanques e monitore as temperaturas.
-                    </p>
+                    <p>Acompanhe em tempo real a fermentação dos tanques e monitore as temperaturas.</p>
                 </div>
 
 
                 <div class="conteudo-dashboard">
-
-                    <!-- KPIS -->
-                    <div class="kpis-lateral">
-
-                        <!-- KPI DATA -->
-                        <div class="caixa-kpi-nova">
-
-                            <div class="titulo-kpi-nova">
-                                <h3>DATA</h3>
-                            </div>
-
-                            <div class="numero-kpi-nova">
-                                <h2 id="dataAtual">16/05/2026</h2>
-                            </div>
-
-                            <div class="descricao-kpi-nova">
-                                <p>Data atual do sistema</p>
-                            </div>
-
-                        </div>
 
 
                         <!-- KPI TEMPERATURA IDEAL -->
@@ -178,63 +143,16 @@
 
                         </div>
 
-
-                        <!-- KPI MAIOR QUE 30 -->
-                        <div class="caixa-kpi-nova">
-
-                            <div class="titulo-kpi-nova">
-                                <h3>TEMPERATURA &gt; 30°C</h3>
-                            </div>
-
-                            <div class="numero-kpi-nova">
-                                <h2>1</h2>
-                            </div>
-
-                            <div class="descricao-kpi-nova">
-                                <p>Temperatura acima do ideal</p>
-                            </div>
-
-                        </div>
-
-
-                        <!-- KPI MENOR QUE 20 -->
-                        <div class="caixa-kpi-nova">
-
-                            <div class="titulo-kpi-nova">
-                                <h3>TEMPERATURA &lt; 20°C</h3>
-                            </div>
-
-                            <div class="numero-kpi-nova">
-                                <h2>1</h2>
-                            </div>
-
-                            <div class="descricao-kpi-nova">
-                                <p>Temperatura abaixo do ideal</p>
-                            </div>
-
-                        </div>
-
-
-
-
-
                     </div>
 
                     <!-- GRÁFICO -->
-                    <div class="grafico-dashboard-direita">
+                    <div class="grafico-dashboard">
 
-                        <div class="titulos-graficos">
-
-                            <h3 class="titulo-grafico">
-                                Temperatura por tanque
-                            </h3>
-
-                        </div>
-
-                        <div class="graficos">
-
-                            <div class="graf1">
-
+                        <div class="content-graf">
+                    
+                            <div class="titulos-graficos">
+                                <h3>Temperatura por tanque</h3>
+                            </div>
                                 <div class="area-grafico">
                                     <canvas id="graficoBarra"></canvas>
                                 </div>

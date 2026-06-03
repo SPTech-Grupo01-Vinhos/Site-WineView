@@ -26,38 +26,15 @@ function carregarDadosSensor() {
     .catch(function (erro) {
       alert("Erro ao buscar dados do sensor!");
     });
-
-  // DATA AUTOMÁTICA
-
-  let data = new Date();
-
-  let dia = data.getDate();
-
-  let mes = data.getMonth() + 1;
-
-  let ano = data.getFullYear();
-
-  if (dia < 10) {
-    dia = "0" + dia;
-  }
-
-  if (mes < 10) {
-    mes = "0" + mes;
-  }
-
-  let dataFormatada = dia + "/" + mes + "/" + ano;
-
-  document.getElementById("dataAtual").innerHTML = dataFormatada;
 }
 
 function gerarGrafico(data) {
   let labelsBarra = [];
   let dadosBarra = [];
 
-
-  for(let i = 0; i < data.length; i++) {
-    labelsBarra.push(data[i].codigoTanque)
-    dadosBarra.push(Number(data[i].temperatura).toFixed(0))
+  for (let i = 0; i < data.length; i++) {
+    labelsBarra.push(data[i].codigoTanque);
+    dadosBarra.push(Number(data[i].temperatura).toFixed(0));
   }
 
   let cores = [];
@@ -83,11 +60,8 @@ function gerarGrafico(data) {
       datasets: [
         {
           label: "Temperatura",
-
           data: dadosBarra,
-
           backgroundColor: cores,
-
           borderRadius: 8,
         },
       ],
