@@ -69,6 +69,14 @@ const serial = async (
             );
             console.log("valores inseridos no banco: ", sensorAnalogico);
 
+            if(sensorAnalogico < 20 || sensorAnalogico > 30) {
+
+                await poolBancoDados.execute(
+                    `INSERT INTO alerta (fkSensor, mensagem, temperatura) 
+                    VALUES  (${fkSensorAleatorio}, 'Temperatura Crítica: ${sensorAnalogico.toFixed(0)}°C detectados', ${sensorAnalogico.toFixed(0)})`
+                );
+            }
+
         }
 
     });
