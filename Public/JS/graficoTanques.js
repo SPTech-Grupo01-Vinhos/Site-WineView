@@ -133,3 +133,22 @@ function gerarGrafico(data) {
     },
   });
 }
+
+function mudarParaEspecifico() {
+  let select = document.getElementById("select_especifico");
+  let tanqueSelecionado = select.value;
+
+  if (tanqueSelecionado == "#") {
+    return;
+  } else if (tanqueSelecionado == "t1") {
+    window.location.href = "../dashboard/painelTanques.html";
+  } else if (tanqueSelecionado == "t2") {
+    window.location.href = "../dashboard/painelT2.html";
+  } else if (tanqueSelecionado == "t3") {
+    window.location.href = "../dashboard/painelT3.html";
+  } else if (tanqueSelecionado == "t4") {
+    window.location.href = "../dashboard/painelT4.html";
+  }
+
+  console.log("O usuário escolheu o tanque: " + tanqueSelecionado);
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleGlobal.css">
-    <link rel="stylesheet" href="painelGeral.css">
+    <link rel="stylesheet" href="painelTanques.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -58,84 +58,48 @@
 
             <div class="container-painel">
 
-                <div class="titulo">
-                    <h2>Visão eral do Tanque 1</h2>
+                <div class="container-titulo">
+                    <div class="titulo">
+                        <h2>Painel</h2>
+                        <div class="select-painelEspecifico">
+                            <select id="select_especifico" onchange="mudarParaEspecifico()">
+                                <option value="#">Selecione o painel específico...</option>
+                                <option value="t1">Tanque 1</option>
+                                <option value="t2">Tanque 2</option>
+                                <option value="t3">Tanque 3</option>
+                                <option value="t4">Tanque 4</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <p>Acompanhe em tempo real a fermentação dos tanques e monitore as temperaturas.</p>
                 </div>
 
 
                 <div class="conteudo-dashboard">
 
-
-                    <!-- KPI TEMPERATURA IDEAL -->
-                    <div class="caixa-kpi">
-
-                        <div class="titulo-kpi">
-                            <h3>TEMPERATURA IDEAL</h3>
-                        </div>
-
-                        <div class="numero-kpi">
-                            <h2>30°C</h2>
-                        </div>
-
-                        <div class="descricao-kpi">
-                            <p>Faixa ideal da fermentação</p>
-                        </div>
-
+                    <div class="caixa-legenda">
+                        <h3>MODELO DO TANQUE</h3>
+                        <h2 id="modeloTanque">INOX</h2>
+                        <p>Informa o nome do modelo do tanque</p>
                     </div>
 
-
-                    <!-- KPI ALERTAS -->
                     <div class="caixa-kpi">
-
-                        <div class="titulo-kpi-nova">
-                            <h3>TOTAL DE ALERTAS</h3>
-                        </div>
-
-                        <div class="numero-kpi-nova">
-                            <h2>2</h2>
-                        </div>
-
-                        <div class="descricao-kpi-nova">
-                            <p>Tanques fora da faixa ideal</p>
-                        </div>
-
+                        <h3>TOTAL DE ALERTAS</h3>
+                        <h2 id="totalAlertas">0</h2>
+                        <p>Quantidade de alertas emitidos somente em estado crítico</p>
                     </div>
 
-
-                    <!-- KPI TOTAL TANQUES -->
                     <div class="caixa-kpi">
-
-                        <div class="titulo-kpi-nova">
-                            <h3>TOTAL DE TANQUES</h3>
-                        </div>
-
-                        <div class="numero-kpi-nova">
-                            <h2>7</h2>
-                        </div>
-
-                        <div class="descricao-kpi-nova">
-                            <p>Quantidade cadastrada</p>
-                        </div>
-
+                        <h3>TEMPERATURA ATUAL</h3>
+                        <h2 id="temperaturaAtual">0°C</h2>
+                        <p>Medição da temperatura atual do tanque</p>
                     </div>
 
-
-                    <!-- KPI TANQUES ATIVOS -->
                     <div class="caixa-kpi">
-
-                        <div class="titulo-kpi-nova">
-                            <h3>TANQUES ATIVOS</h3>
-                        </div>
-
-                        <div class="numero-kpi-nova">
-                            <h2>4</h2>
-                        </div>
-
-                        <div class="descricao-kpi-nova">
-                            <p>Tanques em funcionamento</p>
-                        </div>
-
+                        <h3>STATUS ATUAL DO TANQUE</h3>
+                        <h2 id="statusTanque">MOSTO</h2>
+                        <p>Informa se o tanque iniciou a fermentação</p>
                     </div>
 
                 </div>
@@ -151,7 +115,7 @@
                         <div class="area-grafico">
                             <canvas id="graficoLinha"></canvas>
                         </div>
-                        
+
                     </div>
 
                 </div>

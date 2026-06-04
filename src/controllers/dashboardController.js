@@ -16,6 +16,11 @@ function buscarDadosSensor(req, res) {
     });
 }
 
+function buscarDadosTanque(req, res) {
+  let idUsuario = req.body.idUsuario;
+  let 
+}
+
 module.exports = {
   buscarDadosSensor
 };

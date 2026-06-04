@@ -66,19 +66,22 @@
                 <div class="container-titulo">
                     <div class="titulo">
                         <h2>Painel</h2>
-                        <p>Acompanhe em tempo real a fermentação dos tanques e monitore as temperaturas.</p>
+                        <div class="select-painelEspecifico">
+                            <select id="select_especifico" onchange="mudarParaEspecifico()">
+                                <option value="#">Selecione o painel específico...</option>
+                                <option value="t1">Tanque 1</option>
+                                <option value="t2">Tanque 2</option>
+                                <option value="t3">Tanque 3</option>
+                                <option value="t4">Tanque 4</option>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="select-painelEspecífico">
-                        <select id="select_especifico" onchange="mudarParaEspecifico()">
-                            <option value="#">Selecione o painel que você quer visualizar...</option>
-                            <option value="t1">Tanque 1</option>
-                            <option value="t2">Tanque 2</option>
-                            <option value="t3">Tanque 3</option>
-                            <option value="t4">Tanque 4</option>
-                        </select>
-                    </div>
+                    
+                    <p>Acompanhe em tempo real a fermentação dos tanques e monitore as temperaturas.</p>
                 </div>
+
+
+
 
 
                 <div class="conteudo-dashboard">
