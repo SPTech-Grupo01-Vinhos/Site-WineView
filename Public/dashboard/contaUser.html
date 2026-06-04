@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleGlobal.css">
     <link rel="stylesheet" href="contaUser.css">
+    <script src="../JS/contaUser.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
     <title>Dashboard</title>
 </head>
 
-<body>
+<body onload="buscarDadosUsuario()">
 
     <div class="container-principal">
         <div class="menu">
@@ -66,33 +67,39 @@
 
                     <div class="container-info-conta">
                         <div class="bolinha-info">
-                            <img src="../../img/dash/icon-pessoa.png" alt="">
+                            <img src="../img/dash/icon-pessoa.png" alt="">
                         </div>
                         <div class="infos-conta">
                             <p class="subtitulo">Nome Completo</p>
-                            <p>João da Silva</p>
+                            <p id="nome-user">João da Silva</p>
+                            <input type="text" id="ipt_nome" style="display: none;" class="ipt-edicao">
                         </div>
                     </div>
 
                     <div class="container-info-conta">
                         <div class="bolinha-info">
-                            <img src="../../img/dash/icon-carta.png" alt="">
+                            <img src="../img/dash/icon-carta.png" alt="">
                         </div>
                         <div class="infos-conta">
                             <p class="subtitulo">Email</p>
-                            <p>joao.silva@email.com</p>
+                            <p id="email-user">joao.silva@email.com</p>
+                            <input type="text" id="ipt_email" style="display: none;" class="ipt-edicao">
                         </div>
                     </div>
 
                     <div class="container-info-conta">
                         <div class="bolinha-info">
-                            <img src="../../img/dash/icon-cadeado.png" alt="">
+                            <img src="../img/dash/icon-cadeado.png" alt="">
                         </div>
                         <div class="infos-conta">
                             <p class="subtitulo">Senha</p>
-                            <p>**********</p>
+                            <p id="senha-user">**********</p>
+                            <input type="password" id="ipt_senha" style="display: none;" class="ipt-edicao">
                         </div>
                     </div>
+
+                    <button onclick="liberarEdicao()" id="btn-editarPerfil">Editar Perfil</button>
+                    <button onclick="salvarEdicao()" id="btn-salvarEdicao" style="display: none;">Salvar</button>
 
                 </div>
 
