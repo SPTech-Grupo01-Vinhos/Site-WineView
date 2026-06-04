@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleGlobal.css">
     <link rel="stylesheet" href="alerta.css">
+    <script src="../JS/alerta.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
     <title>Dashboard</title>
 </head>
 
-<body>
+<body onload="carregarAlertas()">
 
     <div class="container-principal">
 
@@ -57,55 +58,9 @@
                         <p>Aqui você consegue visualizar todos os alertas já registrados.</p>
                     </div>
 
-                    <div class="container-alertas2">
+                    <div id="lista-alertas" class="container-alertas2">
 
-                        <div class="cardsAlertas">
-                            <div class="iconeAlerta">
-                                <img src="../img/dash/iconalerta.png" alt="">
-                            </div>
-                            <div class="infoAlerta">
-                                <h3>Tanque: T2</h3>
-                                <p><b>Status:</b> Temperatura crítica: 32°C</p>
-                                <p><b>Leitura:</b> 32.50°C</p>
-                            </div>
-                            <div class="divisor"></div>
-                            <div class="tempoAlerta">
-                                <p>Registrado às</p>
-                                <span>12:38</span>
-                            </div>
-                        </div>
-
-                        <div class="cardsAlertas">
-                            <div class="iconeAlerta">
-                                <img src="../img/dash/iconalerta.png" alt="">
-                            </div>
-                            <div class="infoAlerta">
-                                <h3>Tanque: T2</h3>
-                                <p><b>Status:</b> Temperatura crítica: 32°C</p>
-                                <p><b>Leitura:</b> 32.50°C</p>
-                            </div>
-                            <div class="divisor"></div>
-                            <div class="tempoAlerta">
-                                <p>Registrado às</p>
-                                <span>12:38</span>
-                            </div>
-                        </div>
-
-                        <div class="cardsAlertas">
-                            <div class="iconeAlerta">
-                                <img src="../img/dash/iconalerta.png" alt="">
-                            </div>
-                            <div class="infoAlerta">
-                                <h3>Tanque: T2</h3>
-                                <p><b>Status:</b> Temperatura crítica: 32°C</p>
-                                <p><b>Leitura:</b> 32.50°C</p>
-                            </div>
-                            <div class="divisor"></div>
-                            <div class="tempoAlerta">
-                                <p>Registrado às</p>
-                                <span>12:38</span>
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>

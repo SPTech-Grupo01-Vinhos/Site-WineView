@@ -15,4 +15,8 @@ router.post("/buscar-tanques", function (req, res) {
     dashboardController.buscarTanques(req, res);
 })
 
+router.post("/buscar-alertas", function (req, res) {
+    dashboardController.buscarAlertas(req, res);
+})
+
 module.exports = router;

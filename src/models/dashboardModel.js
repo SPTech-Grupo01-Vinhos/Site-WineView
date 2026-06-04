@@ -73,9 +73,30 @@ function buscarTanques(idUsuario) {
   return database.executar(instrucaoSql);
 }
 
+function buscarAlertas(idUsuario) {
+  console.log(
+    "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function buscarAlertas(): ",
+    idUsuario,
+  );
+
+  var instrucaoSql = `
+    SELECT a.*, t.codigoTanque
+    FROM alerta a
+      JOIN sensor s ON s.idSensor = a.fkSensor
+      JOIN tanque t ON t.idTanque = s.fkTanque
+      JOIN vinicola v ON v.idVinicola = t.fkVinicola
+      JOIN usuario u ON u.idUsuario = v.fkUsuario
+      WHERE u.idUsuario = ${idUsuario}
+      ORDER BY a.dtHora DESC;	`;
+
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
 module.exports = {
   buscarDadosSensor,
   buscarDadosTanque,
   buscarTemperaturasTanque,
-  buscarTanques
+  buscarTanques,
+  buscarAlertas 
 };
