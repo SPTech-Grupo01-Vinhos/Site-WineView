@@ -24,7 +24,7 @@
 
 </head>
 
-<body onload="carregarDadosSensor()">
+<body onload="atualizarDadosGrafico()">
 
     <div class="container-principal">
         <div class="menu">
@@ -84,75 +84,35 @@
                 <div class="conteudo-dashboard">
 
 
-                    <!-- KPI TEMPERATURA IDEAL -->
-                    <div class="caixa-kpi-legenda">
-
-                        <div class="titulo-kpi-legenda">
-                            <h3>TEMPERATURA IDEAL</h3>
-                        </div>
-
-                        <div class="numero-kpi-legenda">
-                            <h2>20°C - 30°C</h2>
-                        </div>
-
-                        <div class="descricao-kpi-legenda">
-                            <p>Faixa ideal da fermentação</p>
-                        </div>
-
+                    <!-- KPI TOTAL TANQUES -->
+                    <div class="caixa-kpi">
+                        <h3>TOTAL DE TANQUES</h3>
+                        <h2 id="TotalTanques">0</h2>
+                        <p>Tanques cadastrados pelo usuário</p>
                     </div>
 
 
                     <!-- KPI ALERTAS -->
                     <div class="caixa-kpi">
-
-                        <div class="titulo-kpi-nova">
-                            <h3>TOTAL DE ALERTAS</h3>
-                        </div>
-
-                        <div class="numero-kpi-nova">
-                            <h2>2</h2>
-                        </div>
-
-                        <div class="descricao-kpi-nova">
-                            <p>Tanques fora da faixa ideal</p>
-                        </div>
-
+                        <h3>TOTAL DE TANQUES ABAIXO DO IDEAL</h3>
+                        <h2 id="totalAbaixoIdeal">0</h2>
+                        <p>Tanques abaixo de 20°C</p>
                     </div>
 
 
-                    <!-- KPI TOTAL TANQUES -->
+                    <!-- KPI ALERTAS -->
                     <div class="caixa-kpi">
-
-                        <div class="titulo-kpi-nova">
-                            <h3>TOTAL DE TANQUES</h3>
-                        </div>
-
-                        <div class="numero-kpi-nova">
-                            <h2>7</h2>
-                        </div>
-
-                        <div class="descricao-kpi-nova">
-                            <p>Quantidade cadastrada</p>
-                        </div>
-
+                        <h3>TOTAL DE TANQUES ACIMA DO IDEAL</h3>
+                        <h2 id="totalAcimaIdeal">0</h2>
+                        <p>Tanques acima de 30°C</p>
                     </div>
 
 
-                    <!-- KPI TANQUES ATIVOS -->
+                    <!-- KPI SENSOR INATIVO -->
                     <div class="caixa-kpi">
-
-                        <div class="titulo-kpi-nova">
-                            <h3>TANQUES ATIVOS</h3>
-                        </div>
-
-                        <div class="numero-kpi-nova">
-                            <h2>4</h2>
-                        </div>
-
-                        <div class="descricao-kpi-nova">
-                            <p>Tanques em funcionamento</p>
-                        </div>
-
+                        <h3>SENSORES INATIVOS</h3>
+                        <h2 id="sensoresInativos">0</h2>
+                        <p>Quantidade de sensores inativos</p>
                     </div>
 
                 </div>

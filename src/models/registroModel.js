@@ -3,7 +3,7 @@ var database = require("../database/config")
 function buscarDadosSensor(idUsuario) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", idUsuario)
     var instrucaoSql = `
-        SELECT r.*, t.codigoTanque
+        SELECT r.*, t.codigoTanque, s.statusSensor
         FROM registro r 
         JOIN sensor s ON s.idSensor = r.fkSensor 
         JOIN tanque t ON t.idTanque = s.fkTanque
