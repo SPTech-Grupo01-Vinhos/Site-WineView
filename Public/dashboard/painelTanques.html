@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="carregarDadosSensor()">
+<body onload="atualizarDadosGrafico()">
 
     <div class="container-principal">
         <div class="menu">
@@ -60,14 +60,10 @@
 
                 <div class="container-titulo">
                     <div class="titulo">
-                        <h2>Painel</h2>
+                        <h2 id="codigo-tanque">Painel do Tanque T</h2>
                         <div class="select-painelEspecifico">
                             <select id="select_especifico" onchange="mudarParaEspecifico()">
-                                <option value="#">Selecione o painel específico...</option>
-                                <option value="t1">Tanque 1</option>
-                                <option value="t2">Tanque 2</option>
-                                <option value="t3">Tanque 3</option>
-                                <option value="t4">Tanque 4</option>
+                                
                             </select>
                         </div>
                     </div>

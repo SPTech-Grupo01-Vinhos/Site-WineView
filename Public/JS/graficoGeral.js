@@ -57,6 +57,7 @@ function iniciarGrafico() {
 function atualizarDadosGrafico() {
   console.log("Inicializando o gráfico e buscando dados...");
 
+  carregarTanques();
   iniciarGrafico();
   carregarDadosSensor();
 
@@ -125,23 +126,52 @@ function gerarGrafico(data, grafico) {
   grafico.update();
 }
 
-function mudarParaEspecifico() {
-  let select = document.getElementById("select_especifico");
-  let tanqueSelecionado = select.value;
+function carregarTanques() {
+  let idUsuario = sessionStorage.getItem("ID_USUARIO");
 
-  if (tanqueSelecionado == "#") {
-    return;
-  } else if (tanqueSelecionado == "t1") {
-    window.location.href = "../dashboard/painelT1.html";
-  } else if (tanqueSelecionado == "t2") {
-    window.location.href = "../dashboard/painelT2.html";
-  } else if (tanqueSelecionado == "t3") {
-    window.location.href = "../dashboard/painelT3.html";
-  } else if (tanqueSelecionado == "t4") {
-    window.location.href = "../dashboard/painelT4.html";
+  fetch("/dashboard/buscar-tanques", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      idUsuario: idUsuario,
+    }),
+  })
+    .then(function (resposta) {
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then((json) => {
+          criarSelectTanques(json)
+        });
+      } else {
+        alert("Erro ao buscar tanques!");
+      }
+    })
+    .catch(function (erro) {
+      alert("Erro ao buscar tanques!");
+    });
+}
+
+function criarSelectTanques(data) {
+
+  let htmlSelect = '<option value="#">Selecione o painel específico...</option>';
+
+  for(let i = 0; i < data.length; i++) {
+    htmlSelect += `<option value="${data[i].idTanque}">${data[i].codigoTanque}</option>`;
   }
 
-  console.log("O usuário escolheu o tanque: " + tanqueEscolhido);
+  document.getElementById('select_especifico').innerHTML = htmlSelect;
+}
+
+function mudarParaEspecifico() {
+  let select = document.getElementById("select_especifico");
+  let idTanqueSelecionado = select.value;
+
+  sessionStorage.setItem('TANQUE_SELECIONADO', idTanqueSelecionado)
+
+  window.location.href = "../dashboard/painelTanques.html";
 }
 
 // funcao KPI's

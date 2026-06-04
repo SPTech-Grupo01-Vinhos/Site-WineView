@@ -11,4 +11,8 @@ router.post("/buscar-dados-tanque", function (req, res) {
     dashboardController.buscarDadosTanque(req, res);
 })
 
+router.post("/buscar-tanques", function (req, res) {
+    dashboardController.buscarTanques(req, res);
+})
+
 module.exports = router;
