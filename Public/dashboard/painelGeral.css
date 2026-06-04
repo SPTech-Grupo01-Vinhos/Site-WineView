@@ -1,5 +1,4 @@
-/* Importa o menu e resets globais */
-@import url("global.css");
+/* Importa resets globais */
 
 .container-principal {
   min-height: 100vh;

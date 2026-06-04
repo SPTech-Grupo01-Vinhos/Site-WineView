@@ -1,5 +1,4 @@
 /* Importa o menu e resets globais */
-@import url("global.css");
 
 .container-principal {
   min-height: 100vh;
@@ -107,7 +106,7 @@
 
   h2 {
     color: #42090e;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
   }
 
@@ -145,7 +144,7 @@
 
   h2 {
     color: #f0eae3;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
   }
 
