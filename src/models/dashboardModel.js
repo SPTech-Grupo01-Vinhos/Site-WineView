@@ -18,8 +18,19 @@ function buscarDadosSensor(idUsuario) {
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
+};
+
+function buscarDadosTanque(idUsuario, idTanque) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", idUsuario, idTanque)
+    var instrucaoSql = `SELECT * FROM vw_resumo_tanques_atual WHERE idUsuario = ${idUsuario} AND idTanque = ${idTanque};` //  A VIEW ESTÁ AQUI
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
 }
 
+
+
 module.exports = {
-    buscarDadosSensor
+    buscarDadosSensor,
+    buscarDadosTanque
 };

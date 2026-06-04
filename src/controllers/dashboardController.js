@@ -1,4 +1,4 @@
-var registroModel = require("../models/registroModel");
+var registroModel = require("../models/dashboardModel");
 
 function buscarDadosSensor(req, res) {
   let idUsuario = req.body.idUsuario;
@@ -9,8 +9,11 @@ function buscarDadosSensor(req, res) {
       res.json(resultado);
     })
     .catch(function (erro) {
-      console.log(erro)
-      console.log("\nHouve um erro ao buscar os dados do sensor! Erro: ", erro.sqlMessage);
+      console.log(erro);
+      console.log(
+        "\nHouve um erro ao buscar os dados do sensor! Erro: ",
+        erro.sqlMessage,
+      );
       res.status(500).json(erro.sqlMessage);
       return;
     });
@@ -18,9 +21,25 @@ function buscarDadosSensor(req, res) {
 
 function buscarDadosTanque(req, res) {
   let idUsuario = req.body.idUsuario;
-  let 
+  let idTanque = req.body.idTanque;
+
+  registroModel
+  .buscarDadosTanque(idUsuario, idTanque)
+  .then(function (resultado) {
+    res.json(resultado);
+  })
+  .catch(function (erro) {
+    console.log(erro);
+    console.log(
+        "\nHouve um erro ao buscar os dados do sensor! Erro: ",
+        erro.sqlMessage,
+      );
+      res.status(500).json(erro.sqlMessage);
+      return;
+  });
 }
 
 module.exports = {
-  buscarDadosSensor
+  buscarDadosSensor,
+  buscarDadosTanque
 };
