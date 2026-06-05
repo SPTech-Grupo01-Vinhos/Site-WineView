@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <link rel="stylesheet" href="suporte.css">
+    <link rel="stylesheet" href="styleGlobal.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="container" class="container-principal">
+        <div class="menu">
+            <img src="../img/dash/logoBranca.png" alt="logo" class="logo">
+            <div class="itens">
+                <div class="item" id="p5">
+                    <img src="../img/dash/icon-suporte-2.png" alt="" class="imgItens">
+                    <a href="./suporte.html">Suporte</a>
+                </div>
+            </div>
+            <div class="voltar">
+                <img src="../img/dash/iconePorta.png" alt="" class="imgItens">
+                <a href="../home/home.html">Voltar ao Site</a>
+            </div>
+        </div>
+        <div class="painel">
+            <div class="container-painel">
+                <div class="icon-img">
+                    <img src="../img/dash/icon-suporte-1.png" alt="">
+                </div>
+                <div class="container-texto-manual">
+                    <span class="titulo-manual">Suporte Nível 3</span>
+                    <span class="conteudo-manual">Ambiente exclusivo para a equipe de Suporte Nível 3. Utilize o
+                        assistente inteligente para análise de incidentes, diagnóstico de alertas, validação de
+                        sensores, consulta de documentação técnica e suporte avançado da plataforma Wine View. Obtenha
+                        respostas rápidas para auxiliar na resolução de problemas e na tomada de decisões.</span>
+                </div>
+                <div class="container-caixa">
+                    <div class="container-caixa-1">
+                        <span class="titulo">✧ Assistente IA</span>
+                        <span class="conteudo">Faça perguntas técnicas
+                            sobre o sistema, sensores, fermentação, integrações e muito mais
+                        </span>
+                        <span class="titulo">✧ Sugestões</span>
+                        <span class="conteudo">Como verificar falha de sensor?
+                        </span>
+                        <span class="conteudo">Como validar os alertas?
+                        </span>
+                        <span class="conteudo">Como consultar logs?
+                        </span>
+                    </div>
+                    <div class="container-caixa-2">
+                        <div class="container-caixa-resposta">
+                            <div class="mensagem-ia">
+                                <span id="resposta">
+                                    Olá! Eu sou assistente de suporte do Wine View.<br>
+                                    Como posso ajudar você hoje?
+                                </span>
+                            </div>
+                        </div>
+                        <div class="caixa-criar-pergunta">
+                            <div class="container-caixa-pergunta">
+                                <textarea id="pergunta" placeholder="Digite sua pergunta para a IA..."
+                                    class="caixa-pergunta"></textarea>
+                                <button onclick="gerarResposta()" class="btn">
+                                    <img src="../img/dash/icon-suporte-3.png" alt="">
+                                </button>
+                            </div>
+
+                            <span>
+                                ⓘ Seja específico e forneça o máximo de detalhes possível para obter melhores respostas.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        async function gerarResposta() {
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/ia/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            resposta.style.display = 'block';
+            document.getElementById('resposta').innerText = data.resultado;
+        }
+
+    </script>
+
+</body>
+
+</html>

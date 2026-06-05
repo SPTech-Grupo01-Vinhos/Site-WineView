@@ -1,0 +1,213 @@
+/* #container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+} */
+
+.container-principal {
+    min-height: 100vh;
+}
+
+img {
+    width: 50px;
+}
+
+.painel {
+    width: 80%;
+    margin: 15px 15px;
+    height: auto;
+    background-color: #E2D8CA;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container-painel {
+        width: 85%;
+        height: 90%;
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        .icon-img {
+            img {
+                width: 115px;
+                /* background-color: aqua; */
+            }
+        }
+
+        .container-texto-manual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .titulo-manual {
+                color: #42090e;
+                font-size: 2.5rem;
+                font-family: 'DM Serif Display', serif;
+            }
+
+            .conteudo-manual {
+                margin-top: 15px;
+                width: 75%;
+                font-size: 1.2rem;
+                color: #5e5555;
+                line-height: 1.2;
+            }
+        }
+
+        .container-caixa {
+            width: 90%;
+            margin-top: 35px;
+            height: 350px;
+            display: flex;
+            border-radius: 15px;
+
+            .container-caixa-1 {
+                background-color: #F0EAE3;
+                width: 20%;
+                border-right: 1px solid white;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 8px;
+                padding-top: 30px;
+                .titulo {
+                    width: 80%;
+                    color: #42090e;
+                    font-size: 1.1rem;
+                    font-family: 'DM Serif Display', serif;
+                    height: 30px;
+                }
+
+                .conteudo {
+                    width: 80%;
+                    color: #6d625b;
+                }
+            }
+
+            .container-caixa-2 {
+                background-color: #F0EAE3;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                .container-caixa-resposta {
+                    width: 100%;
+                    max-height: 190px;
+                    overflow-y: auto;
+
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    padding: 20px 35px;
+                    box-sizing: border-box;
+                    margin: 0;
+
+
+                    .mensagem-ia {
+                        max-width: 450px;
+                        background-color: #E2D8CA;
+                        border-radius: 15px;
+                        padding: 15px 18px;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        #resposta {
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: #5B514A;
+                            line-height: 1.4;
+                        }
+                    }
+                }
+
+                .caixa-criar-pergunta {
+                    width: 95%;
+                    height: 120px;
+                    background-color: #E2D8CA;
+                    border-radius: 10px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    gap: 12px;
+                    margin: 0 auto 15px auto;
+                    flex-shrink: 0;
+
+                    .container-caixa-pergunta {
+                        width: 95%;
+                        height: 55px;
+                        background-color: #F0EAE3;
+                        border-radius: 8px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 8px;
+                        box-sizing: border-box;
+
+                        .caixa-pergunta {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            outline: none;
+                            resize: none;
+                            background: transparent;
+
+                            padding: 15px;
+                            font-size: 16px;
+                            color: #6d625b;
+                            font-family: inherit;
+
+                            &::placeholder {
+                                color: #8c8178;
+                            }
+                        }
+
+                        .btn {
+                            min-width: 55px;
+                            width: 55px;
+                            height: 45px;
+
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #42090E;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            cursor: pointer;
+
+                            img {
+                                width: 60px;
+                                /* height: 20px; */
+                                object-fit: contain;
+                            }
+                        }
+                    }
+
+                    span {
+                        width: 95%;
+                        font-size: 14px;
+                        color: #9a8d82;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

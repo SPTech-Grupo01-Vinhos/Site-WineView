@@ -17,6 +17,7 @@ var app = express();
 var homeRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var dashboardRouter = require("./src/routes/dashboard");
+var iaRouter = require("./src/routes/ia");
 var vinicolaRouter = require("./src/routes/vinicola");
 
 
@@ -29,6 +30,7 @@ app.use(cors());
 app.use("/", homeRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/ia", iaRouter);
 app.use("/vinicola", vinicolaRouter);
 
 
