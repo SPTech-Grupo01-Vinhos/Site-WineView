@@ -114,3 +114,16 @@
 .linha {
     display: none;
 }
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: self-end;
+    justify-content:end;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+.infos input {
+    display: none;
+}
