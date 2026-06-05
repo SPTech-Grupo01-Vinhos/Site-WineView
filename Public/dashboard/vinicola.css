@@ -1,5 +1,4 @@
 /* Importa o menu e resets globais */
-
 .container-principal {
     min-height: 100vh;
 }
@@ -126,4 +125,35 @@
 
 .infos input {
     display: none;
+}
+
+.ipt-edicao {
+    padding: .3rem;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: inset 0 6px 10px #0000000d;
+    width: 25rem;
+}
+
+.btn-editar-salvar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+#btn-editarPerfil, #btn-salvarVinicola {
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #42090e;
+    color: #d6cfc7;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-editarPerfil:hover, #btn-salvarVinicola:hover {
+    opacity: 0.7;
+    transform: scale(1.02);
 }
