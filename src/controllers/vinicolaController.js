@@ -1,6 +1,5 @@
 var vinicolaModel = require("../models/vinicolaModel");
 
-
 function buscarVinicola(req, res) {
   let idUsuario = req.body.idUsuario;
 
@@ -20,29 +19,40 @@ function buscarVinicola(req, res) {
 }
 
 function editarVinicola(req, res) {
-    let idUsuario = req.body.idUsuario;
-    let nomeVinicola = req.body.nomeVinicola;
-    let telefone = req.body.telefone;
-    let cnpj = req.body.cnpj;
-    let qtdTanquesSuportados = req.body.qtdTanquesSuportados;
+  
+  var nomeVinicola = req.body.nomeVinicola;
+  var telefone = req.body.telefone;
+  var cnpj = req.body.cnpj;
+  var qtdTanquesSuportados = req.body.qtdTanquesSuportados;
+  let idUsuario = req.body.idUsuario;
 
-    if (idUsuario == undefined) {
-        return res.status(400).send("O ID do usuário está undefined!");
-    }
+  let dados_vinicola = {
+    nomeVinicola: nomeVinicola,
+    telefone: telefone,
+    cnpj: cnpj,
+    qtdTanquesSuportados: qtdTanquesSuportados,
+  };
 
-    vinicolaModel
-        .editarVinicola(nomeVinicola, telefone, cnpj, qtdTanquesSuportados, idUsuario)
-        .then(function (resultado) {
-            res.json(resultado);
-        })
-        .catch(function (erro) {
-            console.log(erro);
-            console.log("\nHouve um erro ao editar a vinícola! Erro: ", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        });
+  if (idUsuario == undefined) {
+    return res.status(400).send("O ID do usuário está undefined!");
+  }
+
+  vinicolaModel
+    .editarVinicola(dados_vinicola, idUsuario)
+    .then(function (resultado) {
+      res.json(resultado);
+    })
+    .catch(function (erro) {
+      console.log(erro);
+      console.log(
+        "\nHouve um erro ao editar a vinícola! Erro: ",
+        erro.sqlMessage,
+      );
+      res.status(500).json(erro.sqlMessage);
+    });
 }
 
 module.exports = {
-    buscarVinicola,
-    editarVinicola
+  buscarVinicola,
+  editarVinicola
 };

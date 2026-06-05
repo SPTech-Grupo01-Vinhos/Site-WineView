@@ -1,8 +1,13 @@
-
 let nomeVinicola = "";
 let telefone = "";
 let cnpj = "";
 let qtdTanquesSuportados = "";
+let rua = "";
+let numero = "";
+let bairro = "";
+let cep = "";
+let cidade = "";
+let estado = "";
 
 function buscarDadosUsuario() {
   let idUsuario = sessionStorage.getItem("ID_USUARIO");
@@ -23,7 +28,7 @@ function buscarDadosUsuario() {
         resposta.json().then((json) => {
           console.log(json);
 
-          exibirInformacoesUser(json);
+          exibirInformacoesVinicola(json);
         });
       } else {
         alert("Erro ao buscar dados da vinicola!");
@@ -34,7 +39,7 @@ function buscarDadosUsuario() {
     });
 }
 
-function exibirInformacoesUser(data) {
+function exibirInformacoesVinicola(data) {
   nomeVinicola = data[0].nomeVinicola;
   telefone = data[0].telefone;
   cnpj = data[0].cnpj;
@@ -76,6 +81,12 @@ function editarvinicola(){
   ipt_telefone.value = telefone;
   ipt_cnpj.value = cnpj;
   ipt_qtdTanques.value = qtdTanquesSuportados; // Corrigido para a variável global certa
+  ipt_rua.value = rua;
+  ipt_numero.value = numero;
+  ipt_bairro.value = bairro;
+  ipt_cep.value = cep;
+  ipt_cidade.value = cidade;
+  ipt_estado.value = estado;
   
   // Como rua, numero, etc. não foram declarados globalmente, pegamos do próprio texto da tela:
   ipt_rua.value = document.getElementById("rua").innerText;
@@ -112,7 +123,7 @@ function salvarVinicola(){
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      idUsuario: idUsuario,
+      idUsuario: sessionStorage.getItem("ID_USUARIO"),
       nomeVinicola: ipt_nomeVinicola.value,
       telefone: ipt_telefone.value,
       cnpj: ipt_cnpj.value,
@@ -137,9 +148,8 @@ function salvarVinicola(){
           document.getElementById("btn-editarPerfil").style.display = "block";
           document.getElementById("btn-salvarVinicola").style.display = "none";
 
-          exibirInformacoesUser(json);
+          exibirInformacoesVinicola(json);
         });
-        alert("Dados atualizados com sucesso!");
         window.location.reload();
       } else {
         alert("Erro ao salvar dados da vinícola!");
