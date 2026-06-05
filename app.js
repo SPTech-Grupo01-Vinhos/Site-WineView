@@ -17,6 +17,8 @@ var app = express();
 var homeRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var dashboardRouter = require("./src/routes/dashboard");
+var vinicolaRouter = require("./src/routes/vinicola");
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +29,8 @@ app.use(cors());
 app.use("/", homeRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/vinicola", vinicolaRouter);
+
 
 app.listen(PORTA_APP, function () {
     console.log(`
