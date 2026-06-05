@@ -150,7 +150,6 @@ function salvarVinicola(){
 
           exibirInformacoesVinicola(json);
         });
-        window.location.reload();
       } else {
         alert("Erro ao salvar dados da vinícola!");
       }
