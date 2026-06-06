@@ -17,6 +17,10 @@ function limparSessao() {
     window.location = "../login.html";
 }
 
+function Deslogar() {
+    sessionStorage.clear();
+    window.location = "../home/home.html";
+}
 // carregamento (loading)
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
