@@ -7,7 +7,7 @@ const chatIA = new GoogleGenAI({
 });
 
 router.post("/perguntar", async (req, res) => {
-    const pergunta = req.body.pergunta;
+    const pergunta = req.body.pergunta; 
 
     try {
         const resultado = await gerarResposta(pergunta);

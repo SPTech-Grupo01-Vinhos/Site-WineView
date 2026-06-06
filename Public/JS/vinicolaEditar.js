@@ -51,7 +51,7 @@ function exibirInformacoesVinicola(data) {
   document.getElementById("qtdTanques").innerText = `${qtdTanquesSuportados}`;
 }
 
-function editarvinicola(){
+function editarvinicola() {
   // 1. Esconde os parágrafos de texto originais
   document.getElementById("nomeVinicola").style.display = "none";
   document.getElementById("telefone").style.display = "none";
@@ -87,7 +87,7 @@ function editarvinicola(){
   ipt_cep.value = cep;
   ipt_cidade.value = cidade;
   ipt_estado.value = estado;
-  
+
   // Como rua, numero, etc. não foram declarados globalmente, pegamos do próprio texto da tela:
   ipt_rua.value = document.getElementById("rua").innerText;
   ipt_numero.value = document.getElementById("numero").innerText;
@@ -113,8 +113,7 @@ function editarvinicola(){
   document.getElementById("btn-salvarVinicola").style.display = "block";
 }
 
-
-function salvarVinicola(){
+function salvarVinicola() {
   let idUsuario = sessionStorage.getItem("ID_USUARIO");
 
   fetch("/vinicola/editarVinicola", {
@@ -139,11 +138,23 @@ function salvarVinicola(){
           document.getElementById("telefone").style.display = "block";
           document.getElementById("cnpj").style.display = "block";
           document.getElementById("qtdTanques").style.display = "block";
+          document.getElementById("rua").style.display = "block";
+          document.getElementById("numero").style.display = "block";
+          document.getElementById("bairro").style.display = "block";
+          document.getElementById("cep").style.display = "block";
+          document.getElementById("cidade").style.display = "block";
+          document.getElementById("estado").style.display = "block";
 
           document.getElementById("ipt_nomeVinicola").style.display = "none";
           document.getElementById("ipt_telefone").style.display = "none";
           document.getElementById("ipt_cnpj").style.display = "none";
-          document.getElementById("qtdTanquesSuportados").style.display = "none";
+          document.getElementById("ipt_qtdTanques").style.display = "none";
+          document.getElementById("ipt_rua").style.display = "none";
+          document.getElementById("ipt_numero").style.display = "none";
+          document.getElementById("ipt_bairro").style.display = "none";
+          document.getElementById("ipt_cep").style.display = "none";
+          document.getElementById("ipt_cidade").style.display = "none";
+          document.getElementById("ipt_estado").style.display = "none";
 
           document.getElementById("btn-editarPerfil").style.display = "block";
           document.getElementById("btn-salvarVinicola").style.display = "none";
