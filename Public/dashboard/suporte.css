@@ -189,12 +189,17 @@ img {
                             align-items: center;
 
                             cursor: pointer;
+                            transition: opacity 0.3s ease;
 
                             img {
                                 width: 60px;
                                 /* height: 20px; */
                                 object-fit: contain;
                             }
+                        }
+
+                        .btn:hover {
+                            opacity: 0.6;
                         }
                     }
 
