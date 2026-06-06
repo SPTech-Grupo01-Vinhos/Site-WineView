@@ -40,7 +40,21 @@ function editarVinicola(req, res) {
   vinicolaModel
     .editarVinicola(dados_vinicola, idUsuario)
     .then(function (resultado) {
-      res.json(resultado);
+      
+      vinicolaModel
+      .buscarVinicola(idUsuario)
+      .then(function (res_vinicola) {
+        res.json(res_vinicola);
+      })
+      .catch(function (erro) {
+        console.log(erro);
+        console.log(
+          "\nHouve um erro ao buscar o id da vinicola! Erro: ",
+          erro.sqlMessage,
+        );
+        res.status(500).json(erro.sqlMessage);
+      });
+      
     })
     .catch(function (erro) {
       console.log(erro);
