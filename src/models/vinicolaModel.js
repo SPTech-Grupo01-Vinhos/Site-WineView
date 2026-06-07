@@ -21,7 +21,7 @@ function buscarVinicola(idUsuario) {
   );
 
   var instrucaoSql = `
-        SELECT * FROM vinicola WHERE fkUsuario = ${idUsuario};
+        SELECT * FROM vinicola JOIN endereco ON fkEndereco = idEndereco WHERE fkUsuario = ${idUsuario};
     `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);

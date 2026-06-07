@@ -43,12 +43,22 @@ function exibirInformacoesVinicola(data) {
   nomeVinicola = data[0].nomeVinicola;
   telefone = data[0].telefone;
   cnpj = data[0].cnpj;
-  qtdTanquesSuportados = data[0].qtdTanquesSuportados;
+  logradouro = data[0].logradouro;
+  numero = data[0].numero;
+  cep = data[0].cep;
+  cidade = data[0].cidade;
+  estado = data[0].estado;
 
   document.getElementById("nomeVinicola").innerText = `${nomeVinicola}`;
   document.getElementById("telefone").innerText = `${telefone}`;
   document.getElementById("cnpj").innerText = `${cnpj}`;
   document.getElementById("qtdTanques").innerText = `${qtdTanquesSuportados}`;
+  document.getElementById("rua").innerText = `${logradouro}`;
+  document.getElementById("numero").innerText = `${numero}`;
+  document.getElementById("cep").innerText = `${cep}`;
+  document.getElementById("cidade").innerText = `${cidade}`;
+  document.getElementById("estado").innerText = `${estado}`;
+
 }
 
 function editarvinicola() {
@@ -59,7 +69,7 @@ function editarvinicola() {
   document.getElementById("qtdTanques").style.display = "none";
   document.getElementById("rua").style.display = "none";
   document.getElementById("numero").style.display = "none";
-  document.getElementById("bairro").style.display = "none";
+  // document.getElementById("bairro").style.display = "none";
   document.getElementById("cep").style.display = "none";
   document.getElementById("cidade").style.display = "none";
   document.getElementById("estado").style.display = "none";
@@ -71,7 +81,7 @@ function editarvinicola() {
   let ipt_qtdTanques = document.getElementById("ipt_qtdTanques");
   let ipt_rua = document.getElementById("ipt_rua");
   let ipt_numero = document.getElementById("ipt_numero");
-  let ipt_bairro = document.getElementById("ipt_bairro");
+  // let ipt_bairro = document.getElementById("ipt_bairro");
   let ipt_cep = document.getElementById("ipt_cep");
   let ipt_cidade = document.getElementById("ipt_cidade");
   let ipt_estado = document.getElementById("ipt_estado");
@@ -83,7 +93,7 @@ function editarvinicola() {
   ipt_qtdTanques.value = qtdTanquesSuportados; // Corrigido para a variável global certa
   ipt_rua.value = rua;
   ipt_numero.value = numero;
-  ipt_bairro.value = bairro;
+  // ipt_bairro.value = bairro;
   ipt_cep.value = cep;
   ipt_cidade.value = cidade;
   ipt_estado.value = estado;
@@ -91,7 +101,7 @@ function editarvinicola() {
   // Como rua, numero, etc. não foram declarados globalmente, pegamos do próprio texto da tela:
   ipt_rua.value = document.getElementById("rua").innerText;
   ipt_numero.value = document.getElementById("numero").innerText;
-  ipt_bairro.value = document.getElementById("bairro").innerText;
+  // ipt_bairro.value = document.getElementById("bairro").innerText;
   ipt_cep.value = document.getElementById("cep").innerText;
   ipt_cidade.value = document.getElementById("cidade").innerText;
   ipt_estado.value = document.getElementById("estado").innerText;
@@ -103,7 +113,7 @@ function editarvinicola() {
   ipt_qtdTanques.style.display = "block";
   ipt_rua.style.display = "block";
   ipt_numero.style.display = "block";
-  ipt_bairro.style.display = "block";
+  // ipt_bairro.style.display = "block";
   ipt_cep.style.display = "block";
   ipt_cidade.style.display = "block";
   ipt_estado.style.display = "block";
@@ -140,7 +150,7 @@ function salvarVinicola() {
           document.getElementById("qtdTanques").style.display = "block";
           document.getElementById("rua").style.display = "block";
           document.getElementById("numero").style.display = "block";
-          document.getElementById("bairro").style.display = "block";
+          // document.getElementById("bairro").style.display = "block";
           document.getElementById("cep").style.display = "block";
           document.getElementById("cidade").style.display = "block";
           document.getElementById("estado").style.display = "block";
@@ -151,7 +161,7 @@ function salvarVinicola() {
           document.getElementById("ipt_qtdTanques").style.display = "none";
           document.getElementById("ipt_rua").style.display = "none";
           document.getElementById("ipt_numero").style.display = "none";
-          document.getElementById("ipt_bairro").style.display = "none";
+          // document.getElementById("ipt_bairro").style.display = "none";
           document.getElementById("ipt_cep").style.display = "none";
           document.getElementById("ipt_cidade").style.display = "none";
           document.getElementById("ipt_estado").style.display = "none";
