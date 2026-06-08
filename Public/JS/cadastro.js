@@ -18,59 +18,60 @@ function proximo() {
   telefone = ipt_celular.value;
   senha = ipt_senha.value;
 
+  if (
+    nome == "" ||
+    email == "" ||
+    cnpj == "" ||
+    telefone == "" ||
+    senha == ""
+  ) {
+    alert("Preencha todos os campos da primeira etapa!");
+    return;
+  }
+
+  let posicaoArroba = email.indexOf("@");
+  let posicaoCom = email.indexOf(".com");
+  let senhaValida = senha.length >= 6;
+  let emailValido =
+    email.includes("@") &&
+    email.includes(".com") &&
+    posicaoArroba < posicaoCom &&
+    email.endsWith(".com");
+
+  if (!emailValido) {
+    alert("E-mail inválido!");
+    return;
+  }
+  if (!senhaValida) {
+    alert("Senha inválida! Mínimo de 6 caracteres.");
+    return;
+  }
+
+  // Se tudo estiver OK, grava e muda de página
   sessionStorage.setItem("nome", nome);
   sessionStorage.setItem("email", email);
   sessionStorage.setItem("cnpj", cnpj);
   sessionStorage.setItem("telefone", telefone);
   sessionStorage.setItem("senha", senha);
 
-  let posicaoArroba = email.indexOf("@");
-  let posicaoCom = email.indexOf(".com");
-  let senhaValida = false;
-  let emailValido = false;
-
-  // verificação da senha
-  if (senha.length >= 6) {
-    senhaValida = true;
-  }
-
-  //verificação e-mail
-  if (
-    email != "" &&
-    email.includes("@") &&
-    email.includes(".com") &&
-    posicaoArroba < posicaoCom &&
-    email.endsWith(".com")
-  ) {
-    emailValido = true;
-  }
-
-  if (senhaValida == true && emailValido == true) {
-    window.location.href = "cadastro-continuacao.html";
-  } else if (!emailValido) {
-    alert("E-mail inválido!");
-    return;
-  } else if(!senhaValida) {
-    alert("Senha inválida!");
-    return;
-  }
+  window.location.href = "cadastro-continuacao.html";
 }
 
 function cadastrar() {
   nomeVinicola = ipt_nomeVinicola.value;
-  qtdTanques = Number(ipt_tanques.value);
+  qtdTanques = ipt_tanques.value;
   ruaLogradouro = ipt_rua.value;
   cidade = ipt_cidade.value;
   estadoUF = ipt_uf.value;
-  numero = Number(ipt_num.value);
+  numero = ipt_num.value;
   CEP = ipt_cep.value;
 
   sessionStorage.setItem("nomeVinicola", nomeVinicola);
-  sessionStorage.setItem("qtdTanques", qtdTanques);
+  sessionStorage.setItem("qtdTanques", Number(qtdTanques));
   sessionStorage.setItem("ruaLogradouro", ruaLogradouro);
   sessionStorage.setItem("cidade", cidade);
   sessionStorage.setItem("estadoUF", estadoUF);
-  sessionStorage.setItem("numero", numero);
+  sessionStorage.setItem("numero", Number(numero));
   sessionStorage.setItem("CEP", CEP);
 
   let mensagem = "";
@@ -117,11 +118,12 @@ function gravarCadastro() {
     }),
   })
     .then(function (resposta) {
-
       if (resposta.ok) {
-       clearStorage()
+        clearStorage();
 
-        alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+        alert(
+          "Cadastro realizado com sucesso! Redirecionando para tela de Login...",
+        );
         window.location.href = "../login/login.html";
       } else {
         throw "Ocorreu um erro ao realizar o cadastro!";
@@ -134,16 +136,5 @@ function gravarCadastro() {
 }
 
 function clearStorage() {
-  sessionStorage.removeItem("nome");
-  sessionStorage.removeItem("email");
-  sessionStorage.removeItem("cnpj");
-  sessionStorage.removeItem("telefone");
-  sessionStorage.removeItem("senha");
-  sessionStorage.removeItem("nomeVinicola");
-  sessionStorage.removeItem("qtdTanques");
-  sessionStorage.removeItem("ruaLogradouro");
-  sessionStorage.removeItem("cidade");
-  sessionStorage.removeItem("estadoUF");
-  sessionStorage.removeItem("numero");
-  sessionStorage.removeItem("CEP");
+  sessionStorage.clear();
 }
