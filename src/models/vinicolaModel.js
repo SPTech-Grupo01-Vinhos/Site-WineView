@@ -19,7 +19,7 @@ function cadastrar(dados_vinicola,idUsuario) {
 function buscarVinicola(idUsuario) {
   console.log("ACESSEI O VINICOLA MODEL \n\n function buscarVinicola():");
   
-  var instrucaoSql = `SELECT * FROM vinicola WHERE fkUsuario = ${idUsuario};`;
+  var instrucaoSql = `SELECT * FROM vinicola JOIN endereco ON fkEndereco = idEndereco WHERE fkUsuario = ${idUsuario};`;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
