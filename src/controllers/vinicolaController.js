@@ -19,7 +19,6 @@ function buscarVinicola(req, res) {
 }
 
 function editarVinicola(req, res) {
-  
   var nomeVinicola = req.body.nomeVinicola;
   var telefone = req.body.telefone;
   var cnpj = req.body.cnpj;
