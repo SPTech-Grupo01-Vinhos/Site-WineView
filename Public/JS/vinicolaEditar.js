@@ -43,6 +43,7 @@ function exibirInformacoesVinicola(data) {
   nomeVinicola = data[0].nomeVinicola;
   telefone = data[0].telefone;
   cnpj = data[0].cnpj;
+  qtdTanquesSuportados = data[0].qtdTanquesSuportados
   logradouro = data[0].logradouro;
   numero = data[0].numero;
   cep = data[0].cep;

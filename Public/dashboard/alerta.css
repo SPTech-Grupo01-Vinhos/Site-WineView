@@ -10,7 +10,7 @@
     background-color: #E2D8CA;
     border-radius: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }

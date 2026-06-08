@@ -97,7 +97,7 @@
   .content {
     background-color: #fefbf8;
     border-radius: 1rem;
-    padding: 50px;
+    padding: 20px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -114,7 +114,7 @@
     font-weight: 700;
 
     /* tamanho */
-    height: 20%;
+    /* height: 15%; */
   }
 
   p {
@@ -124,13 +124,23 @@
     font-weight: 500;
 
     /* tamanho */
-    height: 20%;
+    /* height: 10%; */
+  }
+
+  .inp_cad {
+    border-radius: 5px;
+    background: #e4e4e3;
+    padding: 10px;
+
+    /* tamanho */
+    height: 10%;
+    width: 100%;
   }
 
   input {
     border-radius: 5px;
     background: #e4e4e3;
-    padding: 10px;
+    padding: 7px;
 
     /* tamanho */
     height: 10%;
@@ -151,7 +161,7 @@
 
     border: 1px solid #ffffff00;
 
-    height: 2.5rem;
+    /* height: 2.5rem; */
 
     cursor: pointer;
     transition: 200ms;
@@ -165,4 +175,3 @@
     transition: 200ms;
   }
 }
-
