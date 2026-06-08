@@ -128,15 +128,12 @@ function gerarGrafico(data) {
   let statusFermentacao = "";
   let corFermentacao = "";
 
-  if (temperatura < 15) {
-    statusFermentacao = "MOSTO";
-    corFermentacao = "#7c7c7c";
-  } else if (temperatura <= 32) {
-    statusFermentacao = "EM FERMENTAÇÃO";
-    corFermentacao = "#2ba804";
-  } else {
+  if (temperatura < 20 || temperatura > 30) {
     statusFermentacao = "CRÍTICO";
     corFermentacao = "#ac0505";
+  } else if (temperatura <= 32) {
+    statusFermentacao = "IDEAL";
+    corFermentacao = "#2ba804";
   }
 
   document.getElementById("codigo-tanque").innerText =
