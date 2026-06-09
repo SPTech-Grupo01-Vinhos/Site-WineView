@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function cadastrar(dados_vinicola,idUsuario) {
+function cadastrar(dados_vinicola,idUsuario,idEndereco) {
   console.log("ACESSEI O VINICOLA MODEL \n\n function cadastrar():");
 
   var nomeVinicola = dados_vinicola.nomeVinicola;
