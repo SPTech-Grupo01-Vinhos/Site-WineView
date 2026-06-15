@@ -61,7 +61,7 @@ function atualizarDadosGrafico() {
   iniciarGrafico();
   carregarDadosSensor();
 
-  setInterval(carregarDadosSensor, 10000);
+  setInterval(carregarDadosSensor, 5000);
 }
 
 function carregarDadosSensor() {
